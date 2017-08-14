@@ -132,37 +132,38 @@ include ('header.html');
 
 
 			<!-- Modal -->
-			  <div class="modal fade" id="myModal" role="dialog">
-			    <div class="modal-dialog modal-lg">
-			      <div class="modal-content">
-			        <div class="modal-header">
-			          <button type="button" class="close" data-dismiss="modal">&times;</button>
-			          <h2 class="modal-title textital modaltitre">Veuillez entrer les mots de passe</h2>
-			        </div>
+			<div class="modal fade" id="myModal" role="dialog">
+				<div class="modal-dialog modal-lg">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<h2 class="modal-title textital modaltitre">Veuillez entrer les mots de passe</h2>
+						</div>
 
-			        <form>
-				        <div class="modal-body">
-				        	<div class="form-group">
-				        		<label for="1mdp">Mot de passe 1 :</label>
-				        		<input type="password" name="1mdp" id="1mdp">			        			       		
-				        	</div>
+						<form action="acces_admin.php" method="post">
 
-				        	<div class="form-group">
-				        		<label for="2mdp">Mot de passe 2 :</label>
-				        		<input type="password" name="2mdp" id="2mdp">			        			       		
-				        	</div>
-				        </div>
-				    </form>
+							<div class="modal-body">
+								<div class="form-group">
+									<label for="1mdp">Mot de passe 1 :</label>
+									<input type="password" name="1mdp" id="1mdp">			        			       		
+								</div>
 
+								<div class="form-group">
+									<label for="2mdp">Mot de passe 2 :</label>
+									<input type="password" name="2mdp" id="2mdp">			        			       		
+								</div>
+							</div>      	
 
+							<div class="modal-footer">
+								<input type="submit" name="envoye" value="Valider"> 
+								<button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+							</div>
 
-						<div class="modal-footer">
-					        <button type="button" class="btn btn-default" data-dismiss="modal">Valider</button>
-					     </div>
+						</form>
 
-				      </div>        
-				    </div>
-				  </div>
+					</div>        
+				</div>
+			</div>
 
 		</div>
 </body>
