@@ -1,0 +1,13 @@
+/* Partie admin */
+.menu_admin
+{
+	background-color: black;
+	border-right: 6px groove darkgreen;
+	min-height:100vh;
+}
+
+.titre
+{
+	color: #FFFFFF;
+	font-size: 1.8em;
+}
