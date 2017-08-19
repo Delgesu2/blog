@@ -1,22 +1,17 @@
 <?php
-include ('connect.php');
+
 include ('menu_admin.html');
 
 // Récupération du contenu de la table
-if (isset($_GET['id'])) {
-    $req = $bdd->prepare('SELECT id, titre, chapo, contenu FROM post WHERE id =:id');
-    $req->bindValue(':id', $_GET['id'], PDO::PARAM_INT);
-    $req->execute();
-    $data=$req->fetch(PDO::FETCH_ASSOC);
-    }
-?>
+require ('../controleur/ctrl_recup_update.php');
 
+?>
 
 <div class="col-sm-10">
     <h1 class="text-center">Modifier un post</h1>
 
    
-    <form method="post" action="ttt_update.php">
+    <form method="post" action="../controleur/ctrl_update.php">
         <div class="form-group">
         <label for="titre">Titre:</label>
         <input class="form-control" type="text" name="titre" id="titre" value="<?php if (isset ($_GET['id'])) {echo $data['titre'];} ?>">

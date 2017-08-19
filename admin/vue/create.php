@@ -1,5 +1,5 @@
 <?php
-include ('connect.php');
+include ('../../modele/connect.php');
 include ('menu_admin.html');
 ?>
 
@@ -9,7 +9,7 @@ include ('menu_admin.html');
     <h1 class="text-center">Rédiger un post</h1>
 
     <!-- Editeur Summernote -->
-    <form method="post" action="ttt_create.php">
+    <form method="post" action="../controleur/ctrl_create.php">
         <div class="form-group">
         <label for="titre">Titre:</label>
         <input class="form-control" type="text" name="titre" id="titre">

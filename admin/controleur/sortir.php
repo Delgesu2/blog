@@ -5,4 +5,4 @@
  * Date: 02/08/17
  * Time: 12:25
  */
-header('Location:index.php');
+header('Location:../../vue/accueil.php');

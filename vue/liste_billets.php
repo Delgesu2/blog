@@ -10,8 +10,6 @@ include('head.html');
 </html>
 
 <?php
-include ('connect.php');
-
 
  echo "<body>
  		<div class = 'container'>
@@ -26,13 +24,8 @@ echo "<div class='row text-center'>
 		 	<h3>Pour lire un message au complet, cliquer sur son titre.</h3>	 	
 	  </div>";
 
-
-
-
 // Récupération du contenu de la table 'post'
-$liste_post=$bdd->query("SELECT id, titre, chapo, 
-	DATE_FORMAT(date_creation, '%d/%m/%Y à %Hh%imin%ss') AS date_creation
-	FROM post ORDER BY date_creation DESC LIMIT 5");
+require ('../modele/mod_liste_billets.php');
 	
 		while ($donnees = $liste_post->fetch())  {
 			echo "<div class = 'row'>
