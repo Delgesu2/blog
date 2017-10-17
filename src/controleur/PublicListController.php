@@ -5,8 +5,8 @@
  * Date: 24/09/17
  * Time: 18:51
  */
-require_once '../manager/Modele.php';
-require_once '../manager/Billet.php';
+
+namespace Post;
 require_once '../vue/PublicList.php';
 
 
@@ -15,7 +15,7 @@ class PublicListController{
 
     public function __construct()
     {
-        $this->liste = new Billet();
+        $this->liste = new BilletManager();
     }
 
     // Affiche la liste des billets du blog

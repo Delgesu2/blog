@@ -6,9 +6,9 @@
  * Time: 20:16
  */
 
-require_once 'Modele.php';
+namespace Post;
 
-class Billet extends Modele {
+class BilletManager extends Modele {
 
     // Renvoie la liste des billets du blog
     public function getBillets()
@@ -72,6 +72,11 @@ class Billet extends Modele {
     {
         $post = new Post();
         $post->setId($data['id']);
+        $post->setTitre($data['titre']);
+        $post->setChapo($data['chapo']);
+        $post->setContenu($data['contenu']);
+        $post->setDateCreation($data['date_creation']);
+        $post->setDateMaj($data['date_maj']);
         return $post;
     }
 }

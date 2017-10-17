@@ -6,17 +6,16 @@
  * Time: 19:38
  */
 
-require_once '../manager/Modele.php';
-require_once '../manager/Billet.php';
+namespace Post;
 require_once '../vue/PublicList.php';
 
 class PublicBilletController {
 
     private $billet;
 
-    private function __construct()
+    public function __construct()
     {
-        $this->billet = new Billet();
+        $this->billet = new BilletManager();
     }
 
     // Affiche les détails sur le billet

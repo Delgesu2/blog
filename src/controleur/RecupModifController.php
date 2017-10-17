@@ -6,15 +6,14 @@
  * Time: 17:31
  */
 
-require_once '../manager/Modele.php';
-require_once '../manager/Billet.php';
+namespace Post;
 
 class RecupModifController {
     private $recup_billet;
 
     public function __construct()
     {
-        $this->recup_billet = new Billet();
+        $this->recup_billet = new BilletManager();
     }
 
     // Récupération du billet à modifier

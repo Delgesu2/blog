@@ -6,6 +6,9 @@
  * Date: 09/09/17
  * Time: 19:38
  */
+
+namespace Entity;
+
 class Post
 {
     public $id;
@@ -37,6 +40,14 @@ class Post
 
 
     // getters et setters
+
+    /**
+     * @param $id
+     */
+    public function setId($id)
+    {
+        $this->id=$id;
+    }
 
     /**
      * @return date
@@ -118,12 +129,6 @@ class Post
         $this->contenu = $contenu;
     }
 
-    /**
-     * @param $id
-     */
-    public function setId($id)
-    {
-        $this->id=$id;
-    }
+
 
 }

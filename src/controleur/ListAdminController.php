@@ -5,8 +5,8 @@
  * Date: 25/09/17
  * Time: 14:32
  */
-require_once '../manager/Modele.php';
-require_once '../manager/Billet.php';
+
+namespace Post;
 require_once '../vue/PublicList.php';
 
 class ListAdminController {
@@ -14,7 +14,7 @@ class ListAdminController {
 
     public function __construct()
     {
-        $this->admin_list = new Billet();
+        $this->admin_list = new BilletManager();
     }
 
     // Affiche la liste des billets du blog version admin

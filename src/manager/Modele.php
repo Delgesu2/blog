@@ -6,12 +6,15 @@
  * Time: 19:57
  */
 
+namespace Post;
+namespace User;
+
 abstract class Modele {
 
     // Objet PDO d'accès à la BDD
     private $bdd;
 
-    // Excéture une requête SQL évetuellement paramétrée
+    // Excéture une requête SQL éventuellement paramétrée
     protected function executerRequete($sql, $param = null) {
         if ($param == null) {
             $resultat = $this->getBdd()->query($sql); // exécution directe

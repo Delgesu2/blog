@@ -1,11 +1,13 @@
 <?php
-
 /**
  * Created by PhpStorm.
  * User: ronsard
  * Date: 09/09/17
  * Time: 19:50
  */
+
+namespace Entity;
+
 class User
 {
     /**

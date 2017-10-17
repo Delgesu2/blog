@@ -6,15 +6,14 @@
  * Time: 16:05
  */
 
-require_once '../manager/Modele.php';
-require_once '../manager/Billet.php';
+namespace Post;
 
 class ModifBilletController {
     private $modif_billet;
 
     public function __construct()
     {
-        $this->modif_billet = new Billet();
+        $this->modif_billet = new BilletManager();
     }
 
     // Modification du billet

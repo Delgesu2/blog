@@ -6,15 +6,14 @@
  * Time: 15:34
  */
 
-require_once '../manager/Modele.php';
-require_once '../manager/Billet.php';
+namespace Post;
 
 class DeleteBilletController {
     private $delete_billet;
 
     public function __construct()
     {
-        $this->delete_billet = new Billet();
+        $this->delete_billet = new BilletManager();
     }
 
 

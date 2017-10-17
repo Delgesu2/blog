@@ -1,2 +1,3 @@
 <?php
-header('Location:vue/accueil.php');
+
+require 'vendor/autoload.php';

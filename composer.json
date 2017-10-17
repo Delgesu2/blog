@@ -1,5 +1,12 @@
 {
     "require": {
-        "twig/twig": "~2.0"
+        "twig/twig": "~2.0",
+        "guzzlehttp/psr7": "^1.4"
+    },
+
+    "autoload": {
+        "psr-4": {
+            "Framework\\": "src/Framework"
+        }
     }
 }
