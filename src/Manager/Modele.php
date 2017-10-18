@@ -6,8 +6,8 @@
  * Time: 19:57
  */
 
-namespace Post;
-namespace User;
+namespace Framework\Manager;
+
 
 abstract class Modele {
 

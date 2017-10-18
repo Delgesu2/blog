@@ -6,7 +6,9 @@
  * Time: 16:05
  */
 
-namespace Post;
+namespace Framework\Controller;
+
+use Framework\Manager\BilletManager;
 
 class ModifBilletController {
     private $modif_billet;
@@ -19,7 +21,7 @@ class ModifBilletController {
     // Modification du billet
     public function modif_billet()
     {
-        $suppr_billet = $this->modif_billet->modif();
+        $modif_billet = $this->modif_billet->modif();
         $vue = new Vue("");
     }
 }

@@ -6,7 +6,9 @@
  * Time: 14:44
  */
 
-namespace User;
+namespace Framework\Controller;
+
+use Framework\Manager\UserManager;
 
 class UpdateUserController {
     private $userManager;

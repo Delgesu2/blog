@@ -7,7 +7,7 @@
  * Time: 19:38
  */
 
-namespace Entity;
+namespace Framework\Modele;
 
 class Post
 {

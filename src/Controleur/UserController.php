@@ -7,7 +7,10 @@
  * Time: 11:40
  */
 
-namespace User;
+namespace Framework\Controller;
+
+use Framework\Manager\UserManager;
+
 class UserController
 {
     public function profileAction ($id)

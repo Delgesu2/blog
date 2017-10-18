@@ -6,7 +6,7 @@
  * Time: 20:16
  */
 
-namespace Post;
+namespace Framework\Manager;
 
 class BilletManager extends Modele {
 

@@ -6,7 +6,10 @@
  * Time: 14:32
  */
 
-namespace Post;
+namespace Framework\Controller;
+
+use Framework\Manager\BilletManager;
+
 require_once '../vue/PublicList.php';
 
 class ListAdminController {

@@ -6,7 +6,7 @@
  * Time: 19:50
  */
 
-namespace Entity;
+namespace Framework\Modele;
 
 class User
 {

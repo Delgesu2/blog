@@ -6,7 +6,9 @@
  * Time: 15:34
  */
 
-namespace Post;
+namespace Framework\Controller;
+
+use Framework\Manager\BilletManager;
 
 class DeleteBilletController {
     private $delete_billet;

@@ -7,7 +7,7 @@
  * Time: 19:27
  */
 
-namespace User;
+namespace Framework\Manager;
 
 class UserManager extends Modele {
 

@@ -6,7 +6,9 @@
  * Time: 17:31
  */
 
-namespace Post;
+namespace Framework\Controller;
+
+use Framework\Manager\BilletManager;
 
 class RecupModifController {
     private $recup_billet;
