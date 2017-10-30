@@ -9,20 +9,26 @@
 namespace Framework\Controller;
 
 
+use Framework\Form\CreatePost;
 use Framework\Manager\BilletManager;
+use Framework\Modele\Post;
 
 class CreateBilletController
 {
+    private $form;
     private $create_billet;
 
     public function __construct()
     {
         $this->create_billet = new BilletManager();
+        $this->form = new CreatePost();
     }
 
     public function CreatePost()
     {
-        $new_billet = $this->create_billet->create();
-        $vue = new Vue("");
+        $billet = new Post();
+
+        $BDD_billet = $this->create_billet->create();
+        $vue = new Vue("Create");
     }
 }

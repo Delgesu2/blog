@@ -2,10 +2,12 @@
 
 require 'vendor/autoload.php';
 
-use Framework\Form\Formulr;
+use Framework\Form\CreatePost;
+use Framework\Form\CreateUser;
+use Framework\Form\Contact;
 
 
-$billet = new Formulr(array('titre' => 'Salut'));
+$billet = new CreatePost(array('titre' => 'Salut'));
 
 echo $billet -> input ('text');
 echo $billet -> input ('text');
@@ -15,14 +17,14 @@ echo $billet -> input ('date');
 echo $billet -> submit();
 
 
-$user = new Formulr(array());
+$user = new CreateUser (array());
 
 echo $user -> input ('text');
 echo $user -> input ('password');
 echo $user -> submit();
 
 
-$contact = new Formulr(array());
+$contact = new Contact(array());
 
 echo $contact -> option('option');
 echo $contact -> input ('text');

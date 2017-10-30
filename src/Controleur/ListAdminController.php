@@ -24,6 +24,6 @@ class ListAdminController {
     public function admin_list()
     {
         $billets_admin = $this->admin_list->getList();
-        $vue = new Vue("");
+        $vue = new Vue("Read");
     }
 }
