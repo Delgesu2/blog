@@ -12,7 +12,7 @@ namespace Framework\Form;
  * Class AbstractForm     // Crée le formulaire
  * @package Framework\Form
  */
-class AbstractForm
+abstract class AbstractForm
 {
     /**
      * @var

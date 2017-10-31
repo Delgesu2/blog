@@ -1,0 +1,100 @@
+/* Page d'accueil */
+@font-face
+{
+	font-family: 'HomemadeApple';
+	src: url('../fonts/HomemadeApple.ttf') format('truetype');
+}
+
+@font-face
+{
+	font-family: 'UbuntuLight';
+	src: url('../fonts/Ubuntu-L.ttf') format('truetype');
+}
+
+body
+{
+	font-family: 'UbuntuLight', Arial, serif;
+	background-color: moccasin;
+}
+
+.jumbotron
+{
+	background-image: url("../images/panorama.jpg");
+	color: white;
+}
+
+.jumbotitre
+ {
+ 	font-family: 'HomemadeApple', Arial, serif;
+ }
+
+.btnjumbo
+{
+	margin-bottom: -80px;
+}
+
+.fond
+{
+	background-color: rgba(166, 130, 116, 0.8);
+}
+
+.fondThumb
+{
+	background-color: rgba(166, 130, 116, 0.8);	
+}
+
+form
+{
+	padding-bottom: 40px;
+}
+
+
+/* Public liste posts */
+.titrepannel
+{
+	background-color: rgba(166, 130, 116, 0.8);
+}
+
+.titrepost
+{
+	font-size: 1.4em;
+}
+
+.titredate
+{
+	font-size: 1.1em;
+}
+
+.chapo
+{
+	font-style: italic;
+	font-size: 1.2em;
+}
+
+a    /* Liens dynamiques */
+{
+	color: rgb(51, 51, 51);
+}
+
+a:hover
+{
+	text-decoration: none;
+}
+
+/* Public billet */
+
+
+
+/* Media querries */
+@media screen and (max-width: 780px)
+{
+	.btnjumbo
+	{
+		margin-bottom: -45px;
+	}
+
+	h2
+	{
+		font-size: 1.5em;
+	}
+}
