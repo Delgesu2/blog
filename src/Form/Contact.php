@@ -16,9 +16,8 @@ class Contact extends AbstractForm
         /** Garde l'option choisie en cas de rechargement de la page */
         echo "<select id='civilite' name='civilite'>
                             <option 
-                                value='mr' '. 
-                                                                       
-                                    if (!isset($_POST[civilite]) || $_POST[civilite] == 'mr')  
+                                value='mr' '.                                                                        
+                                    if (!isset($_POST["civilite"]) || $_POST["civilite"] == 'mr')
                                     {
                                         echo ' selected='selected' ';
                                     } . ' >
@@ -27,8 +26,7 @@ class Contact extends AbstractForm
         
                             <option
                                 value='mme' '.
-
-                                    if (isset($_POST[civilite]) && $_POST[civilite] == 'mme')
+                                    if (isset($_POST["civilite"]) && $_POST["civilite"] == 'mme')
                                     {
                                         echo ' selected='selected' ';
                                     } . ' >

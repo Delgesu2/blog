@@ -49,13 +49,12 @@
     </div>
 
     <!-- Formulaire de contact -->
-    <form action="../controleur/send_email.php" method="post" class="col-xs-6">
+    <form action= "/" method="post" class="col-xs-6">
         <legend>Pour m'envoyer un message</legend>
 
+        {{ form.StartForm(_POST, ) }}
         <label for="civilité">Civilit&#233; : </label>
-
-        {{ Contact.option() }}
-
+        {{ form.option() }}
         <div class="form-group">
-            {{ Contact.StartForm(_POST, ) }}
+
         </div>

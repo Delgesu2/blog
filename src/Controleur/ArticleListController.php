@@ -13,7 +13,7 @@ use Framework\Manager\BilletManager;
 require_once '../vue/PublicList.php';
 
 
-class PublicListController{
+class ArticleListController{
     private $liste;
 
     public function __construct()
@@ -25,6 +25,5 @@ class PublicListController{
     public function public_list()
     {
         $billets = $this->liste->getBillets();
-        $vue = new Vue("");
     }
 }

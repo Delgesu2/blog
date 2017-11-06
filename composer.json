@@ -4,6 +4,13 @@
         "guzzlehttp/psr7": "^1.4"
     },
 
+    "authors": [
+        {
+            "name": "Delgesu",
+            "email": "xavierus70@hotmail.com"
+        }
+    ],
+
     "autoload": {
         "psr-4": {
             "Framework\\": "src/"

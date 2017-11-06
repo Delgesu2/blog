@@ -24,6 +24,6 @@ class ContactFormController
     {
         $kontact = $this->contact;
         $vue = new Vue ("Contact");
+        $mail = new Mail($_POST);
     }
-
 }

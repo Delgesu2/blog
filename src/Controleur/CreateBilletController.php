@@ -27,7 +27,6 @@ class CreateBilletController
     public function CreatePost()
     {
         $billet = new Post();
-
         $BDD_billet = $this->create_billet->create();
         $vue = new Vue("Create");
     }
