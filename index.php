@@ -1,2 +1,3 @@
 <?php
-header('Location:vue/accueil.php');
+var_dump($_GET);
+echo "test";
