@@ -9,18 +9,35 @@
 namespace App;
 
 
-class Router {
-    private $url; // URL sur laquelle on veut se rendre
+class Router
+{
     private $routes = []; // Liste des routes
 
-    public function __construct($url){
-        $this-> url = $url;
+    public function __construct()
+    {
+        $this-> createRoutes();
     }
 
-    public function get($path, $callable){
-        $route = new Route($path, $callable);
-        $this->routes["GET"][] = $route;
-        return $route; // On retourne la route pour "enchainer" les méthodes
+    public function createRoutes()
+    {
+        $routes = require __DIR__ . '/routes.php';
+
+        foreach ($routes as $route) {
+            $route = new Route($route['path'], $route['controller']);
+            $this->routes[] = $route;
+        }
+    }
+
+    public function handleRequest($request)
+    {
+        foreach ($this->routes as $route) {
+            if ($route->getPath() === $request) {
+                $controller = new $route->getController();
+                return $controller->indexAction;
+            }
+
+            echo '404 page not found';
+        }
     }
 
 }

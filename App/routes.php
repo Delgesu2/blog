@@ -22,5 +22,11 @@ return [
         'path'       => 'post/details/{id}',
         'method'     => 'GET',
         'controller' => \Framework\Controller\ArticleDetailsController::class
-    ]
+    ],
+
+    'admin' => [
+        'path'       => '/admin',
+        'method'     => 'POST',
+        'controller' => \Framework\Controller\AccessAdminController::class
+]
 ];

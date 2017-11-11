@@ -2,6 +2,6 @@
 
 require 'vendor/autoload.php';
 
-$router = new App\Router($_SERVER['REQUEST_URI']); // Récupère l'URL demandée au serveur
+$router = new App\Router(); // Récupère l'URL demandée au serveur
 
-
+$router->handleRequest($_SERVER['REQUEST_URI']);

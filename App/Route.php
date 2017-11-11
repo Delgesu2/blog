@@ -12,9 +12,24 @@ namespace App;
 class Route
 {
     private $path;
-    private $callable;
-    private $matches = [];
-    private $params = [];
+    private $controller;
 
+    public function __construct($path, $controller)
+    {
+        $this->path = $path;
+        $this->controller = $controller;
+    }
 
+    /**
+     * @return mixed
+     */
+    public function getPath()
+    {
+        return $this->path;
+    }
+
+    public function getController()
+    {
+        return $this->controller();
+    }
 }
