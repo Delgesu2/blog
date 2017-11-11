@@ -41,5 +41,10 @@ return [
         'method'       =>   'GET',
         'controller'   => \Framework\Controller\UpdateUserController::class
 ],
-    
+
+    'update_user'   => [
+        'path'         => '/admin/updateuser',
+        'method'       => 'POST',
+        'controller'   => \Framework\Controller\UpdateUserController::class
+    ]
 ];
