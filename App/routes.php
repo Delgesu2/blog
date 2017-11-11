@@ -19,14 +19,27 @@ return [
     ],
 
     'article_details' => [
-        'path'       => 'post/details/{id}',
+        'path'       => '/post/details/{id}',
         'method'     => 'GET',
         'controller' => \Framework\Controller\ArticleDetailsController::class
     ],
 
-    'admin' => [
+    'acces_admin' => [
         'path'       => '/admin',
         'method'     => 'POST',
         'controller' => \Framework\Controller\AccessAdminController::class
-]
+],
+
+    'admin_list'    => [
+        'path'         => '/admin/list',
+        'method'       => 'GET',
+        'controller'   => \Framework\Controller\ListAdminController::class
+],
+
+    'update_billet' => [
+        'path'         => '/admin/updatepost',
+        'method'       =>   'GET',
+        'controller'   => \Framework\Controller\UpdateUserController::class
+],
+    
 ];
