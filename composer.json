@@ -1,7 +1,8 @@
 {
     "require": {
         "twig/twig": "~2.0",
-        "guzzlehttp/psr7": "^1.4"
+        "guzzlehttp/psr7": "^1.4",
+        "swiftmailer/swiftmailer": "^6.0"
     },
 
     "authors": [
