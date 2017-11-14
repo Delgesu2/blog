@@ -19,10 +19,7 @@ class Route
         $this->path = $path;
         $this->controller = $controller;
     }
-
-    /**
-     * @return mixed
-     */
+    
     public function getPath()
     {
         return $this->path;
@@ -30,6 +27,6 @@ class Route
 
     public function getController()
     {
-        return $this->controller();
+        return $this->controller;
     }
 }
