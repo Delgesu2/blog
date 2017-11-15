@@ -31,13 +31,17 @@ class Router
     public function handleRequest($request)
     {
         foreach ($this->routes as $route) {
+            var_dump($route->getController());
             if ($route->getPath() === $request) {
-                $controller = new $route->getController();
-                return $controller->indexAction;
+
+                $controller = $route->getController();
+                $class = new $controller();
+                return $class();
             }
 
-            echo '404 page not found';
+            else {
+                echo '404 page not found';
+            }
         }
     }
-
 }

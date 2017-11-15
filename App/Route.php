@@ -19,7 +19,7 @@ class Route
         $this->path = $path;
         $this->controller = $controller;
     }
-    
+
     public function getPath()
     {
         return $this->path;

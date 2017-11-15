@@ -27,7 +27,7 @@ class FormBuilder
 
         if ($this->data != null)
         {
-            $this->data->setChapo()
+            $this->data->setChapo();
         }
     }
 }

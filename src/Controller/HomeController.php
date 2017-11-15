@@ -10,8 +10,8 @@ namespace Framework\Controller;
 
 class HomeController
 {
-    public function index()
+    public function __invoke()
     {
-        require '../../accueil.php';
+        echo 'Hello world';
     }
 }

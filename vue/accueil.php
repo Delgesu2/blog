@@ -5,6 +5,7 @@
 include ('head.html');
 ?>
 
+
 	<title>Xavier COUTANT - Bienvenue sur mon site</title>
 </head>
 
