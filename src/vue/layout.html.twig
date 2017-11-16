@@ -1,0 +1,30 @@
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="../contenu/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="../contenu/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../contenu/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+
+
+<body>
+    <div class="container">
+
+            <!-- En-tête jumbotron -->
+        <div class="jumbotron">
+            <h1 class="jumbotitre">Carnet de bord</h1>
+            <p>Site personnel de Xavier Coutant</p>
+            <div class="btn-group btnjumbo">
+                <a class="btn btn-warning fond" href="accueil.php">Accueil</a> <a class="btn btn-warning fond" href="liste_billets.php">Blog</a>
+            </div>
+        </div>
+            <!-- fin en-tête jumbotron -->
+        {% block content %} {% endblock %}
+    </div>
+</body>

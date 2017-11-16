@@ -12,6 +12,6 @@ class HomeController
 {
     public function __invoke()
     {
-        echo 'Hello world';
+        require '../vue/accueil.html.twig';
     }
 }

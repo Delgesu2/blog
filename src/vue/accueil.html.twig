@@ -1,13 +1,7 @@
-{% extends 'head.html.twig' %}
+{% extends 'layout.html.twig' %}
 {% block title %}Xavier COUTANT - Bienvenue sur mon site{% endblock %}
 
-
-<body>
-<div class="container">
-
-    <!-- En-tête jumbotron -->
-{% include 'header.html' %}
-    <!-- fin en-tête jumbotron -->
+{% block content %}
 
     <div class="row text-center">
         <h2>...un développeur polyvalent</h2>
@@ -58,3 +52,7 @@
         <div class="form-group">
 
         </div>
+
+    </form>
+
+{% endblock %}
