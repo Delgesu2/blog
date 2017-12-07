@@ -12,6 +12,8 @@ class HomeController
 {
     public function __invoke()
     {
-        require '../vue/accueil.html.twig';
+        $loader = new Twig_Loader_Filesystem('../vue');
+        $twig = new Twig_Environment($loader, array('debug' => true));
+        echo $twig->render('accueil.html.twig');
     }
 }

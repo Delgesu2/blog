@@ -1,6 +1,6 @@
 <?php
 include ('connect.php');
-include ('menu_admin.html');
+include ('menu_admin.html.twig');
 $req=$bdd->query('SELECT courriel FROM user WHERE id=1');
 $courriel=$req->fetch();
 ?>
