@@ -14,13 +14,13 @@
 
         <div class="form-group">
             <label for="chapo">Chap&#244;:</label><br/>
-            <textarea class="form-control" name="chapo" id="chapo" rows="3" cols="10"> {{ data.chapo }} </textarea>
+            <textarea class="form-control" name="chapo" id="chapo" rows="3" cols="10"> {% if id is defined %} {{ data.chapo }} {% endif %} </textarea>
         </div>
 
         <!-- Editeur Summernote -->
         <div class="form-group">
             <label for="summernote">Texte:</label>
-            <textarea name="contenu" id="summernote"> {{ data.contenu }} </textarea>
+            <textarea name="contenu" id="summernote"> {% if id is defined %} {{ data.contenu }} {% endif %} </textarea>
         </div>
 
         <input type="hidden" name="id" value="<?= $data['id']; ?>" />

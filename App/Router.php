@@ -8,7 +8,6 @@
 
 namespace App;
 
-
 class Router
 {
     private $routes = []; // Liste des routes
@@ -33,10 +32,9 @@ class Router
         foreach ($this->routes as $route) {
             var_dump($route->getController());
             if ($route->getPath() === $request) {
-
                 $controller = $route->getController();
                 $class = new $controller();
-                return $class();
+                $class->index();
             }
 
             else {

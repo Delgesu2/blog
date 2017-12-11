@@ -10,7 +10,7 @@ namespace Framework\Controller;
 
 use Framework\Manager\BilletManager;
 
-class UpdateBilletController
+class UpdateBilletController extends AbstractController
 {
     private $BilletManager;
 

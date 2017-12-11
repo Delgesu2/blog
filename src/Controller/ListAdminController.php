@@ -10,9 +10,10 @@ namespace Framework\Controller;
 
 use Framework\Manager\BilletManager;
 
-require_once '../vue/PublicList.php';
+require_once '../vue/admin_list.html.twig';
 
-class ListAdminController {
+class ListAdminController extends AbstractController
+{
     private $admin_list;
 
     public function __construct()

@@ -8,6 +8,7 @@
  */
 
 namespace Framework\Manager;
+use Framework\Modele\User;
 
 class UserManager extends Modele {
 

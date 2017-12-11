@@ -11,9 +11,8 @@ namespace Framework\Controller;
 
 use Framework\Form\CreatePost;
 use Framework\Manager\BilletManager;
-use Framework\Modele\Post;
 
-class CreateBilletController
+class CreateBilletController extends AbstractController
 {
     private $form;
     private $create_billet;

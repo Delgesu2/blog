@@ -7,9 +7,9 @@
  */
 
 namespace Framework\Manager;
+use App\DBFactory;
 
-
-abstract class Modele {
+abstract class Modele extends DBFactory{
 
     // Objet PDO d'accès à la BDD
     private $bdd;
@@ -20,7 +20,7 @@ abstract class Modele {
             $resultat = $this->getBdd()->query($sql); // exécution directe
         }
         else {
-            $resultat = $this->getBdd()->query($sql); // requête préparée
+            $resultat = $this->getBdd()->query($sql); // requête préparée  ERREUR ?? "prepare" non ?
             $resultat->execute($param);
         }
         return $resultat;
@@ -30,11 +30,10 @@ abstract class Modele {
 
     private function getBdd() {
         if ($this->bdd == null) {
-
             // Création de la connexion
-            $bdd = new PDO('mysql:host=localhost;dbname=monblog;charset=utf8', 'root', '',
-                array(PDO::ATTR_ERRMODE => pdo::ERRMODE_EXCEPTION));
+            $this-> connect();
         }
+
         return $this->bdd;
     }
 

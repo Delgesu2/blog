@@ -10,7 +10,8 @@ namespace Framework\Controller;
 
 use Framework\Manager\UserManager;
 
-class UpdateUserController {
+class UpdateUserController extends AbstractController
+{
     private $userManager;
 
     public function __construct()

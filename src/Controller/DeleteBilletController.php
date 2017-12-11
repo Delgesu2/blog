@@ -10,7 +10,8 @@ namespace Framework\Controller;
 
 use Framework\Manager\BilletManager;
 
-class DeleteBilletController {
+class DeleteBilletController extends AbstractController
+{
     private $delete_billet;
 
     public function __construct()

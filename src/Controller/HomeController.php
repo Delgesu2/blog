@@ -8,12 +8,18 @@
 
 namespace Framework\Controller;
 
-class HomeController
+class HomeController extends AbstractController
 {
+    public function index()
+    {
+        echo $this->getTwig()->render("accueil.html.twig");
+    }
+
     public function __invoke()
     {
-        $loader = new Twig_Loader_Filesystem('../vue');
-        $twig = new Twig_Environment($loader, array('debug' => true));
-        echo $twig->render('accueil.html.twig');
+        echo $this->getTwig()->render("accueil.html.twig");
+        var_dump($this->getTwig()->render("accueil.html.twig"));
     }
+
+
 }

@@ -12,7 +12,8 @@ use Framework\Manager\BilletManager;
 
 require_once '../vue/PublicList.php';
 
-class ArticleDetailsController {
+class ArticleDetailsController extends AbstractController
+{
 
     private $billet;
 

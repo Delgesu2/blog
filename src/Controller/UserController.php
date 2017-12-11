@@ -11,7 +11,7 @@ namespace Framework\Controller;
 
 use Framework\Manager\UserManager;
 
-class UserController
+class UserController extends AbstractController
 {
     public function profileAction ($id)
     {

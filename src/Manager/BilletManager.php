@@ -7,6 +7,7 @@
  */
 
 namespace Framework\Manager;
+use Framework\Modele\Post;
 
 class BilletManager extends Modele {
 
