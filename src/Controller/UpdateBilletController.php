@@ -19,7 +19,7 @@ class UpdateBilletController extends AbstractController
         $this->BilletManager = new BilletManager();
     }
 
-    // Récupération du billet et modification dans la vue
+    // Récupération du billet et modification dans la templates
     public function update_billet()
     {
         $billet_recup = $this->recup_billet->recup_update('id');

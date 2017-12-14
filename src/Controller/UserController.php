@@ -17,6 +17,6 @@ class UserController extends AbstractController
     {
         $manager = new UserManager();
         $user = $manager->getUser($id);
-        $this->generer('vue', ['user'=>$user]);
+        $this->generer('templates', ['user'=>$user]);
     }
 }

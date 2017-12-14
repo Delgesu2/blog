@@ -8,9 +8,9 @@
 
 namespace Framework\Controller;
 
-
-use Framework\Form\CreatePost;
+use Framework\Modele\Post;
 use Framework\Manager\BilletManager;
+use Framework\Form\CreatePost;
 
 class CreateBilletController extends AbstractController
 {

@@ -8,7 +8,8 @@ $router = new Router(); // Récupère l'URL demandée au serveur
 
 $router->handleRequest($_SERVER['REQUEST_URI']);
 
-/** Instantiation des objets Twig  */
-$loader = new Twig_Loader_Filesystem('../src/vue');
+/** Instantiation des objets Twig
+$loader = new Twig_Loader_Filesystem('../src/templates');
 $twig = new Twig_Environment($loader, array('debug' => true));
 echo $twig->render('accueil.html.twig');
+ */

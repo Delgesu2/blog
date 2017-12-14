@@ -12,7 +12,7 @@ class HomeController extends AbstractController
 {
     public function index()
     {
-        echo $this->getTwig()->render("accueil.html.twig");
+        require __DIR__ . './../../vue/accueil.php';
     }
 
     public function __invoke()
@@ -20,6 +20,4 @@ class HomeController extends AbstractController
         echo $this->getTwig()->render("accueil.html.twig");
         var_dump($this->getTwig()->render("accueil.html.twig"));
     }
-
-
 }

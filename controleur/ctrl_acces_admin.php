@@ -10,7 +10,7 @@ if (!empty($_POST['identifiant']) && !empty($_POST['mdp']))
 	if (htmlspecialchars($_POST['identifiant'])==$user['identifiant'] && htmlspecialchars($_POST['mdp'])==$user['mdp'])
 	{
 		echo "Vous êtes identifié.";
-		header('Location:../admin/vue/list.php');
+		header('Location:../admin/templates/list.php');
 	}
 
 	else

@@ -8,6 +8,8 @@
 
 namespace App;
 
+use Framework\Controller\HomeController;
+
 class Router
 {
     private $routes = []; // Liste des routes
@@ -19,26 +21,31 @@ class Router
 
     public function createRoutes()
     {
-        $routes = require __DIR__ . '/routes.php';
+        $routes = require __DIR__ . './../config/routes.php';
 
         foreach ($routes as $route) {
-            $route = new Route($route['path'], $route['controller']);
-            $this->routes[] = $route;
+            $this->routes[] = new Route($route['path'], $route['controller']);
+
         }
+    }
+
+    public function createController($class)
+    {
+        return new $class();
     }
 
     public function handleRequest($request)
     {
         foreach ($this->routes as $route) {
-            var_dump($route->getController());
-            if ($route->getPath() === $request) {
-                $controller = $route->getController();
-                $class = new $controller();
-                $class->index();
-            }
-
-            else {
-                echo '404 page not found';
+            var_dump(new \ReflectionClass($route));
+            switch ($_SERVER['REQUEST_URI']) {
+                case $route->getPath():
+                    echo "Hello !";
+                  $class = $this->createController($route->getController());
+                  $rf = new \ReflectionClass($class);
+                    var_dump($rf->getMethod('index'));
+                    var_dump($class->index());
+                    break;
             }
         }
     }

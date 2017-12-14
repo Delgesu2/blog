@@ -10,7 +10,7 @@ namespace Framework\Controller;
 
 use Framework\Manager\BilletManager;
 
-require_once '../vue/PublicList.php';
+require_once '../templates/PublicList.php';
 
 
 class ArticleListController extends AbstractController

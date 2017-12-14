@@ -10,5 +10,5 @@ include ('../../modele/connect.php');
 require ('../modele/mod_create.php');  
 
 // Retour au formulaire
-header('Location:../vue/create.php');
+header('Location:../templates/create.php');
 ?>

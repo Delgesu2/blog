@@ -9,7 +9,7 @@ return [
     'homepage' => [
         'path'      => '/',
         'method'    => 'GET',
-        'controller'=> Framework\Controller\HomeController::class
+        'controller'=> \Framework\Controller\HomeController::class
     ],
 
     'article_list' => [

@@ -6,5 +6,5 @@ include ('../../modele/connect.php');
 require ('../modele/mod_update.php');
 
 // Retour au formulaire
-header('Location:../vue/list.php');
+header('Location:../templates/list.php');
 ?>
