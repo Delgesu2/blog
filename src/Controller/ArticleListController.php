@@ -26,7 +26,7 @@ class ArticleListController extends AbstractController
     // Affiche la liste des billets du blog
     public function display()
     {
-        // $billets = $this->liste->getBillets();
+        //$billets = $this->liste->getBillets();
         require __DIR__ . './../../templates/liste_billets.php';
     }
 }
