@@ -1,5 +1,4 @@
 <?php
-include ('../../modele/connect.php');
 include ('menu_admin.html');
 ?>
 

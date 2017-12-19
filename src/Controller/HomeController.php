@@ -10,9 +10,9 @@ namespace Framework\Controller;
 
 class HomeController extends AbstractController
 {
-    public function index()
+    public function display()
     {
-        require __DIR__ . './../../vue/accueil.php';
+        require __DIR__ . './../../templates/accueil.php';
     }
 
     public function __invoke()

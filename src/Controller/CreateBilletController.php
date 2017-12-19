@@ -23,10 +23,11 @@ class CreateBilletController extends AbstractController
         $this->form = new CreatePost();
     }
 
-    public function CreatePost()
+    public function display()
     {
         $billet = new Post();
         $BDD_billet = $this->create_billet->create();
         $vue = new Vue("Create");
+        require __DIR__ . './../../templates/create.php';
     }
 }

@@ -10,7 +10,6 @@ namespace Framework\Controller;
 
 use Framework\Manager\BilletManager;
 
-require_once '../templates/PublicList.php';
 
 class ArticleDetailsController extends AbstractController
 {
@@ -23,9 +22,9 @@ class ArticleDetailsController extends AbstractController
     }
 
     // Affiche les détails sur le billet
-    public function billet($idBillet)
+    public function display($idBillet)
     {
-        $billet = $this->billet->getBillets($idBillet);
+        $billet = $this->billet->infosBillet($idBillet);
+        require __DIR__ . './../../templates/billet.php';
     }
-
 }

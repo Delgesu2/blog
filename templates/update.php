@@ -2,9 +2,6 @@
 
 include ('menu_admin.html');
 
-// Récupération du contenu de la table
-require ('../controleur/ctrl_recup_update.php');
-
 ?>
 
 <div class="col-sm-10">

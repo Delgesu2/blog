@@ -2,7 +2,7 @@
 <html>
 
 <?php
-include ('head.html');
+include('head.html');
 ?>
 
 
@@ -139,7 +139,7 @@ include ('header.html');
 							<h2 class="modal-title textital modaltitre">Veuillez entrer l'identifiant et le mot de passe</h2>
 						</div>
 
-						<form action="../controleur/ctrl_acces_admin.php" method="post">
+						<form action="/admin" method="post">
 
 							<div class="modal-body">
 								

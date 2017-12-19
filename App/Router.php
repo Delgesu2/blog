@@ -40,11 +40,10 @@ class Router
             var_dump(new \ReflectionClass($route));
             switch ($_SERVER['REQUEST_URI']) {
                 case $route->getPath():
-                    echo "Hello !";
                   $class = $this->createController($route->getController());
                   $rf = new \ReflectionClass($class);
-                    var_dump($rf->getMethod('index'));
-                    var_dump($class->index());
+                    var_dump($rf->getMethod('display'));
+                    var_dump($class->display());
                     break;
             }
         }

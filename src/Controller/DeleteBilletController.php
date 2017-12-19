@@ -23,6 +23,6 @@ class DeleteBilletController extends AbstractController
     public function efface_billet()
     {
         $suppress_billet = $this->delete_billet->erase_billet();
-        $vue = new Vue("");
+        require __DIR__ . './../../templates/list.php';
     }
 }

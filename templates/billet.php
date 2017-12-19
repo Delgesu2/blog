@@ -2,7 +2,7 @@
 <html>
 
 <?php
-include ('head.html');
+include('head.html');
 ?>		
 	<title>Xavier COUTANT - Blog</title>
 </head>

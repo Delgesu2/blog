@@ -20,7 +20,7 @@ class UpdateUserController extends AbstractController
     }
 
     // Mise à jour des données User
-    public function UpdateUser()
+    public function display()
     {
         $user=$this->userManager->getUser();
         $vue=new Vue;

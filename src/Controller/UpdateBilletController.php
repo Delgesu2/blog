@@ -20,11 +20,12 @@ class UpdateBilletController extends AbstractController
     }
 
     // Récupération du billet et modification dans la templates
-    public function update_billet()
+    public function display()
     {
         $billet_recup = $this->recup_billet->recup_update('id');
         $update_billet = $this->modif_billet->modif($data);
         $vue = new Vue();
+        require __DIR__ . './../../templates/update.php';
     }
 
 }

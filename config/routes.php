@@ -37,7 +37,7 @@ return [
     ],
 
     'update_billet' => [
-        'path'         => '/admin/updatepost',
+        'path'         => '/admin/updatepost/{id}',
         'method'       =>   'GET',
         'controller'   => Framework\Controller\UpdateUserController::class
     ],
