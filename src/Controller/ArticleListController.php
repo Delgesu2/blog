@@ -11,9 +11,7 @@ namespace Framework\Controller;
 use Framework\Manager\BilletManager;
 
 
-
-
-class ArticleListController extends AbstractController
+class ArticleListController
 {
     private $liste;
 
@@ -26,7 +24,10 @@ class ArticleListController extends AbstractController
     // Affiche la liste des billets du blog
     public function display()
     {
-        //$billets = $this->liste->getBillets();
-        require __DIR__ . './../../templates/liste_billets.php';
+        var_dump($this->liste);
+        //$this->liste;
+       // $this->liste->getBillets();
+       // var_dump($this->liste->getBillets());
+       require __DIR__ . './../../templates/liste_billets.php';
     }
 }

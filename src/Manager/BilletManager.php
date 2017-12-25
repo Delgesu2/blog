@@ -7,13 +7,16 @@
  */
 
 namespace Framework\Manager;
+use App\DBFactory;
 use Framework\Modele\Post;
 
-class BilletManager extends Modele {
+
+
+class BilletManager extends DBFactory {
 
     // Renvoie la liste des billets du blog
     public function getBillets()
-    {
+    {   echo "coucou ! ";
        $sql = "SELECT id, titre, chapo,
 	DATE_FORMAT(date_creation, '%d/%m/%Y à %Hh%imin%ss') AS date_creation
 	FROM post ORDER BY date_creation DESC LIMIT 5" ;

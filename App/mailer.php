@@ -6,7 +6,7 @@
  * Time: 18:29
  */
 
-require_once '../../vendor/autoload.php';
+require_once '../vendor/autoload.php';
 
 // Create the Transport
 $transport = (new Swift_SmtpTransport('smtp.orange.fr'))

@@ -25,8 +25,6 @@ echo "<div class='row text-center'>
 	  </div>";
 
 // Récupération du contenu de la table 'post'
-require ('../modele/mod_liste_billets.php');
-	
 		while ($donnees = $liste_post->fetch())  {
 			echo "<div class = 'row'>
 					<div class = 'col-xs-12'>	

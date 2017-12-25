@@ -37,13 +37,10 @@ class Router
     public function handleRequest($request)
     {
         foreach ($this->routes as $route) {
-            var_dump(new \ReflectionClass($route));
             switch ($_SERVER['REQUEST_URI']) {
                 case $route->getPath():
                   $class = $this->createController($route->getController());
-                  $rf = new \ReflectionClass($class);
-                    var_dump($rf->getMethod('display'));
-                    var_dump($class->display());
+                  $class->display();
                     break;
             }
         }
