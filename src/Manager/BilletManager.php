@@ -14,65 +14,79 @@ use Framework\Modele\Post;
 
 class BilletManager extends DBFactory {
 
+    private $data;
+
     // Renvoie la liste des billets du blog
     public function getBillets()
     {   echo "coucou ! ";
-       $sql = "SELECT id, titre, chapo,
-	DATE_FORMAT(date_creation, '%d/%m/%Y à %Hh%imin%ss') AS date_creation
-	FROM post ORDER BY date_creation DESC LIMIT 5" ;
-       return $this->executerRequete ($sql);
+       $req = $this->connect()->query('SELECT id, titre, chapo,
+	DATE_FORMAT(date_creation, "%d/%m/%Y à %Hh%imin%ss") AS date_creation
+	FROM post ORDER BY date_creation DESC LIMIT 5') ;
+       while ($res=$req->fetch()) {
+           $this->data[] = $this->buildDomain($res);
+       }
     }
 
     // Renvoie toutes les informations sur un billet
-    public function infosBillet($idBillet)
+    public function infosBillet($id)
     {
-        $sql = "SELECT id, titre, chapo, contenu, 
+        $req = $this->connect()->prepare("SELECT id, titre, chapo, contenu, 
     		DATE_FORMAT(date_creation, \"%d/%m/%Y à %Hh%imin%ss\") AS date_creation,
     		DATE_FORMAT(date_maj, \"%d/%m/%Y à %Hh%imin%ss\") AS date_maj
-    		FROM post WHERE id = :id')" ;
-        $infos = $this->executerRequete ($sql, $idBillet);
-        return $this->buildModele($infos);
+    		FROM post WHERE id = :id')") ;
+        $req->execute([':id' => $id]);
+
+        return $this->buildDomain($req->fetchAll());
     }
 
     // Renvoie la liste des billets en admin
     public function getList()
     {
-        $sql = "SELECT id, titre, DATE_FORMAT(date_creation, \'[%d-%m-%Y à %Hh%im%ss]\')  AS date_creation, 
-              DATE_FORMAT(date_maj, \'[%d-%m-%Y à %Hh%im%ss]\') AS date_maj FROM post ORDER BY date_maj, date_creation DESC'" ;
-        return $this->executerRequete($sql);
-
+        $req = $this->connect()->query("SELECT id, titre, DATE_FORMAT(date_creation, \'[%d-%m-%Y à %Hh%im%ss]\')  AS date_creation, 
+              DATE_FORMAT(date_maj, \'[%d-%m-%Y à %Hh%im%ss]\') AS date_maj FROM post ORDER BY date_maj, date_creation DESC'") ;
+        while (($res=$req->fetch())) {
+            $this->data[] = $this->buildDomain($res);
+        }
     }
 
     // Récupérer un billet à modifier dans le formulaire
     public function recup_update($id)
     {
-        $sql = "SELECT id, titre, chapo, contenu FROM post WHERE id = :id";
-        return $this->executeRequete($sql, $id);
+        $req = $this->connect()->prepare("SELECT id, titre, chapo, contenu FROM post WHERE id = :id");
+        $req->execute([':id' => $id]);
+
+        return $this->buildDomain($req->fetchAll());
     }
 
     // Modifier billet
     public function modif($id)
     {
-        $sql = "UPDATE post SET titre = :titre, chapo = :chapo, contenu = :contenu, date_maj = NOW() WHERE id = :id " ;
-        return $this->executerRequete($sql, $id);
+        $req = $this->connect()->prepare("UPDATE post SET titre = :titre, chapo = :chapo, contenu = :contenu, date_maj = NOW() WHERE id = :id ") ;
+        $req->execute([':id' => $id]);
+
+        // Hydrater l'objet Post
+        return $this->buildDomain($req->fetchAll());
     }
 
     // Effacer un billet
     public function erase_billet($id)
     {
-        $sql = "DELETE FROM post WHERE id=:id";
-        return $this->executerRequete($sql, $id);
+        $req = $this->connect()->query("DELETE FROM post WHERE id=:id");
+        // sais pas return $this->;
     }
 
     // Créer un billet
     public function create($data)
     {
-        $sql = "INSERT INTO post(titre, chapo, contenu, date_creation) VALUES (:titre, :chapo, :contenu, NOW())" ;
-        return $this->executeRequete ($sql, $data);
+        $req = $this->connect()->prepare("INSERT INTO post(titre, chapo, contenu, date_creation) VALUES (:titre, :chapo, :contenu, NOW())") ;
+        $req->execute();  // pas besoin de paramètre, puisque MySQL crée un nouvel id automatiquement
+
+        // Hydrater l'objet Post
+        return $this->buildDomain($req->fetchAll());
     }
 
     // Tableau en paramètres contenant les données des requêtes
-    public function buildModele($data)
+    public function buildDomain(array $data)
     {
         $post = new Post();
         $post->setId($data['id']);

@@ -36,6 +36,18 @@ return [
         'controller'   => Framework\Controller\ListAdminController::class
     ],
 
+    'create_billet'  => [
+        'path'         => '/admin/create',
+        'method'       => 'POST',
+        'controller'   => \Framework\Controller\CreateBilletController::class
+    ],
+
+    'delete_billet'  => [
+        'path'         => '/admin/delete',
+        'method'       => 'POST',
+        'controller'   =>  \Framework\Controller\DeleteBilletController::class
+    ],
+
     'update_billet' => [
         'path'         => '/admin/updatepost/{id}',
         'method'       =>   'GET',

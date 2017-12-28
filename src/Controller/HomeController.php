@@ -8,16 +8,16 @@
 
 namespace Framework\Controller;
 
-class HomeController extends AbstractController
+class HomeController //extends AbstractController
 {
     public function display()
     {
         require __DIR__ . './../../templates/accueil.php';
     }
 
-    public function __invoke()
+  /**  public function __invoke()
     {
         echo $this->getTwig()->render("accueil.html.twig");
         var_dump($this->getTwig()->render("accueil.html.twig"));
-    }
+    }**/
 }

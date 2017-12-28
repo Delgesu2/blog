@@ -1,7 +1,6 @@
 <?php
-
-include ('menu_admin.html');
-
+session_start();
+ob_start()
 ?>
 
 <div class="col-sm-10">
@@ -42,9 +41,8 @@ $(document).ready(function() {
         });
     </script>
 
-</body>
-
-</html>
-
-
+<?php
+$content = ob_get_clean();
+require ('admin-template.php');
+?>
 

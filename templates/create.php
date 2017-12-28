@@ -1,8 +1,7 @@
 <?php
-include ('menu_admin.html');
+session_start();
+ob_start()
 ?>
-
-
 
 <div class="col-sm-10">
     <h1 class="text-center">Rédiger un post</h1>
@@ -37,6 +36,7 @@ include ('menu_admin.html');
         });
     </script>
 
-</body>
-
-</html>
+<?php
+$content = ob_get_clean();
+require ('admin-template.php');
+?>

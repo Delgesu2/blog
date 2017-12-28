@@ -1,21 +1,10 @@
-<!DOCTYPE html>
-<html>
-
 <?php
-include('head.html');
-?>		
-	<title>Xavier COUTANT - Blog</title>
-</head>
+$title = 'Xavier COUTANT - Blog';
+ob_start();
+?>
 
-<body>
-<div class="container">
-<?php // En-tête jumbotron
-include ('header.html');
-?>  <!-- fin en-tête jumbotron -->
-
+    <!-- Affichage du billet sélectionné -->
 <?php
-
-require ('../modele/mod_billet_solo.php');
 
   if (isset($_GET['id'])) {  
 
@@ -54,7 +43,7 @@ require ('../modele/mod_billet_solo.php');
   
 ?>
 
-</div>
-</body>
-</html>
- 
+<?php
+$content = ob_get_clean();
+require ('public-template.php');
+?>

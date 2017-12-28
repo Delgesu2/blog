@@ -14,12 +14,12 @@
 body
 {
 	font-family: 'UbuntuLight', Arial, serif;
-	background-color: moccasin;
+	background-color:grey ;
 }
 
 .jumbotron
 {
-	background-image: url("../images/panorama.jpg");
+	background-image: url('../images/panorama.jpg');
 	color: white;
 }
 

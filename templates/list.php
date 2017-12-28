@@ -1,14 +1,7 @@
 <?php
 session_start();
-
-
-include ('menu_admin.html');
-
-// Récupération du contenu de la table
-require ('../modele/mod_list.php');
-
+ob_start()
 ?>
-
 
 <div class="col-sm-10">
     <h1 class="text-center">Liste des messages</h1>
@@ -26,7 +19,7 @@ require ('../modele/mod_list.php');
                     
                         <!-- Boucle affichage -->
                 <?php
-                while ($ligne = $req->fetch())
+              /**  while ($ligne = $req->fetch())  */
                     {
                         echo '<tr> <td>' . htmlspecialchars($ligne['titre']) . '</td><td>' . htmlspecialchars($ligne['date_creation']) .
                         '</td><td>' . htmlspecialchars($ligne['date_maj']) . '</td>
@@ -37,7 +30,7 @@ require ('../modele/mod_list.php');
                         </td> </tr> <br/>';
                     }
 
-                    $req->closeCursor();
+                    /** $req->closeCursor(); */
                 ?>
                         <!-- Fin boucle -->
 
@@ -48,3 +41,8 @@ require ('../modele/mod_list.php');
         </div>
     </div>
 </div>
+
+<?php
+$content = ob_get_clean();
+require ('admin-template.php');
+?>

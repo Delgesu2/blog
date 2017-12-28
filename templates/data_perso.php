@@ -1,5 +1,5 @@
 <?php
-include ('menu_admin.html.twig');
+include('menu_admin.html.twig');
 $req=$bdd->query('SELECT courriel FROM user WHERE id=1');
 $courriel=$req->fetch();
 ?>

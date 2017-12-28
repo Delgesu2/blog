@@ -22,9 +22,9 @@ class ArticleDetailsController extends AbstractController
     }
 
     // Affiche les détails sur le billet
-    public function display($idBillet)
+    public function display($id)
     {
-        $billet = $this->billet->infosBillet($idBillet);
+        $billet = $this->billet->infosBillet($id);
         require __DIR__ . './../../templates/billet.php';
     }
 }

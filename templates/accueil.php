@@ -1,23 +1,8 @@
-<!DOCTYPE html>
-<html>
-
 <?php
-include('head.html');
+$title = 'Xavier COUTANT - Accueil';
+ob_start();
 ?>
 
-
-	<title>Xavier COUTANT - Bienvenue sur mon site</title>
-</head>
-
-<body>
-	<div class="container">
-
-		<!-- En-tête jumbotron -->
-<?php
-include ('header.html');
-?>
-		<!-- fin en-tête jumbotron -->
-		
 		<div class="row text-center">
 			<h2>...un développeur polyvalent</h2>			
 		</div>	
@@ -164,7 +149,7 @@ include ('header.html');
 				</div>
 			</div>
 
-		</div>
-</body>
-
-</html>
+<?php
+    $content = ob_get_clean();
+    require ('public-template.php');
+?>
