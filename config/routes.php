@@ -15,25 +15,25 @@ return [
     'article_list' => [
         'path'      =>'/post/list',
         'method'    => 'GET',
-        'controller'=> Framework\Controller\ArticleListController::class
+        'controller'=> \Framework\Controller\ArticleListController::class
     ],
 
     'article_details' => [
         'path'       => '/post/details/{id}',
         'method'     => 'GET',
-        'controller' => Framework\Controller\ArticleDetailsController::class
+        'controller' => \Framework\Controller\ArticleDetailsController::class
     ],
 
     'acces_admin' => [
         'path'       => '/admin',
         'method'     => 'POST',
-        'controller' => Framework\Controller\AccessAdminController::class
+        'controller' => \Framework\Controller\AccessAdminController::class
     ],
 
     'admin_list'    => [
         'path'         => '/admin/list',
         'method'       => 'GET',
-        'controller'   => Framework\Controller\ListAdminController::class
+        'controller'   => \Framework\Controller\ListAdminController::class
     ],
 
     'create_billet'  => [
@@ -45,18 +45,18 @@ return [
     'delete_billet'  => [
         'path'         => '/admin/delete',
         'method'       => 'POST',
-        'controller'   =>  \Framework\Controller\DeleteBilletController::class
+        'controller'   => \Framework\Controller\DeleteBilletController::class
     ],
 
     'update_billet' => [
         'path'         => '/admin/updatepost/{id}',
         'method'       =>   'GET',
-        'controller'   => Framework\Controller\UpdateUserController::class
+        'controller'   => \Framework\Controller\UpdateUserController::class
     ],
 
     'update_user'   => [
         'path'         => '/admin/updateuser',
         'method'       => 'POST',
-        'controller'   => Framework\Controller\UpdateUserController::class
+        'controller'   => \Framework\Controller\UpdateUserController::class
     ]
 ];

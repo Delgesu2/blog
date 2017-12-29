@@ -5,8 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>Administration</title>
-        <link rel="stylesheet" type="text/css" href= "../contenu/css/style.css">
-        <link rel="stylesheet" type="text/css" href="../contenu/css/styleadmin.css">
+        <link rel="stylesheet" type="text/css" href="/contenu/css/styleadmin.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="../contenu/css/bootstrap.min.css" rel="stylesheet">
         <link rel="../contenu/css/bootstrap-theme.min.css" rel="stylesheet">

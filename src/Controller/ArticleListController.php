@@ -15,7 +15,7 @@ class ArticleListController
 {
     private $liste;
 
-    public function __construct()  // Construit l'objet BilletManager
+   public function __construct()  // Construit l'objet BilletManager
     {
         $this->liste = new BilletManager();
     }
@@ -24,7 +24,7 @@ class ArticleListController
     // Affiche la liste des billets du blog
     public function display()
     {
-        $billets = $this->liste->getBillets();
-       require  '../../templates/liste_billets.php';
+       $billets = $this->liste->getBillets();
+       require '../../templates/liste_billets.php';
     }
 }
