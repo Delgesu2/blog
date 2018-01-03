@@ -34,7 +34,7 @@ class Router
         return new $class();
     }
 
-    public function handleRequest($request)
+    public function handleRequest()
     {
         foreach ($this->routes as $route) {
             switch ($_SERVER['REQUEST_URI']) {

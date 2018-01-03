@@ -5,6 +5,6 @@
  * Date: 13/12/17
  * Time: 16:46
  */
-return [
+ return [
     'templates_folder' => __DIR__.'./../templates'
 ];

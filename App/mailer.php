@@ -25,3 +25,6 @@ $message = (new Swift_Message('Nouveau message'))
     ->addPart('nom' . $_POST['nom'])
     ->addPart('prenom' . $_POST['prenom'])
     ;
+
+echo "<p>Merci de m'avoir contacter. Je vous réponds le plus rapidement possible.</p> 
+<p>Veuillez cliquer <a href='blog.localhost'>sur ce lien</a> pour retourner à la page d'accueil.";

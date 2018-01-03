@@ -44,31 +44,15 @@ ob_start();
 
 		<div class="row">
 			<!-- Formulaire de contact -->
-			<form action="../controleur/send_email.php" method="post" class="col-xs-6">
+			<form action="../App/mailer.php" method="post" class="col-xs-6">
 	  			<legend>Pour m'envoyer un message</legend>
 
 	  			<label for="civilité">Civilit&#233; : </label>
 	  			<select id="civilite" name="civilite">
-		            <option 
-		                value="mr"
-		                <?php 
-		                    if (!isset($_POST['civilite']) || $_POST['civilite'] == 'mr')
-		                    {
-		                        echo ' selected="selected"';
-		                    }
-		                ?>
-		            >
+		            <option value="mr">
 		                Monsieur
 		            </option>
-		            <option 
-		                value="mme"
-		                <?php 
-		                    if (isset($_POST['civilite']) && $_POST['civilite'] == 'mme')
-		                    {
-		                        echo ' selected="selected"';
-		                    }
-		                ?>
-		            >
+		            <option value="mme">
 		                Madame
 		            </option>
 		        </select>
@@ -76,19 +60,18 @@ ob_start();
 			    <div class="form-group">
 			      <label for="nom">Nom :</label>
 			      <input id="nom" type="text" name="nom" class="form-control" placeholder="Champ obligatoire"
-			      value="<?php echo (isset($_POST['nom'])) ? $nom : '' ?>" maxlenght="60"  required />
+			       maxlenght="60"  required />
 			    </div>
 
 			     <div class="form-group">
 			      <label for="prenom">Pr&#233;nom :</label>
-			      <input id="prenom" type="text" name="prenom" class="form-control" 
-			      value="<?php echo (isset($_POST['prenom'])) ? $nom : '' ?>" maxlenght="60" > 
+			      <input id="prenom" type="text" name="prenom" class="form-control" maxlenght="60" >
 			    </div>
 
 			    <div class="form-group">
 			      <label for="email">Courriel :</label>
 			      <input id="email" type="email" name="email" class="form-control" placeholder="Champ obligatoire"
-			      value="<?php echo (isset($_POST['email'])) ? $expediteur : '' ?>" required />
+			       required />
 			    </div>
 
 			    <div class="form-group">
