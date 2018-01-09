@@ -5,6 +5,9 @@
  * Date: 08/11/17
  * Time: 21:35
  */
+
+// tableau des routes du site
+
 return [
     'homepage' => [
         'path'      => '/',

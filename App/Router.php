@@ -12,14 +12,14 @@ namespace App;
 
 class Router
 {
-    private $routes = []; // Liste des routes
+    private $routes = []; // Liste des routes dans un tableau
 
     public function __construct()
     {
         $this-> createRoutes();
     }
 
-    public function createRoutes()
+    public function createRoutes()  // On remplit le tableau
     {
         $routes = require __DIR__ . './../config/routes.php';
 

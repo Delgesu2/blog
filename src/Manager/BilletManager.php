@@ -18,13 +18,14 @@ class BilletManager extends DBFactory {
 
     // Renvoie la liste des billets du blog
     public function getBillets()
-    {   echo "coucou ! ";
+    {   echo "coucou !";
        $req = $this->connect()->query('SELECT id, titre, chapo,
 	DATE_FORMAT(date_creation, "%d/%m/%Y à %Hh%imin%ss") AS date_creation
 	FROM post ORDER BY date_creation DESC LIMIT 5') ;
        while ($res=$req->fetch()) {
            $this->data[] = $this->buildDomain($res);
        }
+       return $this->data;
     }
 
     // Renvoie toutes les informations sur un billet

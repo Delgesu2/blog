@@ -122,7 +122,7 @@ ob_start();
 							</div>      	
 
 							<div class="modal-footer">
-								<input type="submit" name="envoye" value="Valider"> 
+                                <button type="submit" name="envoye" value="Valider">Valider</button>
 								<button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
 							</div>
 

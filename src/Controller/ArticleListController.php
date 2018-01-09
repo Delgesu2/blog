@@ -25,6 +25,6 @@ class ArticleListController
     public function display()
     {
        $billets = $this->liste->getBillets();
-       require '../../templates/liste_billets.php';
+       require '../templates/liste_billets.php';
     }
 }
