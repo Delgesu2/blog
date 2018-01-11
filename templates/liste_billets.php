@@ -6,7 +6,7 @@ ob_start();
     <div class='row text-center'>
 		 	<h2>Liste des billets<br/></h2>
 		 	<h3>Pour lire un message au complet, cliquer sur son titre.</h3>	 	
-    </div>";
+    </div>
 
  <!-- Récupération du contenu de la table 'post' -->
 		<?php foreach ( $billets as $post): ?>
@@ -16,7 +16,7 @@ ob_start();
 							<div class='panel-heading'>
 								<div class='row titrepannel'>
 									<div class='col-xs-8'>
-                                        <h3 class='titrepost'><?= $post->getTitre(); ?></h3>
+                                        <a href="/post/details/" <?php $billets['id'] ?> > <h3 class='titrepost'><?= $post->getTitre(); ?></h3> </a>
 						 			</div>
 						 			<div class='col-xs-4'>
 						 			 <h4 class='titredate'>Créé le : <?= $post->getDateCreation(); ?></h4>

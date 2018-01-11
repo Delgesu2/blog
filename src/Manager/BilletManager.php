@@ -11,17 +11,17 @@ use App\DBFactory;
 use Framework\Modele\Post;
 
 
-
 class BilletManager extends DBFactory {
 
     private $data;
 
     // Renvoie la liste des billets du blog
     public function getBillets()
-    {   echo "coucou !";
-       $req = $this->connect()->query('SELECT id, titre, chapo,
-	DATE_FORMAT(date_creation, "%d/%m/%Y à %Hh%imin%ss") AS date_creation
-	FROM post ORDER BY date_creation DESC LIMIT 5') ;
+    {
+       $req = $this->connect()->query("SELECT id, titre, chapo, 
+        CONCAT(SUBSTRING(contenu,1,200), '...') AS contenu, 
+        DATE_FORMAT(date_creation, '%d/%m/%Y à %Hh%imin%ss') AS date_creation
+        FROM post ORDER BY date_creation DESC LIMIT 5") ;
        while ($res=$req->fetch()) {
            $this->data[] = $this->buildDomain($res);
        }
@@ -93,9 +93,13 @@ class BilletManager extends DBFactory {
         $post->setId($data['id']);
         $post->setTitre($data['titre']);
         $post->setChapo($data['chapo']);
-        $post->setContenu($data['contenu']);
         $post->setDateCreation($data['date_creation']);
-        $post->setDateMaj($data['date_maj']);
+        $post->setContenu($data['contenu']);
+
+        if (isset($data['date_maj'])) {
+           $post->setDateMaj($data['date_maj']);
+        }
+
         return $post;
     }
 }

@@ -110,7 +110,7 @@ class Post
      */
     public function setDateMaj($date_maj)
     {
-        $this->date_maj = $date_maj;
+        $this->date_maj=$date_maj;
     }
 
     /**
@@ -126,7 +126,7 @@ class Post
      */
     public function setContenu($contenu)
     {
-        $this->contenu = $contenu;
+        $this->contenu=$contenu;
     }
 
 
