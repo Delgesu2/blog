@@ -17,23 +17,20 @@ ob_start()
                 </thead>
                 <tbody>
                     
-                        <!-- Boucle affichage -->
-                <?php
-              /**  while ($ligne = $req->fetch())  */
+                        <!-- Boucle affichage : récupération des lignes de la table post-->
+                <?php foreach ( $billets_admin as $post):
                     {
-                        echo '<tr> <td>' . htmlspecialchars($ligne['titre']) . '</td><td>' . htmlspecialchars($ligne['date_creation']) .
-                        '</td><td>' . htmlspecialchars($ligne['date_maj']) . '</td>
+                        echo '<tr> <td>' . $post->getTitre() . '</td><td>' . $post->getDateCreation() .
+                        '</td><td>' . $post->getDateMaj() . '</td>
                         <td><div class="btn-group">
-                            <a class="btn btn-primary btn-sm" href="update.php?id=' . $ligne['id'] . ' ">Modifier</a>
-                            <a class="btn btn-danger btn-sm"  href="../controleur/delete.php?id=' . $ligne['id'] . ' ">Supprimer</a>
+                            <a class="btn btn-primary btn-sm" href="/admin/update/{' . $post->getId() . '}" >Modifier</a>
+                            <a class="btn btn-danger btn-sm"  href="/admin/delete/{' . $post->getId() . '}" >Supprimer</a>
                             </div> 
                         </td> </tr> <br/>';
                     }
-
-                    /** $req->closeCursor(); */
+                  endforeach;
                 ?>
                         <!-- Fin boucle -->
-
                     
                 </tbody>
             </table>

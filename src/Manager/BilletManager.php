@@ -43,11 +43,13 @@ class BilletManager extends DBFactory {
     // Renvoie la liste des billets en admin
     public function getList()
     {
-        $req = $this->connect()->query("SELECT id, titre, DATE_FORMAT(date_creation, \'[%d-%m-%Y à %Hh%im%ss]\')  AS date_creation, 
-              DATE_FORMAT(date_maj, \'[%d-%m-%Y à %Hh%im%ss]\') AS date_maj FROM post ORDER BY date_maj, date_creation DESC'") ;
-        while (($res=$req->fetch())) {
+        $req = $this->connect()->query("SELECT id, titre, DATE_FORMAT(date_creation, '%d-%m-%Y à %Hh%im%ss') 
+              AS date_creation, DATE_FORMAT(date_maj, '%d-%m-%Y à %Hh%im%ss') AS date_maj FROM post ORDER BY date_maj, 
+              date_creation DESC") ;
+        while ($res=$req->fetch()) {
             $this->data[] = $this->buildDomain($res);
         }
+        return $this->data;
     }
 
     // Récupérer un billet à modifier dans le formulaire
@@ -62,7 +64,8 @@ class BilletManager extends DBFactory {
     // Modifier billet
     public function modif($id)
     {
-        $req = $this->connect()->prepare("UPDATE post SET titre = :titre, chapo = :chapo, contenu = :contenu, date_maj = NOW() WHERE id = :id ") ;
+        $req = $this->connect()->prepare("UPDATE post SET titre = :titre, chapo = :chapo, contenu = :contenu,
+                                                   date_maj = NOW() WHERE id = :id ") ;
         $req->execute([':id' => $id]);
 
         // Hydrater l'objet Post
@@ -79,7 +82,8 @@ class BilletManager extends DBFactory {
     // Créer un billet
     public function create($data)
     {
-        $req = $this->connect()->prepare("INSERT INTO post(titre, chapo, contenu, date_creation) VALUES (:titre, :chapo, :contenu, NOW())") ;
+        $req = $this->connect()->prepare("INSERT INTO post(titre, chapo, contenu, date_creation)
+                                                   VALUES (:titre, :chapo, :contenu, NOW())") ;
         $req->execute();  // pas besoin de paramètre, puisque MySQL crée un nouvel id automatiquement
 
         // Hydrater l'objet Post
@@ -92,9 +96,15 @@ class BilletManager extends DBFactory {
         $post = new Post();
         $post->setId($data['id']);
         $post->setTitre($data['titre']);
-        $post->setChapo($data['chapo']);
         $post->setDateCreation($data['date_creation']);
-        $post->setContenu($data['contenu']);
+
+        if (isset($data['chapo'])) {
+            $post->setChapo($data['chapo']);
+        }
+
+        if (isset($data['contenu'])) {
+            $post->setContenu($data['contenu']);
+        }
 
         if (isset($data['date_maj'])) {
            $post->setDateMaj($data['date_maj']);

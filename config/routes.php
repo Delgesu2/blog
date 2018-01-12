@@ -46,7 +46,7 @@ return [
     ],
 
     'delete_billet'  => [
-        'path'         => '/admin/delete',
+        'path'         => '/admin/delete/{id}',
         'method'       => 'POST',
         'controller'   => \Framework\Controller\DeleteBilletController::class
     ],
@@ -61,5 +61,11 @@ return [
         'path'         => '/admin/updateuser',
         'method'       => 'POST',
         'controller'   => \Framework\Controller\UpdateUserController::class
-    ]
+    ],
+
+    'exit_admin'    => [
+        'path'         => '/admin/exit',
+        'method'       => '',
+        'controller'   => \Framework\Controller\AdminExit::class,
+]
 ];

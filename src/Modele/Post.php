@@ -42,6 +42,14 @@ class Post
     // getters et setters
 
     /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
      * @param $id
      */
     public function setId($id)

@@ -30,9 +30,9 @@
                     <nav>
                         <ul class="nav nav-pills nav-stacked">
                             <li><a href='/admin/list'>Liste des messages</a></li>
-                            <li><a href='admin/create'>Créer</a></li>
+                            <li><a href='/admin/create'>Créer</a></li>
                             <li><a href='/admin/updateuser'>Changer données personnelles</a></li>
-                            <li><a href="../controleur/sortir.php">Sortir</a></li>
+                            <li><a href='/admin/exit'>Sortir</a></li>
                         </ul>
                     </nav>
                 </div>

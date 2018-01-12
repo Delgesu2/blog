@@ -8,7 +8,7 @@ ob_start();
 		 	<h3>Pour lire un message au complet, cliquer sur son titre.</h3>	 	
     </div>
 
- <!-- Récupération du contenu de la table 'post' -->
+    <!-- Boucle affichage : récupération des lignes de la table post-->
 		<?php foreach ( $billets as $post): ?>
 			    <div class = 'row'>
 					<div class = 'col-xs-12'>	
@@ -16,7 +16,7 @@ ob_start();
 							<div class='panel-heading'>
 								<div class='row titrepannel'>
 									<div class='col-xs-8'>
-                                        <a href="/post/details/" <?php $billets['id'] ?> > <h3 class='titrepost'><?= $post->getTitre(); ?></h3> </a>
+                                        <a href='/post/details/{<?= $post->getId(); ?>}'><h3 class='titrepost'><?= $post->getTitre(); ?></h3> </a>
 						 			</div>
 						 			<div class='col-xs-4'>
 						 			 <h4 class='titredate'>Créé le : <?= $post->getDateCreation(); ?></h4>
@@ -28,6 +28,7 @@ ob_start();
 					</div>
 				  </div>
 		<?php endforeach; ?>
+    <!-- Fin boucle -->
 
 <?php
     $content = ob_get_clean();
