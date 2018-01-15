@@ -45,6 +45,12 @@ return [
         'controller'   => \Framework\Controller\CreateBilletController::class
     ],
 
+    'write'          => [
+        'path'         =>'/admin/write',
+        'method'       => 'GET',
+        'controller'   => \Framework\Controller\WriteController::class
+    ],
+
     'delete_billet'  => [
         'path'         => '/admin/delete/{id}',
         'method'       => 'POST',
@@ -53,14 +59,20 @@ return [
 
     'update_billet' => [
         'path'         => '/admin/updatepost/{id}',
-        'method'       =>   'GET',
-        'controller'   => \Framework\Controller\UpdateUserController::class
+        'method'       => 'GET',
+        'controller'   => \Framework\Controller\UpdateBilletController::class
     ],
 
     'update_user'   => [
         'path'         => '/admin/updateuser',
         'method'       => 'POST',
-        'controller'   => \Framework\Controller\UpdateUserController::class
+        'controller'   => \Framework\Controller\AdminChange::class
+    ],
+
+    'update_user_action'   => [
+        'path'         => '/admin/updateuser_action',
+        'method'       => 'POST',
+        'controller'   => \Framework\Controller\AdminChangeAction::class
     ],
 
     'exit_admin'    => [

@@ -9,19 +9,31 @@
 
 namespace Framework\Controller;
 
+use Framework\Manager\UserManager;
+
 class AccessAdminController
 {
-    public function checkAccess()
+    private $userManager;
+
+    public function __construct()
     {
-        /* On va chercher les données dans la BDD */
-        // require('../modele/mod_acces_admin.php');
+        $this->userManager = new UserManager();
+    }
+
+    public function display()
+    {
+        $data=$this->userManager->getUser();
 
         /* Les champs sont-ils pleins ? */
         if (!empty($_POST['identifiant']) && !empty($_POST['mdp'])) {
+
             /* Les données sont-elles justes ?*/
-            if (($_POST['identifiant']) == $user['identifiant'] && ($_POST['mdp']) == $user['mdp']) {
-                echo "Vous êtes identifié.";
-                header('Location:../admin/templates/list.php'); // renvoyer vers la page listadmin
+            if (($_POST['identifiant']) == $data['identifiant'] && ($_POST['mdp']) == $data['mdp']) {
+                // Start session
+                session_start();
+                $_SESSION['identifiant'] = $_POST['identifiant'];
+                // Go listadmin page
+                header('Location:/admin/list');
             } else {
                 echo "Au moins 1 des deux champs est faux. Recommencez.";
             }

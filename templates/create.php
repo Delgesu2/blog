@@ -1,13 +1,13 @@
 <?php
 session_start();
-ob_start()
+ob_start();
 ?>
 
 <div class="col-sm-10">
     <h1 class="text-center">Rédiger un post</h1>
 
     <!-- Editeur Summernote -->
-    <form method="post" action="../controleur/ctrl_create.php">
+    <form method="post" action="/admin/write">
         <div class="form-group">
         <label for="titre">Titre:</label>
         <input class="form-control" type="text" name="titre" id="titre">

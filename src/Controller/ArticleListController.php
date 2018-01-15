@@ -15,7 +15,7 @@ class ArticleListController
 {
     private $liste;
 
-   public function __construct()  // Construit l'objet BilletManager
+    public function __construct()  // Construit l'objet BilletManager
     {
         $this->liste = new BilletManager();
     }

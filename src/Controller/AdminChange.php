@@ -2,18 +2,17 @@
 /**
  * Created by PhpStorm.
  * User: ronsard
- * Date: 12/01/18
- * Time: 11:09
+ * Date: 15/01/18
+ * Time: 21:07
  */
 
 namespace Framework\Controller;
 
 
-class AdminExit
+class AdminChange
 {
     public function display()
     {
-        session_destroy();
-        header('Location:/');
+        require __DIR__ . './../../templates/updateuser.php';
     }
 }

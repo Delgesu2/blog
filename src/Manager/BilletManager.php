@@ -80,7 +80,7 @@ class BilletManager extends DBFactory {
     }
 
     // Créer un billet
-    public function create($data)
+    public function create()
     {
         $req = $this->connect()->prepare("INSERT INTO post(titre, chapo, contenu, date_creation)
                                                    VALUES (:titre, :chapo, :contenu, NOW())") ;

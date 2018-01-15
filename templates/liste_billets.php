@@ -16,7 +16,7 @@ ob_start();
 							<div class='panel-heading'>
 								<div class='row titrepannel'>
 									<div class='col-xs-8'>
-                                        <a href='/post/details/{<?= $post->getId(); ?>}'><h3 class='titrepost'><?= $post->getTitre(); ?></h3> </a>
+                                        <a href='/post/details/<?= $post->getId(); ?>'><h3 class='titrepost'><?= $post->getTitre(); ?></h3> </a>
 						 			</div>
 						 			<div class='col-xs-4'>
 						 			 <h4 class='titredate'>Créé le : <?= $post->getDateCreation(); ?></h4>

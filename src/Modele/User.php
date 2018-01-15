@@ -82,6 +82,14 @@ class User
     }
 
     /**
+     * @return id
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
      * @param id $id
      */
     public function setId($id)

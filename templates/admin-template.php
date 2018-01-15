@@ -26,6 +26,7 @@
                 <div class="col-sm-2 menu_admin">
                     <div class="page-header">
                         <h1 class="titre">Panneau d'administration</h1>
+                        <h2>Bienvenu <?php echo $_SESSION['identifiant']; ?></h2>
                     </div>
                     <nav>
                         <ul class="nav nav-pills nav-stacked">
