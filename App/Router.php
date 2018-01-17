@@ -40,7 +40,7 @@ class Router
             switch ($_SERVER['REQUEST_URI']) {
                 case $route->getPath():
                   $class = $this->createController($route->getController());
-                  $class->display();
+                  $class->action();
                     break;
             }
         }

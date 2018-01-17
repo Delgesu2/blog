@@ -20,7 +20,7 @@ class UpdateBilletController extends AbstractController
     }
 
     // Récupération du billet et modification dans la templates
-    public function display()
+    public function action()
     {
         $billet_recup = $this->recup_billet->recup_update('id');
         $update_billet = $this->modif_billet->modif($data);

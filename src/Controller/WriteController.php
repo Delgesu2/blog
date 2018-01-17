@@ -19,14 +19,9 @@ class WriteController
         $this->write_post = new BilletManager();
     }
 
-    public function buildDomainCall()
+    public function action()
     {
-        $this->write_post->buildDomain();
-    }
-
-    public function display()
-    {
-        $new_post = $this->write_post->create();
-        //header('Location:/admin/list');
+        $this->write_post->create();
+        header('Location:/admin/list');
     }
 }

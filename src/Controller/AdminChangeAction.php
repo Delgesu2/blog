@@ -16,7 +16,7 @@ class AdminChangeAction
         $this->user = new UserManager();
     }
 
-    public function display()
+    public function action()
     {
         $data=$this->user->getUser();
 

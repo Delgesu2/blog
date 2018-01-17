@@ -20,7 +20,7 @@ class DeleteBilletController extends AbstractController
     }
 
 
-    public function efface_billet()
+    public function action()
     {
         $suppress_billet = $this->delete_billet->erase_billet();
         require __DIR__ . './../../templates/list.php';

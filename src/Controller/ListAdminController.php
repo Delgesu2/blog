@@ -22,7 +22,7 @@ class ListAdminController extends AbstractController
     }
 
     // Affiche la liste des billets du blog version admin
-    public function display()
+    public function action()
     {
         $billets_admin = $this->admin_list->getList();
        // $vue = new Vue("Read");

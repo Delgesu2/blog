@@ -20,7 +20,7 @@ class AccessAdminController
         $this->userManager = new UserManager();
     }
 
-    public function display()
+    public function action()
     {
         $data=$this->userManager->getUser();
 
@@ -28,7 +28,7 @@ class AccessAdminController
         if (!empty($_POST['identifiant']) && !empty($_POST['mdp'])) {
 
             /* Les données sont-elles justes ?*/
-            if (($_POST['identifiant']) == $data['identifiant'] && ($_POST['mdp']) == $data['mdp']) {
+            if (($_POST['identifiant']) == $data->getIdentifiant() && ($_POST['mdp']) == $data->getMdp()) {
                 // Start session
                 session_start();
                 $_SESSION['identifiant'] = $_POST['identifiant'];

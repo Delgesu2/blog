@@ -22,7 +22,7 @@ class ArticleListController
 
 
     // Affiche la liste des billets du blog
-    public function display()
+    public function action()
     {
        $billets = $this->liste->getBillets();
        require '../templates/liste_billets.php';

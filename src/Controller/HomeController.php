@@ -10,7 +10,7 @@ namespace Framework\Controller;
 
 class HomeController //extends AbstractController
 {
-    public function display()
+    public function action()
     {
         require __DIR__ . './../../templates/accueil.php';
     }

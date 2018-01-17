@@ -16,12 +16,12 @@ class UserManager extends DBFactory {
     public $data;
 
     // Récupérer données utilisateur
-    public function getUser() {  //$id en param ?
+    public function getUser() {
         $req = $this->connect()->prepare("SELECT id, identifiant, mdp, courriel FROM user WHERE id=1");
         $req->execute();
-        $me = $req->fetch();
-
-        return $me;
+        $data = $req->fetch();
+        var_dump($data);
+        return $this->buildDomain($data);
     }
 
        // Modifier données utilisateur
@@ -30,12 +30,13 @@ class UserManager extends DBFactory {
     }
 
     // Tableau contenant les données de l'entité User
-  /**  public function buildDomain(array $data)
+    private function buildDomain(array $data)
     {
         $user = new User();
         $user->setId($data['id']);
         $user->setIdentifiant($data['identifiant']);
+        $user->setMdp($data['mdp']);
         $user->setCourriel($data['courriel']);
         return $user;
-    }**/
+    }
 }

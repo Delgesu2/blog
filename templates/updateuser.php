@@ -18,6 +18,15 @@ ob_start();
             <input class="form-control" type="text" name="ctrl_mdp" id="ctrl_mdp">
         </div>
 
+        <div class="form-group">
+            <label for="nv_ident">Nouvel identifiant:</label>
+            <input class="form-control" type="text" name="ctrl_ident" id="ctrl_ident">
+        </div>
+
+        <div class="form-group">
+            <label for="ctrl_ident">Identifiant:</label>
+            <input class="form-control" type="text" name="ctrl_ident" id="ctrl_ident">
+        </div>
         <input type="submit">
     </form>
 

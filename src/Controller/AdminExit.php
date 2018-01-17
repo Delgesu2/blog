@@ -11,7 +11,7 @@ namespace Framework\Controller;
 
 class AdminExit
 {
-    public function display()
+    public function action()
     {
         session_destroy();
         header('Location:/');
