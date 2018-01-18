@@ -19,7 +19,7 @@ $mailer = new Swift_Mailer($transport);
 
 // Create a message
 $message = (new Swift_Message('Nouveau message'))
-    ->setFrom($POST['email'])
+    ->setFrom($_POST['email'])
     ->setTo('coutant.xavier@orange.fr')
     ->setBody($_POST['sujet'])
     ->addPart('nom' . $_POST['nom'])

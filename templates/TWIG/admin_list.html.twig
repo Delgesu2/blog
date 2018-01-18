@@ -19,7 +19,7 @@
                         <tr> <td> {{ ligne.titre }} </td><td> {{ ligne.date_creation }}
                             </td><td> {{ ligne.date_maj }} </td>
                         <td><div class="btn-group">
-                                <a class="btn btn-primary btn-sm" href="{{ path('Framework/Controller/UpdateBilletController', {'id': ligne.id}) }}" <!--"update.php?id=' . $ligne['id'] . ' "-->>Modifier</a>
+                                <a class="btn btn-primary btn-sm" href="{{ path('Framework/Controller/UpdateBilletController', {'id': ligne.id}) }}" <admin_change.php.php?id=' . $ligne['id'] . ' "-->>Modifier</a>
                                 <a class="btn btn-danger btn-sm"  href="{{ path('Framework/Controller/DeleteBilletController', {'id': ligne.id}) }}" <!--../controleur/delete.php?id=' . $ligne['id'] . ' " -->>Supprimer</a>
                             </div>
                         </td> </tr> <br/>

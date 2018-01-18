@@ -1,9 +1,3 @@
-<?php
-include('menu_admin.html.twig');
-$req=$bdd->query('SELECT courriel FROM user WHERE id=1');
-$courriel=$req->fetch();
-?>
-
 <div class="col-sm-10">
     <h1 class="text-center">Changer données personnelles</h1>
 
@@ -37,3 +31,8 @@ $courriel=$req->fetch();
     	</form>
     </div>
 </div>
+
+<?php
+$content = ob_get_clean();
+require ('admin-template.php');
+?>

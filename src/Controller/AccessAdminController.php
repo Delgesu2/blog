@@ -22,13 +22,13 @@ class AccessAdminController
 
     public function action()
     {
-        $data=$this->userManager->getUser();
+        $arrayData=$this->userManager->getUser();
 
         /* Les champs sont-ils pleins ? */
         if (!empty($_POST['identifiant']) && !empty($_POST['mdp'])) {
 
             /* Les données sont-elles justes ?*/
-            if (($_POST['identifiant']) == $data->getIdentifiant() && ($_POST['mdp']) == $data->getMdp()) {
+            if (($_POST['identifiant']) == $arrayData->getIdentifiant() && ($_POST['mdp']) == $arrayData->getMdp()) {
                 // Start session
                 session_start();
                 $_SESSION['identifiant'] = $_POST['identifiant'];

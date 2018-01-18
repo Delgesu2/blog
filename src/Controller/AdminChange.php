@@ -13,6 +13,6 @@ class AdminChange
 {
     public function action()
     {
-        require __DIR__ . './../../templates/updateuser.php';
+        require __DIR__ . './../../templates/update_user.php';
     }
 }

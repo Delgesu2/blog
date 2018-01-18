@@ -69,7 +69,7 @@ return [
         'controller'   => \Framework\Controller\AdminChange::class
     ],
 
-    'update_user_action'   => [
+    'updateuser_action'   => [
         'path'         => '/admin/updateuser_action',
         'method'       => 'POST',
         'controller'   => \Framework\Controller\AdminChangeAction::class

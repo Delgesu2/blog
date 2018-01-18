@@ -45,4 +45,25 @@ class Router
             }
         }
     }
+
+    /**protected function toRegex($path)
+    {
+        $route = preg_replace('/\{[a-zA-Z_]+\}/', '([a-z-]*)', $path);
+        $route = preg_replace('/\{[a-zA-A_]+:([^}]+)\}/', '(\1)', $route);
+
+        return '#'.$route.'#A';
+    }
+
+    public function handleRequest($request)
+    {
+        foreach ($this->routes as $route) {
+            $routeRegex = $this->toRegex($route->getPath());
+            if (preg_match($routeRegex, $request, $params)) {
+                $class = $this->createController($route->getController());
+            } else {
+                return null;
+            }
+
+        }
+    }**/
 }

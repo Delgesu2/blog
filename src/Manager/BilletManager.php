@@ -44,8 +44,7 @@ class BilletManager extends DBFactory {
     public function getList()
     {
         $req = $this->connect()->query("SELECT id, titre, DATE_FORMAT(date_creation, '%d-%m-%Y à %Hh%im%ss') 
-              AS date_creation, DATE_FORMAT(date_maj, '%d-%m-%Y à %Hh%im%ss') AS date_maj FROM post ORDER BY date_maj, 
-              date_creation DESC") ;
+              AS date_creation, DATE_FORMAT(date_maj, '%d-%m-%Y à %Hh%im%ss') AS date_maj FROM post ORDER BY id DESC") ;
         while ($res=$req->fetch()) {
             $this->data[] = $this->buildDomain($res);
         }
@@ -85,9 +84,9 @@ class BilletManager extends DBFactory {
         $req = $this->connect()->prepare("INSERT INTO post(titre, chapo, contenu, date_creation)
                                                    VALUES (:titre, :chapo, :contenu, NOW())");
         $req->execute( array(
-            'titre'=>$_POST['titre'],
-            'chapo'=>$_POST['chapo'],
-            'contenu'=>$_POST['contenu']
+            'titre' => $_POST['titre'],
+            'chapo' => $_POST['chapo'],
+            'contenu' => $_POST['contenu']
         ));
     }
 

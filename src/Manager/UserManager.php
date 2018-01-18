@@ -20,13 +20,18 @@ class UserManager extends DBFactory {
         $req = $this->connect()->prepare("SELECT id, identifiant, mdp, courriel FROM user WHERE id=1");
         $req->execute();
         $data = $req->fetch();
-        var_dump($data);
+
         return $this->buildDomain($data);
     }
 
        // Modifier données utilisateur
-    public function UserUpdate($data) {
-        $maj_user = $this->connect()->prepare("UPDATE user SET identifiant = :identifiant, mdp = :mdp, courriel = :courriel") ;
+    public function userUpdate() {
+        $req = $this->connect()->prepare("UPDATE user SET identifiant = :identifiant, mdp = :mdp, courriel = :courriel
+        WHERE id=1") ;
+        $req->bindValue('identifiant', $_POST['nv_ident'], \PDO::PARAM_STR);
+        $req->bindValue('mdp', $_POST['nv_mdp'], \PDO::PARAM_STR);
+        $req->bindValue('courriel', $_POST['courriel'], \PDO::PARAM_STR);
+        $req->execute();
     }
 
     // Tableau contenant les données de l'entité User
