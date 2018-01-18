@@ -28,9 +28,9 @@ class UserManager extends DBFactory {
     public function userUpdate() {
         $req = $this->connect()->prepare("UPDATE user SET identifiant = :identifiant, mdp = :mdp, courriel = :courriel
         WHERE id=1") ;
-        $req->bindValue('identifiant', $_POST['nv_ident'], \PDO::PARAM_STR);
-        $req->bindValue('mdp', $_POST['nv_mdp'], \PDO::PARAM_STR);
-        $req->bindValue('courriel', $_POST['courriel'], \PDO::PARAM_STR);
+        $req->bindValue(':identifiant', $_POST['nv_ident'], \PDO::PARAM_STR);
+        $req->bindValue(':mdp', $_POST['nv_mdp'], \PDO::PARAM_STR);
+        $req->bindValue(':courriel', $_POST['courriel'], \PDO::PARAM_STR);
         $req->execute();
     }
 

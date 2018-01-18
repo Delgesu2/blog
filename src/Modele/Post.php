@@ -137,6 +137,4 @@ class Post
         $this->contenu=$contenu;
     }
 
-
-
 }

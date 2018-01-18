@@ -25,24 +25,26 @@ class AdminChangeAction
         $data=$this->user->getUser();
 
         /* REGEX: au moins 1 majuscule, au moins 1 chiffre, au moins 8 caractères, pas d'espace */
-        $regex_mdp = '#[a-zA-Z\d]+.{7,}#';
+        $regex_mdp = '#(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])\S{8,}#';
+        $mdp = $_POST['nv_mdp'];
 
         /* Verification que les champs de controle soient pleins*/
         if (!empty($_POST['ctrl_ident']) && !empty($_POST['ctrl_mdp']))
         {
 
             /* Verification que les données soient les mêmes que celles présentes dans la table 'user' */
-            if (htmlspecialchars($_POST['ctrl_ident'])==$data['identifiant'] && htmlspecialchars($_POST['ctrl_mdp'])==$data['mdp']) {
+            if (htmlspecialchars($_POST['ctrl_ident'])==$data->getIdentifiant()
+                && password_verify($_POST['ctrl_mdp'], $data->getMdp()) ) {
+                //&& htmlspecialchars($_POST['ctrl_mdp'])==$data->getMdp()) {   //En cas de connerie.....
 
-
-                /* Verification que les champs sont renseignés */
+                /* Verification que les champs soient renseignés */
                 if (!empty($_POST['nv_mdp']) && !empty($_POST['nv_ident'])) {
                     /* Verification validité nouveaux mdp avec regex */
-                    if (preg_match($regex_mdp, $_POST['nv_mdp'])) {
+                    if (preg_match($regex_mdp, $mdp)) {
 
                         /* Hash password */
-                        $mdp = $_POST['nv_mdp'];
                         $pwd = password_hash($mdp, PASSWORD_DEFAULT);
+                        $_POST['nv_mdp'] = $pwd;
 
                         /* Update dans la BDD */
                         $this->user->userUpdate();
@@ -53,11 +55,10 @@ class AdminChangeAction
                     }
                 }
 
-
-            else {
-                    echo "Les deux champs doivent être renseignés.";
-                 }
-            }
+                else {
+                        echo "Les deux champs doivent être renseignés.";
+                     }
+                }
 
             else
             {

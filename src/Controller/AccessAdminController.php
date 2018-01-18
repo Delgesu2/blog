@@ -28,7 +28,8 @@ class AccessAdminController
         if (!empty($_POST['identifiant']) && !empty($_POST['mdp'])) {
 
             /* Les données sont-elles justes ?*/
-            if (($_POST['identifiant']) == $arrayData->getIdentifiant() && ($_POST['mdp']) == $arrayData->getMdp()) {
+            if (($_POST['identifiant']) == $arrayData->getIdentifiant()
+                && password_verify($_POST['mdp'], $arrayData->getMdp()) ) {
                 // Start session
                 session_start();
                 $_SESSION['identifiant'] = $_POST['identifiant'];

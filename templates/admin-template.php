@@ -32,7 +32,7 @@
                         <ul class="nav nav-pills nav-stacked">
                             <li><a href='/admin/list'>Liste des messages</a></li>
                             <li><a href='/admin/create'>Créer</a></li>
-                            <li><a href='/admin/updateuser'>Changer identifiant et mdp</a></li>
+                            <li><a href='/admin/updateuser'>Identifiant et mot de passe</a></li>
                             <li><a href='/admin/exit'>Sortir</a></li>
                         </ul>
                     </nav>
