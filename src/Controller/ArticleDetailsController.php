@@ -21,7 +21,7 @@ class ArticleDetailsController extends AbstractController
         $this->billet = new BilletManager();
     }
 
-    // Affiche les détails sur le billet
+    // Affiche les détails sur le billet dont l'id en BDD est stocké dans $id
     public function action($id)
     {
         $billet = $this->billet->infosBillet($id);

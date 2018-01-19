@@ -22,7 +22,7 @@ return [
     ],
 
     'article_details' => [
-        'path'       => '/post/details/{id}',
+        'path'       => '/post/details/{id:\d+}',
         'method'     => 'GET',
         'controller' => \Framework\Controller\ArticleDetailsController::class
     ],
@@ -52,13 +52,13 @@ return [
     ],
 
     'delete_billet'  => [
-        'path'         => '/admin/delete/{id}',
+        'path'         => '/admin/delete/{id:\d+}',
         'method'       => 'POST',
         'controller'   => \Framework\Controller\DeleteBilletController::class
     ],
 
     'update_billet' => [
-        'path'         => '/admin/updatepost/{id}',
+        'path'         => '/admin/updatepost/{id:\d+}',
         'method'       => 'GET',
         'controller'   => \Framework\Controller\UpdateBilletController::class
     ],

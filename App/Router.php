@@ -21,7 +21,7 @@ class Router
 
     public function createRoutes()  // On remplit le tableau
     {
-        $routes = require __DIR__ . './../config/routes.php';
+       $routes = require __DIR__ . './../config/routes.php';
 
         foreach ($routes as $route) {
             $this->routes[] = new Route($route['path'], $route['controller']);
@@ -34,19 +34,29 @@ class Router
         return new $class();
     }
 
-    public function handleRequest()
+    public function handleRequest($request)
     {
         foreach ($this->routes as $route) {
-            switch ($_SERVER['REQUEST_URI']) {
-                case $route->getPath():
+            $routeRegex = $this->toRegex($route->getPath());
+            //switch ($_SERVER['REQUEST_URI']) {
+              //  case $route->getPath():
+            if (preg_match($routeRegex, $request, $params)) {
                   $class = $this->createController($route->getController());
-                  $class->action();
-                    break;
+                  return $class->action(...array_slice($params, 1));
+                  //$class->action();
+                    //break;
+            } else {
+                return null;
             }
         }
     }
 
-    /**protected function toRegex($path)
+
+    /**
+     * @param $path Route path
+     * @return string Regex to match requested URL
+     */
+    protected function toRegex($path)
     {
         $route = preg_replace('/\{[a-zA-Z_]+\}/', '([a-z-]*)', $path);
         $route = preg_replace('/\{[a-zA-A_]+:([^}]+)\}/', '(\1)', $route);
@@ -54,16 +64,4 @@ class Router
         return '#'.$route.'#A';
     }
 
-    public function handleRequest($request)
-    {
-        foreach ($this->routes as $route) {
-            $routeRegex = $this->toRegex($route->getPath());
-            if (preg_match($routeRegex, $request, $params)) {
-                $class = $this->createController($route->getController());
-            } else {
-                return null;
-            }
-
-        }
-    }**/
 }

@@ -6,9 +6,7 @@ ob_start();
     <!-- Affichage du billet sélectionné -->
 <?php
 
-  if (isset($_GET['id'])) {  
-
-  	if (!preg_match("#script#", $data['contenu'])) {		
+  if (isset($_GET['id'])) {
 
   	echo "<div class = 'row'>
 					<div class = 'col-xs-12'>	
@@ -30,10 +28,7 @@ ob_start();
 					</div>
 		 </div>";
 
-  		}
-
-  		else echo "Tu as voulu me piéger, petit filou !";
-  	}
+  }
 
   if ($data['date_maj']!=NULL) {
   	echo "<span class='badge badge-primary'>
