@@ -31,12 +31,12 @@ class Post
     /**
      * @var date création du billet
      */
-    public $date_creation;
+    public $datecreation;
 
     /**
      * @var date mise-à-jour éventuelle du billet
      */
-    public $date_maj;
+    public $datemaj;
 
 
     // getters et setters
@@ -58,7 +58,7 @@ class Post
     }
 
     /**
-     * @return date
+     * @return titre
      */
     public function getTitre()
     {
@@ -66,7 +66,7 @@ class Post
     }
 
     /**
-     * @param date $date_maj
+     * @param titre $string
      */
     public function setTitre($string)
     {
@@ -74,7 +74,7 @@ class Post
     }
 
     /**
-     * @return date
+     * @return chapo
      */
     public function getChapo()
     {
@@ -82,7 +82,7 @@ class Post
     }
 
     /**
-     * @param date $date_maj
+     * @param chapo $string
      */
     public function setChapo($string)
     {
@@ -90,35 +90,35 @@ class Post
     }
 
     /**
+     * @return date creation
+     */
+    public function getDatecreation()
+    {
+        return $this->datecreation;
+    }
+
+    /**
+     * @param date
+     */
+    public function setDatecreation($datecrea)
+    {
+        $this->datecreation=$datecrea;
+    }
+
+    /**
      * @return date
      */
-    public function getDateCreation()
+    public function getDatemaj()
     {
-        return $this->date_creation;
+        return $this->datemaj;
     }
 
     /**
      * @param date $date_maj
      */
-    public function setDateCreation($datecrea)
+    public function setDatemaj($datemaj)
     {
-        $this->date_creation=$datecrea;
-    }
-
-    /**
-     * @return date
-     */
-    public function getDateMaj()
-    {
-        return $this->date_maj;
-    }
-
-    /**
-     * @param date $date_maj
-     */
-    public function setDateMaj($date_maj)
-    {
-        $this->date_maj=$date_maj;
+        $this->datemaj=$datemaj;
     }
 
     /**

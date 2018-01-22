@@ -20,8 +20,10 @@ class BilletManager extends DBFactory {
     {
        $req = $this->connect()->query("SELECT id, titre, chapo, 
         CONCAT(SUBSTRING(contenu,1,200), '...') AS contenu, 
-        DATE_FORMAT(date_creation, '%d/%m/%Y à %Hh%imin%ss') AS date_creation
-        FROM post ORDER BY date_creation DESC LIMIT 5") ;
+        DATE_FORMAT(datecreation, '%d/%m/%Y à %Hh%imin%ss') AS datecreation,
+        DATE_FORMAT(datemaj, 'Mis à jour le %d/%m/%Y à %Hh%imin%ss') AS datemaj,
+        CASE WHEN datemaj IS NULL THEN datecreation ELSE datemaj END AS datetri 
+        FROM post ORDER BY datetri DESC") ;
        while ($res=$req->fetch()) {
            $this->data[] = $this->buildDomain($res);
        }
@@ -32,8 +34,8 @@ class BilletManager extends DBFactory {
     public function infosBillet($id)
     {
         $req = $this->connect()->prepare("SELECT id, titre, chapo, contenu, 
-    		DATE_FORMAT(date_creation, \"%d/%m/%Y à %Hh%imin%ss\") AS date_creation,
-    		DATE_FORMAT(date_maj, \"%d/%m/%Y à %Hh%imin%ss\") AS date_maj
+    		DATE_FORMAT(datecreation, \"%d/%m/%Y à %Hh%imin%ss\") AS datecreation,
+    		DATE_FORMAT(datemaj, \"%d/%m/%Y à %Hh%imin%ss\") AS datemaj
     		FROM post WHERE id = :id')") ;
         $req->execute([':id' => $id]);
 
@@ -43,8 +45,8 @@ class BilletManager extends DBFactory {
     // Renvoie la liste des billets en admin
     public function getList()
     {
-        $req = $this->connect()->query("SELECT id, titre, DATE_FORMAT(date_creation, '%d-%m-%Y à %Hh%im%ss') 
-              AS date_creation, DATE_FORMAT(date_maj, '%d-%m-%Y à %Hh%im%ss') AS date_maj FROM post ORDER BY id DESC") ;
+        $req = $this->connect()->query("SELECT id, titre, DATE_FORMAT(datecreation, '%d-%m-%Y à %Hh%im%ss') 
+              AS datecreation, DATE_FORMAT(datemaj, '%d-%m-%Y à %Hh%im%ss') AS datemaj FROM post ORDER BY id DESC") ;
         while ($res=$req->fetch()) {
             $this->data[] = $this->buildDomain($res);
         }
@@ -64,7 +66,7 @@ class BilletManager extends DBFactory {
     public function modif($id)
     {
         $req = $this->connect()->prepare("UPDATE post SET titre = :titre, chapo = :chapo, contenu = :contenu,
-                                                   date_maj = NOW() WHERE id = :id ") ;
+                                                   datemaj = NOW() WHERE id = :id ") ;
         $req->execute([':id' => $id]);
 
         // Hydrater l'objet Post
@@ -81,7 +83,7 @@ class BilletManager extends DBFactory {
     // Créer un billet
     public function create()
     {
-        $req = $this->connect()->prepare("INSERT INTO post(titre, chapo, contenu, date_creation)
+        $req = $this->connect()->prepare("INSERT INTO post(titre, chapo, contenu, datecreation)
                                                    VALUES (:titre, :chapo, :contenu, NOW())");
         $req->execute( array(
             'titre' => $_POST['titre'],
@@ -90,26 +92,19 @@ class BilletManager extends DBFactory {
         ));
     }
 
-    // Tableau en paramètres contenant les données des requêtes
+    // Hydratation de l'entité par une boucle.
     public function buildDomain(array $data)
     {
         $post = new Post();
-        $post->setId($data['id']);
-        $post->setTitre($data['titre']);
-        $post->setDateCreation($data['date_creation']);
 
-        if (isset($data['chapo'])) {
-            $post->setChapo($data['chapo']);
-        }
-
-        if (isset($data['contenu'])) {
-            $post->setContenu($data['contenu']);
-        }
-
-        if (isset($data['date_maj'])) {
-           $post->setDateMaj($data['date_maj']);
-        }
-
+      foreach ($data as $key => $value)
+      {
+          $method = 'set'.ucfirst($key);
+          if (method_exists($post, $method))
+          {
+              $post->$method($value);
+          }
+      }
         return $post;
     }
 }

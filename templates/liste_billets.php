@@ -19,12 +19,14 @@ ob_start();
                                         <a href='/post/details/<?= $post->getId(); ?>'><h3 class='titrepost'><?= $post->getTitre(); ?></h3> </a>
 						 			</div>
 						 			<div class='col-xs-4'>
-						 			 <h4 class='titredate'>Créé le : <?= $post->getDateCreation(); ?></h4>
+						 			 <h4 class='titredate'>Créé le : <?= $post->getDatecreation(); ?></h4>
+                                        <div class='badge badge primary'><?= $post->getDatemaj(); ?></div>
 						 			 </div>
 						 		</div>
 					 		</div> 	
-					 	    <div class='panel-body chapo'><?= $post->getContenu(); ?></div>
-						</div>
+					 	    <div class='panel-body chapo'><?= $post->getChapo(); ?></div>
+                            <div class='panel-body contenu'><?= $post->getContenu(); ?></div>
+                        </div>
 					</div>
 				  </div>
 		<?php endforeach; ?>
