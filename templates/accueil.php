@@ -3,39 +3,102 @@ $title = 'Xavier COUTANT - Accueil';
 ob_start();
 ?>
 
-		<div class="row text-center">
-			<h2>...un développeur polyvalent</h2>			
-		</div>	
+
 		
 		<div class="row">
 
 			<!-- texte central -->
-			<div class="col-sm-9 col-xs-7">
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			<div class="col-sm-10 col-xs-7">
+                <div class="row text-center">
+                    <h2>D&#233;veloppeur PHP/Symfony</h2>
+                </div>
+                <p class="chapo chapolanding">
+                    <em>D&#233;veloppeur PHP/Symfony op&#233;rationnel d&#232;s avril 2018. Actuellement en formation avec
+                        <a href="https://openclassrooms.com">OpenClassrooms</a>.
+                        D&#233;veloppeur curieux et aimant apprendre, particuli&#232;rement int&#233;ress&#233; par les Syst&#232;mes de Gestion de Base de Donn&#233;es.
+                    </em>
 				</p>
-				<p>
-					Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
-				</p>
-				<p>
-					At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.
-				</p>
+
+                <!-- 1er panneau -->
+                <div id="flip">
+                        Ce site
+                </div>
+                <div id="panel">
+                    <p>
+                        Ce site personnel/blog a &#233;t&#233; r&#233;alis&#233; dans le cadre d'un projet OpenClassrooms, parcours "<a href="https://openclassrooms.com/paths/developpeur-se-d-application-php-symfony">D&#233;veloppeur d'application
+                            PHP/Symfony</a>". Le site comprend un formulaire de contact ainsi qu'une interface administrateur de blog permettant un CRUD complet.
+                        Il a mobilis&#233; les technologies suivantes:
+                    </p>
+
+                    <table class="table">
+                        <tr>
+                            <td>HTML</td><td>Bootstrap</td><td>Swiftmailer</td>
+                        </tr>
+                        <tr>
+                            <td>CSS</td><td>PHP/POO</td><td>MySQL</td>
+                        </tr>
+                    </table>
+                    Et une goutte de jQuery, d'accord ...
+                </div>
+
+                <!-- 2e panneau -->
+                <div id="flip2">
+                    Projets
+                </div>
+				<div id="panel2">
+                    <p>
+                        Projets r&#233;alis&#233;s lors de la formation:
+                    </p>
+                        <ol>
+                        <li>cr&#233;ation d'un site Wordpress</li>
+                        <li>r&#233;alisation de cahiers des charges</li>
+                        <li>cr&#233;ation de l'architecture d'une base de donn&#233;es MySQL d'un commerce</li>
+                        <li>cr&#233;ation d'un site-blog en PHP orient&#233; objet</li>
+                        <li>d&#233;veloppement d'un site communautaire avec Symfony</li>
+                        <li>d&#233;veloppement d'un site e-commerce avec impl&#233;mentation d'une API</li>
+                        </ol>
+                </div>
+
+                <div id="flip3">
+                    Historique
+                </div>
+                <div id="panel3">
+                <p>
+                    Apr&#232;s une vie riche de voyages et d'exp&#233;riences professionnelles tr&#232;s diverses m'ayant ouvert
+                    diff&#233;rents horizons à travers le monde, je me suis orient&#233; vers le d&#233;veloppement web, attir&#233; tout d'abord par
+                    la probl&#233;matique tr&#232;s actuelle de la s&#233;curit&#233; des donn&#233;es stock&#233;es.
+                    Utilisateur de Mac puis Linux depuis une quinzaine d'ann&#233;es, j'ai commenc&#233; par m'int&#233;resser de mani&#232;re
+                    approfondie à la ligne de commande Linux, puis naturellement au HTML/CSS, à jQuery, à MySQL (<span class="glyphicon glyphicon-heart"></span>)  puis
+                    PHP et Symphony. Les cours OpenClassrooms sont mon principal vecteur d'apprentissage, mais aussi des sites comme
+                    <a href="https://www.developpez.net/">developpez.net</a>, <a href="https://stackoverflow.com/">stackoverflow.com</a>, <a href="https://www.w3schools.com/">w3schools.com</a> ou
+                    <a href="https://github.com/">github</a>...
+                </p>
+                <p>
+                    Ma vie professionnelle pr&#233;c&#233;dente m'a apport&#233; une ouverture d'esprit certaine, un goût pour la linguistique
+                    et un type de r&#233;flexion que l'on retrouve dans la programmation. Ayant &#233;t&#233; professeur des &#233;coles, je connais les vertus
+                    de l'apprentissage de la programmation informatique dans la construction du langage.
+                </p>
+                </div>
 			</div>
 		<!-- fin texte central -->
 
 		<!-- thumbnail -->
-			<div class="col-sm-3 col-xs-5">
+			<div class="col-sm-2 col-xs-5">
 				<div class="thumbnail fondThumb">
 					<img src="/contenu/images/portrait2013.jpg" alt="Mon portrait" title="portrait de Xavier Coutant">
 					<div class="caption">
 						<h3>&#192; mon propos...</h3>
-						<p>Vous pourrez obtenir plus d'informations grâce aux liens suivants</p>						
+						<p>Plus d'informations avec les liens suivants</p>
 						<div class="list-group">
-							<a href="#" class="list-group-item">T&#233;l&#233;charger mon CV</a>
-							<a href="https://www.linkedin.com/in/xavier-coutant-5b273113b/" class="list-group-item">Lien vers page LinkedIn</a>
-						</div>	
-						
-					</div>
+							<a href="#" class="list-group-item"><span class="glyphicon glyphicon-download"></span> Mon CV</a>
+							<a href="https://www.linkedin.com/in/xavier-coutant-5b273113b/" class="list-group-item linkedin">
+                              <img class="linkedin" src="http://icon-icons.com/icons2/99/PNG/512/linkedin_socialnetwork_17441.png" alt="LinkedIn"
+                                         title="ma page LinkedIn" ></a>
+						</div>
+                        <!-- Bouton acc&#232;s à fenêtre modale -->
+                        <a class="btn btn-primary btn-xs active" role="button" data-toggle="modal" data-target="#myModal" href="">Acc&#232;s admin</a>
+                        <!-- fin bouton acc&#232;s à fenêtre modale -->
+                    </div>
 				</div>				
 			</div>
 		<!-- fin thumbnail -->	
@@ -47,7 +110,7 @@ ob_start();
 			<form action="../App/mailer.php" method="post" class="col-xs-6">
 	  			<legend>Pour m'envoyer un message</legend>
 
-	  			<label for="civilité">Civilit&#233; : </label>
+	  			<label for="civilit&#233;">Civilit&#233; : </label>
 	  			<select id="civilite" name="civilite">
 		            <option value="mr">
 		                Monsieur
@@ -88,15 +151,7 @@ ob_start();
 	    		<input type="submit" name="envoye" value="Envoyer" />
 			</form>
 			<!-- fin formulaire de contact -->
-
-
-			<!-- Bouton accès à fenêtre modale -->
-			<div class="col-xs-offset-4 col-xs-1">	
-				<a class="btn btn-primary btn-xs active" role="button" data-toggle="modal" data-target="#myModal" href="">Acc&#232;s admin</a>
-			</div>
-			<!-- fin bouton accès à fenêtre modale -->
 		</div>
-
 
 			<!-- Modal -->
 			<div class="modal fade" id="myModal" role="dialog">
@@ -131,6 +186,28 @@ ob_start();
 					</div>        
 				</div>
 			</div>
+
+<!-- Javascript -->
+<script>
+    $(document).ready(function(){
+        $("#flip").click(function(){
+            $("#panel").slideToggle("slow");
+        });
+    });
+
+    $(document).ready(function(){
+        $("#flip2").click(function(){
+            $("#panel2").slideToggle("slow");
+        });
+    });
+
+    $(document).ready(function(){
+        $("#flip3").click(function(){
+            $("#panel3").slideToggle("slow");
+        });
+    });
+</script>
+
 
 <?php
     $content = ob_get_clean();

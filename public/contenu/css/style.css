@@ -11,6 +11,12 @@
 	src: url('../fonts/Ubuntu-L.ttf') format('truetype');
 }
 
+h3
+{
+	font-size: 1.3em;
+}
+
+
 body
 {
 	font-family: 'UbuntuLight', Arial, serif;
@@ -33,14 +39,61 @@ body
 	margin-bottom: -80px;
 }
 
+.chapolanding
+{
+	margin-bottom: 30px;
+}
+
 .fond
 {
 	background-color: rgba(166, 130, 116, 0.8);
 }
 
+.table
+{
+	background-color: white;
+}
+
 .fondThumb
 {
 	background-color: rgba(166, 130, 116, 0.8);	
+}
+
+.list-group-item
+{
+	padding: 5px;
+}
+
+.linkedin
+{
+	height: 100%;
+
+	max-width: 30px;
+}
+
+#flip, #flip2, #flip3
+{
+	width: 180px;
+	margin: 5px;
+	padding: 10px 0 10px 20px;
+	background-color: rgba(166, 130, 116, 0.8);
+    color: #FFF;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
+	transition: width 1s, background-color 1s;
+}
+
+#flip:hover, #flip2:hover, #flip3:hover
+{
+    width: 200px;
+	background-color: #F7AA81;
+}
+
+#panel, #panel2, #panel3
+{
+	display: none;
+	margin-bottom: 30px;
 }
 
 form
