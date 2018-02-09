@@ -18,12 +18,16 @@
     </head>
 
     <body>
-        <div class='container'>
-    <!-- En-tête jumbotron -->
-        <?php
-        include ('header.html');
-        ?>
-    <!-- fin en-tête jumbotron -->
+    <div class='container'>
+
+    <div class="jumbotron">
+        <h1 class="jumbotitre">Carnet de bord</h1>
+        <p>Site personnel de Xavier Coutant</p>
+        <div class="btn-group btnjumbo">
+            <a class="btn btn-warning fond" href="/">Accueil</a> <a class="btn btn-warning fond" href="/post/list">Blog</a>
+        </div>
+    </div>
+
         <?= $content ?>
         </div>
     </body>

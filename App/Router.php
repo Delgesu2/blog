@@ -8,7 +8,7 @@
 
 namespace App;
 
-// use Framework\Controller\HomeController;
+//use Framework\Controller\HomeController;
 
 class Router
 {
@@ -34,33 +34,25 @@ class Router
         return new $class();
     }
 
-    public function handleRequest($request)
+        public function handleRequest($request)
     {
         foreach ($this->routes as $route) {
-           // $routeRegex = $this->toRegex($route->getPath());
-            switch ($_SERVER['REQUEST_URI']) {case $route->getPath():
-            //if (preg_match($routeRegex, $request, $params)) {
-                  $class = $this->createController($route->getController());
-                  //return $class->action(...array_slice($params, 1));
-                  $class->action();
-                break;
-            } /**else {
-                return null;
-            }**/
+            $regex = '#\\\d+#';
+
+            if (preg_match($regex, $request, $id)) {
+                preg_replace($regex,'',$request);
+                $route->getPath();
+                $class = $this->createController($route->getController());
+                $class->action((int)$id[0]);
+                }
+                    else {
+                        switch ($_SERVER['REQUEST_URI']) {
+                            case $route->getPath():
+                                $class = $this->createController($route->getController());
+                                $class->action();
+                                break;
+                        }
+                    }
         }
     }
-
-
-    /**
-     * @param $path Route path
-     * @return string Regex to match requested URL
-     */
-    protected function toRegex($path)
-    {
-        $route = preg_replace('/\{[a-zA-Z_]+\}/', '([a-z-]*)', $path);
-        $route = preg_replace('/\{[a-zA-A_]+:([^}]+)\}/', '(\1)', $route);
-
-        return '#'.$route.'#A';
-    }
-
 }

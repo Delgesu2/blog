@@ -3,10 +3,8 @@ $title = 'Xavier COUTANT - Blog';
 ob_start();
 ?>
 
-    <!-- Affichage du billet sélectionné -->
 <?php
-
-  if (isset($_GET['id'])) {
+ // if ( $billet!=null) {
 
   	echo "<div class = 'row'>
 					<div class = 'col-xs-12'>	
@@ -14,31 +12,27 @@ ob_start();
 							<div class='panel-heading'>
 								<div class='row titrepannel'>
 									<div class='col-xs-8'>	 
-						 				<h3 class='titrepost'>" . htmlspecialchars($data['titre']) . "</h3>
+						 				<h3 class='titrepost'>" . $billet->getTitre() . "</h3>
 						 			</div>
 						 			<div class='col-xs-4'>
-						 			 <h4 class='titredate'>Créé le : " . htmlspecialchars($data['date_creation']) . "</h4>
+						 			 <h4 class='titredate'>Créé le : " . $billet->getDatecreation() . "</h4>
 						 			 </div>
 						 		</div>
 					 		</div> 	
-					 	    	<div class='panel-body'><div class='chapo'>" . htmlspecialchars($data['chapo']) . "</div>
-					 	    	<p>" . ($data['contenu']) .
+					 	    	<div class='panel-body'><div class='chapo'>" . $billet->getChapo() . "</div>
+					 	    	<p>" . $billet->getContenu() .
 					 	    	"</div>
 						</div>
 					</div>
 		 </div>";
 
-  }
+//  }
 
-  if ($data['date_maj']!=NULL) {
+  if ($billet->getDatemaj()!=NULL) {
   	echo "<span class='badge badge-primary'>
-  				Derni&#232;re mise-&#224;-jour : " . htmlspecialchars($data['date_maj']) 
+  				Derni&#232;re mise-&#224;-jour : " . $billet->getDatemaj()
   		 . "</span>";
   }
-  
-?>
 
-<?php
 $content = ob_get_clean();
 require ('public-template.php');
-?>

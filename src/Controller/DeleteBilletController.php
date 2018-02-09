@@ -20,9 +20,9 @@ class DeleteBilletController extends AbstractController
     }
 
 
-    public function action()
+    public function action($id)
     {
-        $suppress_billet = $this->delete_billet->erase_billet();
+        $suppress_billet = $this->delete_billet->erase_billet($id);
         require __DIR__ . './../../templates/list.php';
     }
 }

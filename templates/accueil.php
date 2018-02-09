@@ -69,7 +69,7 @@ ob_start();
                     la probl&#233;matique tr&#232;s actuelle de la s&#233;curit&#233; des donn&#233;es stock&#233;es.
                     Utilisateur de Mac puis Linux depuis une quinzaine d'ann&#233;es, j'ai commenc&#233; par m'int&#233;resser de mani&#232;re
                     approfondie à la ligne de commande Linux, puis naturellement au HTML/CSS, à jQuery, à MySQL (<span class="glyphicon glyphicon-heart"></span>)  puis
-                    PHP et Symphony. Les cours OpenClassrooms sont mon principal vecteur d'apprentissage, mais aussi des sites comme
+                    PHP et Symfony. Les cours OpenClassrooms sont mon principal vecteur d'apprentissage, mais aussi des sites comme
                     <a href="https://www.developpez.net/">developpez.net</a>, <a href="https://stackoverflow.com/">stackoverflow.com</a>, <a href="https://www.w3schools.com/">w3schools.com</a> ou
                     <a href="https://github.com/">github</a>...
                 </p>
@@ -103,9 +103,9 @@ ob_start();
 			</div>
 		<!-- fin thumbnail -->	
 			
-		</div>	
+		</div>
 
-		<div class="row">
+		<div class="row panel4">
 			<!-- Formulaire de contact -->
 			<form action="../App/mailer.php" method="post" class="col-xs-6">
 	  			<legend>Pour m'envoyer un message</legend>

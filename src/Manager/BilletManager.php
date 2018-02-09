@@ -36,10 +36,10 @@ class BilletManager extends DBFactory {
         $req = $this->connect()->prepare("SELECT id, titre, chapo, contenu, 
     		DATE_FORMAT(datecreation, \"%d/%m/%Y à %Hh%imin%ss\") AS datecreation,
     		DATE_FORMAT(datemaj, \"%d/%m/%Y à %Hh%imin%ss\") AS datemaj
-    		FROM post WHERE id = :id')") ;
+    		FROM post WHERE id = :id") ;
         $req->execute([':id' => $id]);
 
-        return $this->buildDomain($req->fetchAll());
+        return $this->buildDomain($req->fetch());
     }
 
     // Renvoie la liste des billets en admin
@@ -76,8 +76,8 @@ class BilletManager extends DBFactory {
     // Effacer un billet
     public function erase_billet($id)
     {
-        $req = $this->connect()->query("DELETE FROM post WHERE id=:id");
-        // sais pas return $this->;
+        $req = $this->connect()->prepare("DELETE FROM post WHERE id=:id");
+        $req->execute([':id' => $id]);
     }
 
     // Créer un billet

@@ -82,12 +82,13 @@ body
 	-moz-border-radius: 20px;
 	border-radius: 20px;
 	transition: width 1s, background-color 1s;
+	cursor: pointer;
 }
 
 #flip:hover, #flip2:hover, #flip3:hover
 {
     width: 200px;
-	background-color: #F7AA81;
+	background-color: #EC971F;
 }
 
 #panel, #panel2, #panel3
