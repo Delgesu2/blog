@@ -40,4 +40,12 @@ class Route
     {
         return $this->controller;
     }
+
+    /**
+     * @param Route $path
+     */
+    public function setPath($path)
+    {
+        $this->path = $path;
+    }
 }

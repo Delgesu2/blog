@@ -63,6 +63,12 @@ return [
         'controller'   => \Framework\Controller\UpdateBilletController::class
     ],
 
+    'update_billet_action' => [
+        'path'         => '/admin/updatepost_action',
+        'method'       => 'GET',
+        'controller'   => \Framework\Controller\UpdateBilletController::class
+    ],
+
     'update_user'   => [
         'path'         => '/admin/updateuser',
         'method'       => 'POST',

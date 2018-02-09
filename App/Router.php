@@ -41,7 +41,8 @@ class Router
 
             if (preg_match($regex, $request, $id)) {
                 preg_replace($regex,'',$request);
-                $route->getPath();
+                $route->setPath($request);
+               // $route->getPath();
                 $class = $this->createController($route->getController());
                 $class->action((int)$id[0]);
                 }

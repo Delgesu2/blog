@@ -12,18 +12,18 @@ use Framework\Manager\BilletManager;
 
 class UpdateBilletController extends AbstractController
 {
-    private $BilletManager;
+    private $billetManager;
 
     public function __construct()
     {
-        $this->BilletManager = new BilletManager();
+        $this->billetManager = new BilletManager();
     }
 
     // Récupération du billet et modification dans la templates
     public function action($id)
     {
-        $billet_recup = $this->recup_billet->recup_update($id);
-        $update_billet = $this->modif_billet->modif($id);
+        $billet_recup = $this->billetManager->recup_update($id);
+        $update_billet = $this->billetManager->modif($id);
         require __DIR__ . './../../templates/update.php';
     }
 

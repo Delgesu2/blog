@@ -6,24 +6,24 @@ ob_start();
     <h1 class="text-center">Modifier un post</h1>
 
    
-    <form method="post" action="../controleur/ctrl_update.php">
+    <form method="post" action="/admin/updatepost_action">
         <div class="form-group">
         <label for="titre">Titre:</label>
-        <input class="form-control" type="text" name="titre" id="titre" value="<?php if (isset ($_GET['id'])) {echo $data['titre'];} ?>">
+        <input class="form-control" type="text" name="titre" id="titre" value="<?php if (isset ($_GET['id'])) {echo $billet_recup->getId();} ?>">
         </div>
 
         <div class="form-group">
         <label for="chapo">Chap&#244;:</label><br/>
-        <textarea class="form-control" name="chapo" id="chapo" rows="3" cols="10"><?php if (isset($_GET['id'])) {echo $data['chapo'];} ?></textarea>
+        <textarea class="form-control" name="chapo" id="chapo" rows="3" cols="10"><?php if (isset($_GET['id'])) {echo $billet_recup->getChapo();} ?></textarea>
         </div>
 
         <!-- Editeur Summernote -->
         <div class="form-group">
         <label for="summernote">Texte:</label>
-        <textarea name="contenu" id="summernote"><?php if (isset($_GET['id'])) {echo $data['contenu'];} ?></textarea>
+        <textarea name="contenu" id="summernote"><?php if (isset($_GET['id'])) {echo $billet_recup->getContenu();} ?></textarea>
         </div>
 
-        <input type="hidden" name="id" value="<?= $data['id']; ?>" />
+        <input type="hidden" name="id" value="<?= $billet_recup->getId(); ?>" />
 
 
         <button type="submit">Envoyer</button>
