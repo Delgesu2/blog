@@ -39,7 +39,7 @@ class BilletManager extends DBFactory {
     		FROM post WHERE id = :id") ;
         $req->execute([':id' => $id]);
 
-        return $this->buildDomain($req->fetch());
+        return $this->buildDomain($req->fetchAll());
     }
 
     // Renvoie la liste des billets en admin

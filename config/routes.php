@@ -22,9 +22,10 @@ return [
     ],
 
     'article_details' => [
-        'path'       => '/post/details',
+        'path'       => '/post/details/:id',
         'method'     => 'GET',
-        'controller' => \Framework\Controller\ArticleDetailsController::class
+        'controller' => \Framework\Controller\ArticleDetailsController::class,
+        'requirements' => '#/\d+$#'
     ],
 
     'acces_admin' => [
@@ -52,15 +53,17 @@ return [
     ],
 
     'delete_billet'  => [
-        'path'         => '/admin/delete',
+        'path'         => '/admin/delete/:id',
         'method'       => 'POST',
-        'controller'   => \Framework\Controller\DeleteBilletController::class
+        'controller'   => \Framework\Controller\DeleteBilletController::class,
+        'requirements' => '#/\d+$#'
     ],
 
     'update_billet' => [
-        'path'         => '/admin/updatepost',
+        'path'         => '/admin/updatepost/:id',
         'method'       => 'GET',
-        'controller'   => \Framework\Controller\UpdateBilletController::class
+        'controller'   => \Framework\Controller\UpdateBilletController::class,
+        'requirements' => '#/\d+$#'
     ],
 
     'update_billet_action' => [

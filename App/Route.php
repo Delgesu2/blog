@@ -8,21 +8,30 @@
 
 namespace App;
 
-
 class Route
 {
     private $path;
     private $controller;
+    private $requirements;
 
     /**
      * Route constructor.
      * @param $path    route's path
      * @param $controller  back-end controller to be called
      */
-    public function __construct($path, $controller)
+    public function __construct($path, $controller, $requirements)
     {
         $this->path = $path;
         $this->controller = $controller;
+        $this->requirements = $requirements;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getRequirements()
+    {
+        return $this->requirements;
     }
 
     /**

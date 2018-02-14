@@ -24,8 +24,8 @@ class Router
        $routes = require __DIR__ . './../config/routes.php';
 
         foreach ($routes as $route) {
-            $this->routes[] = new Route($route['path'], $route['controller']);
-
+            $this->routes[] = new Route($route['path'], $route['controller'],
+                             $route['requirements'] ?? '#^[a-zA-Z0-9]+#');
         }
     }
 
@@ -34,26 +34,24 @@ class Router
         return new $class();
     }
 
-        public function handleRequest($request)
+    public function handleRequest($request)
     {
         foreach ($this->routes as $route) {
-            $regex = '#\\\d+#';
+            if (preg_match($route->getRequirements(), $request, $id)) {
+                $trimmed =  trim($id[0], '/');
+                $regex = '#:id#';
+                preg_replace($regex, $trimmed, $route->getPath());
 
-            if (preg_match($regex, $request, $id)) {
-                preg_replace($regex,'',$request);
-                $route->setPath($request);
-               // $route->getPath();
                 $class = $this->createController($route->getController());
-                $class->action((int)$id[0]);
-                }
-                    else {
-                        switch ($_SERVER['REQUEST_URI']) {
-                            case $route->getPath():
-                                $class = $this->createController($route->getController());
-                                $class->action();
-                                break;
-                        }
-                    }
-        }
+                $class->action((int) $id[0]);
+            }
+
+           elseif ($route->getPath() === $request) {
+            $class = $this->createController($route->getController());
+            $class->action();
+            }
+
+            }
+
     }
 }
