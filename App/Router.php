@@ -16,16 +16,16 @@ class Router
 
     public function __construct()
     {
-        $this-> createRoutes();
+        $this->createRoutes();
     }
 
     public function createRoutes()  // On remplit le tableau
     {
-       $routes = require __DIR__ . './../config/routes.php';
+        $routes = require __DIR__ . './../config/routes.php';
 
         foreach ($routes as $route) {
             $this->routes[] = new Route($route['path'], $route['controller'],
-                             $route['requirements'] ?? '#^[a-zA-Z0-9]+#');
+                $route['requirements'] ?? '#^[a-zA-Z0-9]+#');
         }
     }
 
@@ -38,20 +38,23 @@ class Router
     {
         foreach ($this->routes as $route) {
             if (preg_match($route->getRequirements(), $request, $id)) {
-                $trimmed =  trim($id[0], '/');
+                $new_id = trim($id[0], '/');
                 $regex = '#:id#';
-                preg_replace($regex, $trimmed, $route->getPath());
+                preg_replace($regex, $new_id, $route->getPath());
 
                 $class = $this->createController($route->getController());
-                $class->action((int) $id[0]);
+                $class->action($new_id);
             }
 
-           elseif ($route->getPath() === $request) {
-            $class = $this->createController($route->getController());
-            $class->action();
+            elseif ($route->getPath() === $request) {
+                $class = $this->createController($route->getController());
+                $class->action();
             }
 
-            }
+            /**else {
+                throw new \Exception('No route matched.', 404);
+            }**/
 
+        }
     }
 }

@@ -11,7 +11,7 @@ namespace Framework\Controller;
 use Framework\Manager\BilletManager;
 
 
-class ArticleDetailsController extends AbstractController
+class ArticleDetailsController
 {
 
     private $billet;
@@ -26,5 +26,6 @@ class ArticleDetailsController extends AbstractController
     {
         $billet = $this->billet->infosBillet($id);
         require __DIR__ . './../../templates/billet.php';
+
     }
 }

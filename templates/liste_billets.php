@@ -9,7 +9,7 @@ ob_start();
     </div>
 
     <!-- Boucle affichage : récupération des lignes de la table post-->
-		<?php foreach ( $billets as $post): ?>
+		<?php foreach ($billets as $post): ?>
 			    <div class = 'row'>
 					<div class = 'col-xs-12'>	
 						<div class='panel panel-default'>

@@ -39,7 +39,9 @@ class BilletManager extends DBFactory {
     		FROM post WHERE id = :id") ;
         $req->execute([':id' => $id]);
 
-        return $this->buildDomain($req->fetchAll());
+        return $this->buildDomain(($req->fetchAll()));
+    var_dump($req->fetch());
+    die();
     }
 
     // Renvoie la liste des billets en admin
@@ -96,7 +98,6 @@ class BilletManager extends DBFactory {
     public function buildDomain(array $data)
     {
         $post = new Post();
-
       foreach ($data as $key => $value)
       {
           $method = 'set'.ucfirst($key);
