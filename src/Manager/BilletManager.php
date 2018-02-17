@@ -39,9 +39,7 @@ class BilletManager extends DBFactory {
     		FROM post WHERE id = :id") ;
         $req->execute([':id' => $id]);
 
-        return $this->buildDomain(($req->fetchAll()));
-    var_dump($req->fetch());
-    die();
+        return $this->buildDomain($req->fetch());
     }
 
     // Renvoie la liste des billets en admin
@@ -61,7 +59,7 @@ class BilletManager extends DBFactory {
         $req = $this->connect()->prepare("SELECT id, titre, chapo, contenu FROM post WHERE id = :id");
         $req->execute([':id' => $id]);
 
-        return $this->buildDomain($req->fetchAll());
+        return $this->buildDomain($req->fetch());
     }
 
     // Modifier billet
@@ -72,7 +70,7 @@ class BilletManager extends DBFactory {
         $req->execute([':id' => $id]);
 
         // Hydrater l'objet Post
-        return $this->buildDomain($req->fetchAll());
+        return $this->buildDomain($req->fetch());
     }
 
     // Effacer un billet

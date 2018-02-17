@@ -23,7 +23,7 @@ class UpdateBilletController extends AbstractController
     public function action($id)
     {
         $billet_recup = $this->billetManager->recup_update($id);
-        $update_billet = $this->billetManager->modif($id);
+       // $update_billet = $this->billetManager->modif($id);
         require __DIR__ . './../../templates/update.php';
     }
 

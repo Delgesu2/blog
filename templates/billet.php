@@ -16,12 +16,11 @@ ob_start();
 						 			</div>
 						 			<div class='col-xs-4'>
 						 			 <h4 class='titredate'>Créé le : " . $billet->getDatecreation() . "</h4>
-						 			 </div>
+						 			</div>
 						 		</div>
 					 		</div> 	
-					 	    	<div class='panel-body'><div class='chapo'>" . $billet->getChapo() . "</div>
-					 	    	<p>" . $billet->getContenu() .
-					 	    	"</div>
+					 	    	<div class='panel-body'><div class='chapo'>" . $billet->getContenu() . "		
+					 	    </div>
 						</div>
 					</div>
 		 </div>";
