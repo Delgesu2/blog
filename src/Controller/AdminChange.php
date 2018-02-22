@@ -11,7 +11,7 @@ namespace Framework\Controller;
 
 class AdminChange
 {
-    public function action()
+    public function __invoke()
     {
         require __DIR__ . './../../templates/update_user.php';
     }

@@ -22,7 +22,7 @@ ob_start();
                         echo '<tr> <td>' . $post->getTitre() . '</td><td>' . $post->getDatecreation() .
                         '</td><td>' . $post->getDatemaj() . '</td>
                         <td><div class="btn-group">
-                            <a class="btn btn-primary btn-sm" href="/admin/update/' . $post->getId() . ' " >Modifier</a>
+                            <a class="btn btn-primary btn-sm" href="/admin/updatepost/' . $post->getId() . ' " >Modifier</a>
                             <a class="btn btn-danger btn-sm"  href="/admin/delete/' . $post->getId() . ' " >Supprimer</a>
                             </div> 
                         </td> </tr> <br/>';

@@ -9,7 +9,7 @@ ob_start();
     <form method="post" action="/admin/updatepost_action">
         <div class="form-group">
         <label for="titre">Titre:</label>
-        <input class="form-control" type="text" name="titre" id="titre" value="<?php echo $billet_recup->getId(); ?>">
+        <input class="form-control" type="text" name="titre" id="titre" value="<?php echo $billet_recup->getTitre(); ?>">
         </div>
 
         <div class="form-group">

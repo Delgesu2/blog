@@ -20,9 +20,7 @@ class ArticleListController
         $this->liste = new BilletManager();
     }
 
-
-    // Affiche la liste des billets du blog
-    public function action()
+    public function __invoke()    // Affiche la liste des billets du blog
     {
        $billets = $this->liste->getBillets();
        require '../templates/liste_billets.php';

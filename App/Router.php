@@ -37,24 +37,30 @@ class Router
     public function handleRequest($request)
     {
         foreach ($this->routes as $route) {
+
             if (preg_match($route->getRequirements(), $request, $id)) {
                 $new_id = trim($id[0], '/');
                 $regex = '#:id#';
-                preg_replace($regex, $new_id, $route->getPath());
+                $new_path = preg_replace($regex, $new_id, $route->getPath());
+                $route->setPath($new_path);
 
-                $class = $this->createController($route->getController());
-                $class->action($new_id);
+                if ($route->getPath() === $request) {
+                    $class = $this->createController($route->getController());
+                    return $class($new_id);
+                }
             }
 
             elseif ($route->getPath() === $request) {
                 $class = $this->createController($route->getController());
-                $class->action();
+                if (preg_match('#updatepost_action#', $request) || preg_match('#write#', $request)) {
+                    return $class->action();
+                } else
+                return $class();
             }
 
-            /**else {
-                throw new \Exception('No route matched.', 404);
-            }**/
-
+           /** if (!in_array($request, $this->routes)) {
+                throw new \Exception();
+            } **/
         }
     }
 }

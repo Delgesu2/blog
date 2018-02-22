@@ -10,7 +10,7 @@ namespace Framework\Controller;
 
 use Framework\Manager\BilletManager;
 
-class UpdateBilletController extends AbstractController
+class UpdateBilletController
 {
     private $billetManager;
 
@@ -20,11 +20,16 @@ class UpdateBilletController extends AbstractController
     }
 
     // Récupération du billet et modification dans la templates
-    public function action($id)
+    public function __invoke($id)
     {
         $billet_recup = $this->billetManager->recup_update($id);
-       // $update_billet = $this->billetManager->modif($id);
         require __DIR__ . './../../templates/update.php';
     }
 
+    // Update in DB
+    public function action()
+    {
+        $update_billet = $this->billetManager->modif();
+        header('Location:/admin/list');
+    }
 }

@@ -10,14 +10,14 @@ namespace Framework\Controller;
 
 class HomeController //extends AbstractController
 {
-    public function action()
+
+    public function __invoke()
     {
         require __DIR__ . './../../templates/accueil.php';
     }
 
-  /**  public function __invoke()
+    /**public function action()
     {
-        echo $this->getTwig()->render("accueil.html.twig");
-        var_dump($this->getTwig()->render("accueil.html.twig"));
-    }**/
+        require __DIR__ . './../../templates/accueil.php';
+    } **/
 }

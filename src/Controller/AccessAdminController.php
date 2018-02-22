@@ -20,7 +20,7 @@ class AccessAdminController
         $this->userManager = new UserManager();
     }
 
-    public function action()
+    public function __invoke()
     {
         $arrayData=$this->userManager->getUser();
 

@@ -63,14 +63,16 @@ class BilletManager extends DBFactory {
     }
 
     // Modifier billet
-    public function modif($id)
+    public function modif()
     {
         $req = $this->connect()->prepare("UPDATE post SET titre = :titre, chapo = :chapo, contenu = :contenu,
                                                    datemaj = NOW() WHERE id = :id ") ;
-        $req->execute([':id' => $id]);
-
-        // Hydrater l'objet Post
-        return $this->buildDomain($req->fetch());
+        $req->execute(array(
+            'titre' => $_POST['titre'],
+            'chapo' => $_POST['chapo'],
+            'contenu' => $_POST['contenu'],
+            'id' => $_POST['id']
+        ));
     }
 
     // Effacer un billet

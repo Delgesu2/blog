@@ -8,16 +8,28 @@
 
 namespace Framework\Controller;
 
-//use Framework\Modele\Post;
 use Framework\Manager\BilletManager;
-use Framework\Form\CreatePost;
 
-class CreateBilletController extends AbstractController
+class CreateBilletController
 {
+    private $create;
 
+    public function __construct()
+    {
+        $this->create = new BilletManager();
+    }
 
-    public function action()
+    // Appel du template de formulaire
+    public function __invoke()
     {
        require __DIR__ . './../../templates/create.php';
     }
+
+    // Create in DB
+    public function action()
+    {
+        $this->create->create();
+        header('Location:/admin/list');
+    }
+
 }

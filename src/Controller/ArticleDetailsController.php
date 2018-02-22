@@ -22,7 +22,7 @@ class ArticleDetailsController
     }
 
     // Affiche les détails sur le billet dont l'id en BDD est stocké dans $id
-    public function action($id)
+    public function __invoke($id)
     {
         $billet = $this->billet->infosBillet($id);
         require __DIR__ . './../../templates/billet.php';

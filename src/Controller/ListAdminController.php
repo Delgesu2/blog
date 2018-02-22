@@ -10,9 +10,7 @@ namespace Framework\Controller;
 
 use Framework\Manager\BilletManager;
 
-//require_once '../../templates/admin_list.html.twig';
-
-class ListAdminController extends AbstractController
+class ListAdminController
 {
     private $admin_list;
 
@@ -22,10 +20,9 @@ class ListAdminController extends AbstractController
     }
 
     // Affiche la liste des billets du blog version admin
-    public function action()
+    public function __invoke()
     {
         $billets_admin = $this->admin_list->getList();
-       // $vue = new Vue("Read");
         require __DIR__ . './../../templates/list.php';
     }
 }

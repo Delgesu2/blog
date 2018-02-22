@@ -20,7 +20,7 @@ class AdminChangeAction
         $this->user = new UserManager();
     }
 
-    public function action()
+    public function __invoke()
     {
         $data=$this->user->getUser();
 

@@ -49,7 +49,7 @@ return [
     'write'          => [
         'path'         =>'/admin/write',
         'method'       => 'GET',
-        'controller'   => \Framework\Controller\WriteController::class
+        'controller'   => \Framework\Controller\CreateBilletController::class
     ],
 
     'delete_billet'  => [
@@ -69,7 +69,7 @@ return [
     'update_billet_action' => [
         'path'         => '/admin/updatepost_action',
         'method'       => 'GET',
-        'controller'   => \Framework\Controller\UpdateBilletController::class
+        'controller'   => \Framework\Controller\UpdateBilletController::class,
     ],
 
     'update_user'   => [

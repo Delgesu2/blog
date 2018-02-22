@@ -9,8 +9,9 @@
 namespace Framework\Controller;
 
 use Framework\Manager\BilletManager;
+use Framework\Controller\ListAdminController;
 
-class DeleteBilletController extends AbstractController
+class DeleteBilletController
 {
     private $delete_billet;
 
@@ -20,9 +21,9 @@ class DeleteBilletController extends AbstractController
     }
 
 
-    public function action($id)
+    public function __invoke($id)
     {
         $suppress_billet = $this->delete_billet->erase_billet($id);
-        require __DIR__ . './../../templates/list.php';
+        header('Location:/admin/list');
     }
 }
