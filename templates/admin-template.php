@@ -26,14 +26,14 @@
                 <div class="col-sm-2 menu_admin">
                     <div class="page-header">
                         <h1 class="titre">Panneau d'administration</h1>
-                        <h3>Bienvenu <?php echo $_SESSION['identifiant']; ?></h3>
+                        <h3 class="namesession">Bienvenu <?php echo $_SESSION['identifiant']; ?></h3>
                     </div>
                     <nav>
                         <ul class="nav nav-pills nav-stacked">
-                            <li><a href='/admin/list'>Liste des messages</a></li>
-                            <li><a href='/admin/create'>Créer</a></li>
-                            <li><a href='/admin/updateuser'>Identifiant et mot de passe</a></li>
-                            <li><a href='/admin/exit'>Sortir</a></li>
+                            <li><a href='/admin/list' class="names">Liste des messages</a></li>
+                            <li><a href='/admin/create' class="names">Créer</a></li>
+                            <li><a href='/admin/updateuser' class="names">Identifiant et mot de passe</a></li>
+                            <li><a href='/admin/exit' class="names">Sortir</a></li>
                         </ul>
                     </nav>
                 </div>

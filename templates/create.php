@@ -22,7 +22,7 @@ ob_start();
         <textarea name="contenu" id="summernote"></textarea>
         </div>
 
-        <input type="submit">
+        <button type="submit">Envoyer</button>
     </form>
 </div>
 
@@ -30,7 +30,7 @@ ob_start();
     <script>
         $(document).ready(function() {
             $('#summernote').summernote({
-                height: 450
+                height: 300
                             });
         });
     </script>

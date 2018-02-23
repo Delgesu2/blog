@@ -4,12 +4,14 @@ ob_start();
 ?>
 
     <div class='row text-center'>
-		 	<h2>Liste des billets<br/></h2>
+		 	<h2 class="soustitre">Liste des billets<br/></h2>
 		 	<h3>Pour lire un message au complet, cliquer sur son titre.</h3>	 	
     </div>
 
-    <!-- Boucle affichage : récupération des lignes de la table post-->
-		<?php foreach ($billets as $post): ?>
+
+<?php if (!empty($billets)) {
+       // Boucle affichage : récupération des lignes de la table post
+		     foreach ($billets as $post): ?>
 			    <div class = 'row'>
 					<div class = 'col-xs-12'>	
 						<div class='panel panel-default'>
@@ -29,7 +31,10 @@ ob_start();
                         </div>
 					</div>
 				  </div>
-		<?php endforeach; ?>
+		<?php endforeach;
+        } else
+            echo '<h3>Pas de billet à lire</h3>';
+        ?>
     <!-- Fin boucle -->
 
 <?php

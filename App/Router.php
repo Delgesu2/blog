@@ -38,6 +38,10 @@ class Router
     {
         foreach ($this->routes as $route) {
 
+           /** if (!in_array($request, $this->routes)) {
+                throw new \Exception();
+            } **/
+
             if (preg_match($route->getRequirements(), $request, $id)) {
                 $new_id = trim($id[0], '/');
                 $regex = '#:id#';
@@ -55,12 +59,8 @@ class Router
                 if (preg_match('#updatepost_action#', $request) || preg_match('#write#', $request)) {
                     return $class->action();
                 } else
-                return $class();
+                    return $class();
             }
-
-           /** if (!in_array($request, $this->routes)) {
-                throw new \Exception();
-            } **/
         }
     }
 }

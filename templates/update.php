@@ -35,7 +35,7 @@ ob_start();
     <script>
 $(document).ready(function() {
     $('#summernote').summernote({
-                height: 450
+                height: 300
                             });
         });
     </script>

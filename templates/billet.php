@@ -19,7 +19,7 @@ ob_start();
 						 			</div>
 						 		</div>
 					 		</div> 	
-					 	    	<div class='panel-body'><div class='chapo'>" . $billet->getContenu() . "		
+					 	    	<div class='panel-body'><div class='contenu'>" . $billet->getContenu() . "		
 					 	    </div>
 						</div>
 					</div>

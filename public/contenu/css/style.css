@@ -1,9 +1,16 @@
 /* Page d'accueil */
 @font-face
 {
-	font-family: 'HomemadeApple';
-	src: url('../fonts/HomemadeApple.ttf') format('truetype');
+	font-family: 'Bauhaus';
+	src: url('../fonts/MandalaBold.otf');
 }
+
+@font-face
+{
+	font-family: 'Bauhaus_Light';
+	src: url('../fonts/MandalaRegular.otf');
+}
+
 
 @font-face
 {
@@ -25,13 +32,19 @@ body
 
 .jumbotron
 {
-	background-image: url('../images/panorama.jpg');
-	color: white;
+	background-image: url('../images/banniere.jpg');
+	color: black;
+}
+
+.subtitle
+{
+	font-family: Bauhaus, Arial, serif;
+	color: #cc0000;
 }
 
 .jumbotitre
  {
- 	font-family: 'HomemadeApple', Arial, serif;
+ 	font-family: 'Bauhaus', Arial, serif;
  }
 
 .btnjumbo
@@ -39,6 +52,10 @@ body
 	margin-bottom: -80px;
 }
 
+.soustitre
+{
+	font-family: Bauhaus_Light, Arial, serif;
+}
 .chapolanding
 {
 	margin-bottom: 30px;
@@ -46,7 +63,7 @@ body
 
 .fond
 {
-	background-color: rgba(166, 130, 116, 0.8);
+	background-color: black;
 }
 
 .table
@@ -56,7 +73,12 @@ body
 
 .fondThumb
 {
-	background-color: rgba(166, 130, 116, 0.8);	
+	background-color: black;
+}
+
+.thumbwrite
+{
+	color: white;
 }
 
 .list-group-item
@@ -64,19 +86,12 @@ body
 	padding: 5px;
 }
 
-.linkedin
-{
-	height: 100%;
-
-	max-width: 30px;
-}
-
 #flip, #flip2, #flip3
 {
 	width: 180px;
 	margin: 5px;
 	padding: 10px 0 10px 20px;
-	background-color: rgba(166, 130, 116, 0.8);
+	background-color: black;
     color: #FFF;
 	-webkit-border-radius: 20px;
 	-moz-border-radius: 20px;
@@ -88,7 +103,7 @@ body
 #flip:hover, #flip2:hover, #flip3:hover
 {
     width: 200px;
-	background-color: #EC971F;
+	background-color: #cc0000;
 }
 
 #panel, #panel2, #panel3
@@ -106,12 +121,15 @@ form
 /* Public liste posts */
 .titrepannel
 {
-	background-color: rgba(166, 130, 116, 0.8);
+	background-color: black;
+	color: #cc0000;
+	font-family: Bauhaus_Light, Arial, serif;
 }
 
 .titrepost
 {
 	font-size: 1.4em;
+	color: #cc0000
 }
 
 .titredate
@@ -121,7 +139,6 @@ form
 
 .chapo
 {
-	font-style: italic;
 	font-size: 1.2em;
 }
 

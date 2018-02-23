@@ -20,13 +20,53 @@
     <body>
     <div class='container'>
 
+        <!-- Header -->
     <div class="jumbotron">
         <h1 class="jumbotitre">Carnet de bord</h1>
-        <p>Site personnel de Xavier Coutant</p>
+        <p class="subtitle">Xavier Coutant - D&#233;veloppeur PHP/Symfony Junior</p>
         <div class="btn-group btnjumbo">
-            <a class="btn btn-warning fond" href="/">Accueil</a> <a class="btn btn-warning fond" href="/post/list">Blog</a>
+            <a class="btn btn-danger fond" href="/">Accueil</a>
+            <a class="btn btn-danger fond" href="/post/list">Blog</a>
+            <a class="btn btn-danger fond" href="/contact">Contact</a>
+            <!-- Accès fenêtre modale -->
+            <a class="btn btn-danger fond" role="button" data-toggle="modal" data-target="#myModal" href="">Acc&#232;s admin</a>
         </div>
     </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h2 class="modal-title textital modaltitre">Veuillez entrer l'identifiant et le mot de passe</h2>
+                    </div>
+
+                    <form action="/admin" method="post">
+
+                        <div class="modal-body">
+
+                            <label for="identifiant">Identifiant :</label>
+                            <input type="text" name="identifiant" id="identifiant">
+
+
+
+                            <label for="mdp">Mot de passe :</label>
+                            <input type="password" name="mdp" id="mdp">
+
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="submit" name="envoye" value="Valider">Valider</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+        <!-- Fin modal -->
 
         <?= $content ?>
         </div>
