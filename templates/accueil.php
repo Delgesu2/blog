@@ -6,7 +6,7 @@ ob_start();
 		<div class="row">
 
 			<!-- texte central -->
-			<div class="col-sm-10 col-xs-7">
+			<div class="col-md-10 col-sm-10 col-xs-8">
                 <div class="row text-center soustitre">
                     <h2>D&#233;veloppeur PHP/Symfony junior</h2>
                 </div>
@@ -84,21 +84,20 @@ ob_start();
 		<!-- fin texte central -->
 
 		<!-- thumbnail -->
-			<div class="col-sm-2 col-xs-5">
+			<div class="col-md-2 col-sm-2 col-xs-4">
 				<div class="thumbnail fondThumb">
 					<img src="/contenu/images/portrait2013.jpg" alt="Mon portrait" title="portrait de Xavier Coutant">
 					<div class="caption">
 						<h3 class="thumbwrite">&#192; mon propos...</h3>
-						<p class="thumbwrite">Plus d'informations avec les liens suivants</p>
+
 						<div class="list-group">
                             <a href="contenu/CVBauhaus.pdf" title="t&#233;l&#233;charger mon CV" class="list-group-item"><span class="glyphicon glyphicon-download"></span><strong> Mon CV</strong></a>
 							<a href="https://www.linkedin.com/in/xavier-coutant-5b273113b/" class="list-group-item">
                               <img class="linkedin" src="https://s2.qwant.com/thumbr/0x0/c/3/e9e11e47672c8a8e6c5ebd97e4ce39/b_1_q_0_p_0.jpg?u=http%3A%2F%2Fblogs.kenan-flagler.unc.edu%2Fwp-content%2Fuploads%2F2013%2F10%2FLinkedIn-Logo-2C.png&q=0&b=1&p=0&a=1"
-                                   alt="LinkedIn"
-                                         title="ma page LinkedIn" ></a>
+                                   alt="LinkedIn" title="ma page LinkedIn" ></a>
 						</div>
                     </div>
-				</div>				
+				</div>
 			</div>
 		<!-- fin thumbnail -->
 		</div>
@@ -109,15 +108,11 @@ ob_start();
             $("#flip").click(function(){
                 $("#panel").slideToggle("slow");
             });
-        });
 
-        $(document).ready(function(){
             $("#flip2").click(function(){
                 $("#panel2").slideToggle("slow");
             });
-        });
 
-        $(document).ready(function(){
             $("#flip3").click(function(){
                 $("#panel3").slideToggle("slow");
             });

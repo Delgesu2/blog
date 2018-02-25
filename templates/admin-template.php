@@ -27,7 +27,7 @@ if (isset($_SESSION['identifiant'])) {
 
     <div class="row">
 
-        <div class="col-sm-2 menu_admin">
+        <div class="col-sm-2 col-xs-12 menu_admin">
             <div class="page-header">
                 <h1 class="titre">Panneau d'administration</h1>
                 <h3 class="namesession">Bienvenu <?php echo $_SESSION['identifiant']; ?></h3>

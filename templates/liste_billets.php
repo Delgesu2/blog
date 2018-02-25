@@ -22,10 +22,10 @@ ob_start();
 						 			</div>
 						 			<div class='col-xs-4'>
 						 			 <h4 class='titredate'>Créé le : <?= $post->getDatecreation(); ?></h4>
-                                        <div class='badge badge primary'><?= $post->getDatemaj(); ?></div>
 						 			 </div>
 						 		</div>
-					 		</div> 	
+					 		</div>
+                            <div class='badge badge primary'><?= $post->getDatemaj(); ?></div>
 					 	    <div class='panel-body chapo'><?= $post->getChapo(); ?></div>
                             <div class='panel-body contenu'><?= $post->getContenu(); ?></div>
                         </div>

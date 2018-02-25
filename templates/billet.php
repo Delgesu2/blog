@@ -4,9 +4,7 @@ ob_start();
 ?>
 
 <?php
- // if ( $billet!=null) {
-
-  	echo "<div class = 'row'>
+    echo "<div class = 'row'>
 					<div class = 'col-xs-12'>	
 						<div class='panel panel-default'>
 							<div class='panel-heading'>
@@ -19,19 +17,21 @@ ob_start();
 						 			</div>
 						 		</div>
 					 		</div> 	
-					 	    	<div class='panel-body'><div class='contenu'>" . $billet->getContenu() . "		
-					 	    </div>
+					 	    	<div class='panel-body'>		
+					 	    	<div class='contenu'>" . $billet->getContenu() . "</div>
+						        </div>
 						</div>
 					</div>
-		 </div>";
+			</div>
+		 ";
 
-//  }
 
-  if ($billet->getDatemaj()!=NULL) {
-  	echo "<span class='badge badge-primary'>
+if ($billet->getDatemaj()!=NULL) {
+    echo "<span class='badge badge-primary'>
   				Derni&#232;re mise-&#224;-jour : " . $billet->getDatemaj()
-  		 . "</span>";
-  }
+        . "</span>";
+}
+
 
 $content = ob_get_clean();
 require ('public-template.php');

@@ -2,12 +2,12 @@
 ob_start();
 ?>
 
-<div class="col-sm-10">
+<div class="col-sm-10 col-xs-12">
     <h1 class="text-center">Liste des messages</h1>
     <h2 class="text-center">Modifier ou supprimer</h2>
 
     <div class="row">
-        <div class="col-sm-12 table-responsive">
+        <div class="col-sm-12 col-xs-12 table-responsive">
             <table class="table table-striped table-condesed">
                 <thead>
                     <tr>
