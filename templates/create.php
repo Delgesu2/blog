@@ -30,8 +30,19 @@ ob_start();
     <script>
         $(document).ready(function() {
             $('#summernote').summernote({
-                height: 300
-                            });
+                height: 300,
+                toolbar: [
+                    ['style', ['bold', 'italic', 'underline', 'clear']],
+                    ['font', ['strikethrough']],
+                    ['fontname', ['fontname']],
+                    ['fontsize', ['fontsize']],
+                    ['color', ['color']],
+                    ['para', ['ul', 'ol', 'paragraph']],
+                    ['height', ['height']],
+                    ['insert', ['link']],
+                    ['misc', ['fullscreen', 'codeview', 'undo', 'redo', 'help']]
+                ]
+            });
         });
     </script>
 

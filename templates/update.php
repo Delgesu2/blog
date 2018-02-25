@@ -31,14 +31,25 @@ ob_start();
 </div>
 
 
-    <!-- script éditeur -->
-    <script>
-$(document).ready(function() {
-    $('#summernote').summernote({
-                height: 300
-                            });
+<!-- script éditeur -->
+<script>
+    $(document).ready(function() {
+        $('#summernote').summernote({
+            height: 300,
+            toolbar: [
+                ['style', ['bold', 'italic', 'underline', 'clear']],
+                ['font', ['strikethrough']],
+                ['fontname', ['fontname']],
+                ['fontsize', ['fontsize']],
+                ['color', ['color']],
+                ['para', ['ul', 'ol', 'paragraph']],
+                ['height', ['height']],
+                ['insert', ['link']],
+                ['misc', ['fullscreen', 'codeview', 'undo', 'redo', 'help']]
+            ]
         });
-    </script>
+    });
+</script>
 
 <?php
 $content = ob_get_clean();

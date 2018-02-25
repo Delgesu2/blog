@@ -30,6 +30,11 @@ return [
         'controller' => \Framework\Controller\ContactController::class,
     ],
 
+    'envoi' => [
+        'path'      => '/contact/envoi',
+        'controller'=> \Framework\Controller\ContactController::class
+    ],
+
     'acces_admin' => [
         'path'       => '/admin',
         'controller' => \Framework\Controller\AccessAdminController::class

@@ -21,10 +21,12 @@ $mailer = new Swift_Mailer($transport);
 $message = (new Swift_Message('Nouveau message'))
     ->setFrom($_POST['email'])
     ->setTo('coutant.xavier@orange.fr')
-    ->setBody($_POST['sujet'])
+    ->setSubject($_POST['sujet'])
+    ->setBody($_POST['message'])
+    ->addPart($_POST['civilite'])
     ->addPart('nom' . $_POST['nom'])
     ->addPart('prenom' . $_POST['prenom'])
     ;
 
-echo "<p>Merci de m'avoir contacter. Je vous réponds le plus rapidement possible.</p> 
-<p>Veuillez cliquer <a href='blog.localhost'>sur ce lien</a> pour retourner à la page d'accueil.";
+echo "<p>Merci de m'avoir contacté. Je vous réponds le plus rapidement possible.</p> 
+<p>Veuillez cliquer <a href='/'>sur ce lien</a> pour retourner à la page d'accueil.";

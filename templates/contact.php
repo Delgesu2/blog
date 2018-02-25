@@ -9,7 +9,7 @@ ob_start();
 
 <div class="row panel4">
     <!-- Formulaire de contact -->
-    <form action="../App/mailer.php" method="post" class="col-xs-6">
+    <form action="/contact/envoi" method="post" class="col-xs-6">
         <legend>Envoyer un message</legend>
 
         <label for="civilit&#233;">Civilit&#233; : </label>
@@ -41,7 +41,7 @@ ob_start();
 
         <div class="form-group">
             <label for="sujet">Sujet :</label>
-            <input type="text" id="sujet" name="sujet" class="form-control" value="<?php echo (isset($_POST['sujet'])) ? $sujet : '' ?>" maxlenght="160"
+            <input type="text" id="sujet" name="sujet" class="form-control" maxlenght="160"
             />
         </div>
 
@@ -50,7 +50,7 @@ ob_start();
             <textarea id="message" type="textarea" name="message" class="form-control" rows="6" placeholder="Champ obligatoire" required /></textarea>
         </div>
 
-        <input type="submit" name="envoye" value="Envoyer" />
+        <button type="submit">Envoyer</button>
     </form>
     <!-- fin formulaire de contact -->
 </div>

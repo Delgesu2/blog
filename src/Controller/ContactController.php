@@ -16,4 +16,9 @@ class ContactController
     {
         require __DIR__ . './../../templates/contact.php';
     }
+
+    public function action()
+    {
+        require __DIR__ . './../../App/mailer.php';
+    }
 }

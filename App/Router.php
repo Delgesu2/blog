@@ -56,7 +56,8 @@ class Router
 
             elseif ($route->getPath() === $request) {
                 $class = $this->createController($route->getController());
-                if (preg_match('#updatepost_action#', $request) || preg_match('#write#', $request)) {
+                if (preg_match('#updatepost_action#', $request) || preg_match('#write#', $request) ||
+                    preg_match('#envoi#', $request)) {
                     return $class->action();
                 } else
                     return $class();

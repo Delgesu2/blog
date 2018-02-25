@@ -29,7 +29,7 @@
             <a class="btn btn-danger fond" href="/post/list">Blog</a>
             <a class="btn btn-danger fond" href="/contact">Contact</a>
             <!-- Accès fenêtre modale -->
-            <a class="btn btn-danger fond" role="button" data-toggle="modal" data-target="#myModal" href="">Acc&#232;s admin</a>
+            <a class="btn btn-danger fond" role="button" data-toggle="modal" data-target="#myModal" href="">Admin</a>
         </div>
     </div>
 

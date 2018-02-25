@@ -15,9 +15,4 @@ class HomeController //extends AbstractController
     {
         require __DIR__ . './../../templates/accueil.php';
     }
-
-    /**public function action()
-    {
-        require __DIR__ . './../../templates/accueil.php';
-    } **/
 }

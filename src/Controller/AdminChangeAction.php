@@ -38,7 +38,7 @@ class AdminChangeAction
                 //&& htmlspecialchars($_POST['ctrl_mdp'])==$data->getMdp()) {   //En cas de connerie.....
 
                 /* Verification que les champs soient renseignés */
-                if (!empty($_POST['nv_mdp']) && !empty($_POST['nv_ident'])) {
+                if (!empty (htmlspecialchars($_POST['nv_mdp'])) && !empty (htmlspecialchars($_POST['nv_ident']))) {
                     /* Verification validité nouveaux mdp avec regex */
                     if (preg_match($regex_mdp, $mdp)) {
 
