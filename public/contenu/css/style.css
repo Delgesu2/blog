@@ -1,4 +1,4 @@
-/* Page d'accueil */
+/* Character fonts */
 @font-face
 {
 	font-family: 'Bauhaus';
@@ -23,13 +23,14 @@ h3
 	font-size: 1.3em;
 }
 
-
+/* Page default */
 body
 {
 	font-family: 'UbuntuLight', Arial, serif;
 	background-color:whitesmoke ;
 }
 
+/* Header */
 .jumbotron
 {
 	background-image: url('../images/banniere.jpg');
@@ -47,23 +48,60 @@ body
  	font-family: 'Bauhaus', Arial, serif;
  }
 
-.btnjumbo
-{
-	margin-bottom: -80px;
-}
-
 .soustitre
 {
 	font-family: Bauhaus_Light, Arial, serif;
 }
+
+/* Navbar */
+.navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover
+{
+    color: white;
+    background-color: black;
+}
+
+.navbar-default .navbar-nav > li > a
+{
+    font-family: Bauhaus;
+    color: #cc0000;
+}
+
+.navbar-default .navbar-collapse, .navbar-default .navbar-form
+{
+    background-color: black;
+    border-color: black;
+}
+
+.container-fluid
+{
+    background-color: black;
+}
+
+.navbar-default
+{
+    background-color: black;
+    border-color: black;
+}
+
+.navbar
+{
+    width: 35%;
+}
+
+.navbar-default .navbar-toggle
+{
+    border-color: black;
+}
+
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+    background-color: whitesmoke;
+}
+/* End navbar */
+
+
 .chapolanding
 {
 	margin-bottom: 30px;
-}
-
-.fond
-{
-	background-color: black;
 }
 
 .table
@@ -71,6 +109,7 @@ body
 	background-color: white;
 }
 
+/* Thumbnail right side */
 .fondThumb
 {
 	background-color: black;
@@ -86,6 +125,7 @@ body
 	padding: 5px;
 }
 
+/* Panels landing page */
 #flip, #flip2, #flip3
 {
 	width: 180px;
@@ -112,13 +152,14 @@ body
 	margin-bottom: 30px;
 }
 
+/* Form */
 form
 {
 	padding-bottom: 40px;
 }
 
 
-/* Public liste posts */
+/* Public list posts */
 .titrepannel
 {
 	background-color: black;
@@ -142,7 +183,8 @@ form
 	font-size: 1.2em;
 }
 
-a    /* Liens dynamiques */
+/* dynamic links */
+a
 {
 	color: rgb(51, 51, 51);
 }
@@ -152,17 +194,15 @@ a:hover
 	text-decoration: none;
 }
 
-/* Public billet */
 
-
-
-/* Media querries */
+/* Media queries */
 @media screen and (max-width: 780px)
 {
-	.btnjumbo
+	/**.btnjumbo
 	{
 		margin-bottom: -45px;
-	}
+        position: fixed;
+	}*/
 
 	h2
 	{

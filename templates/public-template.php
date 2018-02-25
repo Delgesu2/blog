@@ -8,12 +8,13 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="../contenu/css/bootstrap.min.css" rel="stylesheet">
         <link rel="../contenu/css/bootstrap-theme.min.css" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href= "/contenu/css/style.css">
+
         <script
                 src="https://code.jquery.com/jquery-3.3.1.min.js"
                 integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
                 crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href= "/contenu/css/style.css">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     </head>
 
@@ -24,13 +25,34 @@
     <div class="jumbotron">
         <h1 class="jumbotitre">Carnet de bord</h1>
         <p class="subtitle">Xavier Coutant - D&#233;veloppeur PHP/Symfony Junior</p>
-        <div class="btn-group btnjumbo">
+        <!-- Navbar -->
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a href="/">Accueil</a></li>
+                        <li><a href="/post/list">Blog</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                        <li><a href="" role="button" data-toggle="modal" data-target="#myModal">Admin</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!--<div class="btn-group btnjumbo">
             <a class="btn btn-danger fond" href="/">Accueil</a>
             <a class="btn btn-danger fond" href="/post/list">Blog</a>
             <a class="btn btn-danger fond" href="/contact">Contact</a>
             <!-- Accès fenêtre modale -->
-            <a class="btn btn-danger fond" role="button" data-toggle="modal" data-target="#myModal" href="">Admin</a>
-        </div>
+        <!--    <a class="btn btn-danger fond" role="button" data-toggle="modal" data-target="#myModal" href="">Admin</a>
+        </div>-->
     </div>
 
         <!-- Modal -->
