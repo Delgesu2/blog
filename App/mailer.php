@@ -10,8 +10,8 @@ require_once '../vendor/autoload.php';
 
 // Create the Transport
 $transport = (new Swift_SmtpTransport('smtp.orange.fr', 25))
-    ->setUsername('coutant.xavier@orange.fr')
-    ->setPassword('marseille2')
+    ->setUsername('#######')
+    ->setPassword('######')
     ;
 
 // Create the Mailer
