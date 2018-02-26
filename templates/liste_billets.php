@@ -13,7 +13,7 @@ ob_start();
        // Boucle affichage : récupération des lignes de la table post
 		     foreach ($billets as $post): ?>
 			    <div class = 'row'>
-					<div class = 'col-xs-12'>	
+					<div class = 'col-xs-12'>
 						<div class='panel panel-default'>
 							<div class='panel-heading'>
 								<div class='row titrepannel'>

@@ -11,9 +11,9 @@ ob_start();
                     <h2>D&#233;veloppeur PHP/Symfony junior</h2>
                 </div>
                 <p class="chapo chapolanding">
-                    <em>D&#233;veloppeur PHP/Symfony op&#233;rationnel courant 2018. Actuellement en formation avec
+                    <em>Op&#233;rationnel courant 2018, je suis actuellement en formation avec
                         <a href="https://openclassrooms.com">OpenClassrooms</a>.
-                        D&#233;veloppeur curieux et aimant apprendre, particuli&#232;rement int&#233;ress&#233; par les Syst&#232;mes de Gestion de Base de Donn&#233;es.
+                        D&#233;veloppeur curieux et aimant apprendre, j'&#233;prouve un int&#233;r&#234;t pour les Syst&#232;mes de Gestion de Base de Donn&#233;es.
                     </em>
 				</p>
 
@@ -88,7 +88,7 @@ ob_start();
 				<div class="thumbnail fondThumb">
 					<img src="/contenu/images/portrait2013.jpg" alt="Mon portrait" title="portrait de Xavier Coutant">
 					<div class="caption">
-						<h3 class="thumbwrite">&#192; mon propos...</h3>
+						<h3 class="thumbwrite">&#192; mon propos</h3>
 
 						<div class="list-group">
                             <a href="contenu/CVBauhaus.pdf" title="t&#233;l&#233;charger mon CV" class="list-group-item"><span class="glyphicon glyphicon-download"></span><strong> Mon CV</strong></a>

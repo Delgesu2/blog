@@ -2,7 +2,7 @@
 ob_start();
 ?>
 
-<div class="col-sm-10">
+<div class="col-sm-10 col-xs-12">
     <h1 class="text-center">Modifier un post</h1>
 
    

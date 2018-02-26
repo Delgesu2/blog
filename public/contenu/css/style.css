@@ -162,6 +162,12 @@ form
 	font-size: 1.2em;
 }
 
+/* Solo post */
+.badgesolo
+{
+	margin-bottom: 20px;
+}
+
 a    /* Dynamic links */
 {
 	color: rgb(51, 51, 51);

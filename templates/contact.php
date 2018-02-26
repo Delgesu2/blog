@@ -9,7 +9,7 @@ ob_start();
 
 <div class="row panel4">
     <!-- Formulaire de contact -->
-    <form action="/contact/envoi" method="post" class="col-xs-6">
+    <form action="/contact/envoi" method="post" class="col-md-10 col-sm-10 col-xs-12">
         <legend>Envoyer un message</legend>
 
         <label for="civilit&#233;">Civilit&#233; : </label>
