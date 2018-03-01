@@ -35,6 +35,11 @@ return [
         'controller'=> \Framework\Controller\ContactController::class
     ],
 
+    'messagesent' => [
+        'path'      => '/contact/sent',
+        'controller'=> \Framework\Controller\MessageSentController::class
+    ],
+
     'acces_admin' => [
         'path'       => '/admin',
         'controller' => \Framework\Controller\AccessAdminController::class

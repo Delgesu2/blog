@@ -60,13 +60,16 @@
 
                         <div class="modal-body">
 
-                            <label for="identifiant">Identifiant :</label>
-                            <input type="text" name="identifiant" id="identifiant">
-
-
-
-                            <label for="mdp">Mot de passe :</label>
-                            <input type="password" name="mdp" id="mdp">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-6">
+                                    <label for="identifiant">Identifiant :</label>
+                                    <input type="text" name="identifiant" id="identifiant">
+                                </div>
+                                <div class="col-xs-12 col-sm-6">
+                                    <label for="mdp">Mot de passe :</label>
+                                    <input type="password" name="mdp" id="mdp">
+                                </div>
+                            </div>
 
                         </div>
 

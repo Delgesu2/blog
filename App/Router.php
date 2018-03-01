@@ -13,6 +13,7 @@ namespace App;
 class Router
 {
     private $routes = []; // Liste des routes dans un tableau
+    private $matches = 0;
 
     public function __construct()
     {
@@ -34,13 +35,16 @@ class Router
         return new $class();
     }
 
+    public function match(string $url, string $route)
+    {
+        if ($url !== $route) {
+            $this->matches++;
+        }
+    }
+
     public function handleRequest($request)
     {
         foreach ($this->routes as $route) {
-
-           /** if (!in_array($request, $this->routes)) {
-                throw new \Exception();
-            } **/
 
             if (preg_match($route->getRequirements(), $request, $id)) {
                 $new_id = trim($id[0], '/');
@@ -62,6 +66,17 @@ class Router
                 } else
                     return $class();
             }
+
+
+            if ($this->getMatches() == count($this->routes) || $this->getMatches() > count($this->routes)) {
+                throw new \Exception(sprintf('Route not matched'));
+            }
         }
     }
+
+    public function getMatches()
+    {
+        return $this->matches;
+    }
+
 }

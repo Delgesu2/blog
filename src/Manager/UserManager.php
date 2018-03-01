@@ -17,7 +17,7 @@ class UserManager extends DBFactory {
 
     // Récupérer données utilisateur
     public function getUser() {
-        $req = $this->connect()->prepare("SELECT id, identifiant, mdp, courriel FROM user WHERE id=1");
+        $req = $this->connect()->prepare("SELECT id, identifiant, mdp, courriel FROM user WHERE id=1") ;
         $req->execute();
         $data = $req->fetch();
 
