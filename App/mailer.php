@@ -9,7 +9,7 @@
 require_once '../vendor/autoload.php';
 
 // Create the Transport
-$transport = (new Swift_SmtpTransport('smtp.orange.fr', 25))
+$transport = (new Swift_SmtpTransport('######', 25))
     ->setUsername('#######')
     ->setPassword('######')
     ;
@@ -20,8 +20,8 @@ $mailer = new Swift_Mailer($transport);
 // Create a message
 $data = 'Nouveau message de: ' . $_POST['prenom'] . ' ' . $_POST['nom'] . '<p>' . $_POST['message'] . '</p>';
 $message = (new Swift_Message('Nouveau message'))
-    ->setFrom(['xavierus70@hotmail.com' => 'Mon site-blog'])
-    ->setTo('coutant.xavier@orange.fr')
+    ->setFrom(['#######' => 'Mon site-blog'])
+    ->setTo('########')
     ->setSubject($_POST['sujet'])
     ->setBody($data, 'text/html');
 
