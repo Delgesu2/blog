@@ -19,22 +19,25 @@ class ContactController
 
     public function action()
     {
+        // Read data array
+        $data = require __DIR__ . './../../config/mailer.php';
+
         // Create the Transport
-        $transport = (new \Swift_SmtpTransport('smtp.orange.fr', 25))
-            ->setUsername('coutant.xavier@orange.fr')
-            ->setPassword('marseille2')
+        $transport = (new \Swift_SmtpTransport($data['smtp'], 25))
+            ->setUsername($data['username'])
+            ->setPassword($data['password'])
         ;
 
 // Create the Mailer
         $mailer = new \Swift_Mailer($transport);
 
 // Create a message
-        $data = 'Nouveau message de: ' . $_POST['prenom'] . ' ' . $_POST['nom'] . '<p>' . $_POST['message'] . '</p>';
+        $contact = 'Nouveau message de: ' . $_POST['prenom'] . ' ' . $_POST['nom'] . '<p>' . $_POST['message'] . '</p>';
         $message = (new \Swift_Message('Nouveau message'))
-            ->setFrom(['xavierus70@hotmail.com' => 'Mon site-blog'])
-            ->setTo('coutant.xavier@orange.fr')
+            ->setFrom([$data['from'] => 'Mon site-blog'])
+            ->setTo($data['to'])
             ->setSubject($_POST['sujet'])
-            ->setBody($data, 'text/html');
+            ->setBody($contact, 'text/html');
 
 // Send the message
         $result = $mailer->send($message);

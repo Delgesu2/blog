@@ -17,7 +17,7 @@
         <div class="raw">
             <div class="alert alert-success" role="alert">
                     Merci de m'avoir contacté. Je vous réponds le plus rapidement possible.
-                Vous allez être redirigé automatiquement vers la page d'accueil dans 3 secondes.
+                Vous allez être redirigé automatiquement vers la page d'accueil dans 5 secondes.
                 Si vous n'êtes pas redirigé, cliquez <strong><a href='/'>ici</a></strong>.
                 </div>
         </div>
