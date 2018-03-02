@@ -35,13 +35,6 @@ class Router
         return new $class();
     }
 
-    public function match(string $url, string $route)
-    {
-        if ($url !== $route) {
-            $this->matches++;
-        }
-    }
-
     public function handleRequest($request)
     {
         foreach ($this->routes as $route) {
@@ -61,14 +54,14 @@ class Router
             elseif ($route->getPath() === $request) {
                 $class = $this->createController($route->getController());
                 if (preg_match('#updatepost_action#', $request) || preg_match('#write#', $request) ||
-                    preg_match('#envoi#', $request)) {
+                    preg_match('#envoi#', $request) || preg_match('#check#', $request)) {
                     return $class->action();
                 } else
                     return $class();
             }
 
 
-            if ($this->getMatches() == count($this->routes) || $this->getMatches() > count($this->routes)) {
+            elseif ($this->getMatches() == count($this->routes) || $this->getMatches() > count($this->routes)) {
                 throw new \Exception(sprintf('Route not matched'));
             }
         }
@@ -77,6 +70,13 @@ class Router
     public function getMatches()
     {
         return $this->matches;
+    }
+
+    public function match(string $request, string $route)
+    {
+        if ($request !== $route) {
+            $this->matches++;
+        }
     }
 
 }

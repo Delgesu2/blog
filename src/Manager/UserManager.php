@@ -8,8 +8,8 @@
  */
 
 namespace Framework\Manager;
-use App\DBFactory;
-use Framework\Modele\User;
+        use App\DBFactory;
+        use Framework\Modele\User;
 
 class UserManager extends DBFactory {
 

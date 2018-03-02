@@ -33,10 +33,12 @@ class AccessAdminController
                 // Go listadmin page
                 header('Location:/admin/list');
             } else {
-                echo "Au moins 1 des deux champs est faux. Recommencez.";
+                header( "refresh:3;url=/" );
+                echo "Au moins 1 des deux champs est faux. Retour à la <a href='/'>page d'accueil</a> dans 3 secondes.";
             }
         } else {
-            echo "Les 2 champs doivent être complétés.";
+            header( "refresh:3;url=/" );
+            echo "Les 2 champs doivent être complétés. Retour à la <a href='/'>page d'accueil</a> dans 3 secondes.";
         }
     }
 }

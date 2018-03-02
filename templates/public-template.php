@@ -63,11 +63,11 @@
                             <div class="row">
                                 <div class="col-xs-12 col-sm-6">
                                     <label for="identifiant">Identifiant :</label>
-                                    <input type="text" name="identifiant" id="identifiant">
+                                    <input type="text" name="identifiant" id="identifiant" required>
                                 </div>
                                 <div class="col-xs-12 col-sm-6">
                                     <label for="mdp">Mot de passe :</label>
-                                    <input type="password" name="mdp" id="mdp">
+                                    <input type="password" name="mdp" id="mdp" required>
                                 </div>
                             </div>
 
@@ -75,7 +75,8 @@
 
                         <div class="modal-footer">
                             <button type="submit" name="envoye" value="Valider">Valider</button>
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button> </br>
+                            <p class="oubli">Mot de passe oubli&#233; ? <a href="/admin/forget" class="ici">Cliquer ici</a> .</p>
                         </div>
 
                     </form>

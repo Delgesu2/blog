@@ -38,7 +38,8 @@ class AdminChangeAction
                 //&& htmlspecialchars($_POST['ctrl_mdp'])==$data->getMdp()) {   //En cas de connerie.....
 
                 /* Verification que les champs soient renseignés */
-                if (!empty (htmlspecialchars($_POST['nv_mdp'])) && !empty (htmlspecialchars($_POST['nv_ident']))) {
+                if (!empty (htmlspecialchars($_POST['nv_mdp'])) && !empty (htmlspecialchars($_POST['nv_ident']))
+                     && !empty(htmlspecialchars($_POST['courriel']))) {
                     /* Verification validité nouveaux mdp avec regex */
                     if (preg_match($regex_mdp, $mdp)) {
 
@@ -56,7 +57,7 @@ class AdminChangeAction
                 }
 
                 else {
-                        echo "Les deux champs doivent être renseignés.";
+                        echo "Les trois champs doivent être renseignés.";
                      }
                 }
 

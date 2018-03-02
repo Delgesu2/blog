@@ -21,3 +21,14 @@
 {
 	color: #cc0000;
 }
+
+/* Media querries */
+@media screen and (max-width: 780px)
+{
+	.menu_admin
+	{
+		min-height: 1vh;
+		border-right: none;
+		border-bottom: 6px groove darkgreen;
+	}
+}

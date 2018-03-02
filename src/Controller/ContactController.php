@@ -42,10 +42,6 @@ class ContactController
 // Send the message
         $result = $mailer->send($message);
 
-        /**echo "<p>Merci de m'avoir contacté. Je vous réponds le plus rapidement possible.</p>
-<p>Veuillez cliquer <a href='/'>sur ce lien</a> pour retourner à la page d'accueil.";
-**/
-
 // Redirection
          header('Location:/contact/sent');
     }

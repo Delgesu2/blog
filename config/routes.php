@@ -45,6 +45,16 @@ return [
         'controller' => \Framework\Controller\AccessAdminController::class
     ],
 
+    'admin_forget'  => [
+        'path'         => '/admin/forget',
+        'controller'   => \Framework\Controller\AccessAdminForgetController::class
+    ],
+
+    'admin_forget_check' => [
+        'path'         => '/admin/forget/check',
+        'controller'   => \Framework\Controller\AccessAdminForgetController::class
+    ],
+
     'admin_list'    => [
         'path'         => '/admin/list',
         'controller'   => \Framework\Controller\ListAdminController::class

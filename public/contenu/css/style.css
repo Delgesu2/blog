@@ -25,6 +25,11 @@ body
     background-color:whitesmoke ;
 }
 
+.panel, .alert
+{
+	margin-top: 2em;
+}
+
 /* Header */
 h3
 {
@@ -71,6 +76,16 @@ h3
 }
 /* End menu */
 
+/* Modal */
+.oubli
+{
+	margin-top: 1em;
+}
+
+.ici
+{
+    color: red;
+}
 
 .chapolanding
 {
@@ -81,6 +96,12 @@ h3
 .table
 {
 	background-color: white;
+}
+
+.annuler
+{
+	margin-left: 1em;
+	color: red;
 }
 
 /* Righ frame */

@@ -1,5 +1,5 @@
 <?php
-$title = 'Xavier COUTANT - Blog';
+$title = 'Xavier COUTANT - Contact';
 ob_start();
 ?>
 
@@ -35,8 +35,7 @@ ob_start();
 
         <div class="form-group">
             <label for="email">Courriel :</label>
-            <input id="email" type="email" name="email" class="form-control" placeholder="Champ obligatoire"
-                   required />
+            <input id="email" type="email" name="email" class="form-control" placeholder="Champ obligatoire" required />
         </div>
 
         <div class="form-group">
