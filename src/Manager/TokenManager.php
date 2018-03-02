@@ -13,10 +13,8 @@ class TokenManager extends DBFactory
     public function createToken($token)
     {
         $req = $this->connect()->prepare("INSERT INTO token(token)
-		                                 VALUES (:token) WHERE id=1");
-        $req->execute(array(
-            'token' => $_POST['token']
-        ));
+		                                 VALUES (:token)");
+        $req->execute([':token' => $token]);
     }
 
     // Read token
@@ -31,7 +29,7 @@ class TokenManager extends DBFactory
     // Delete token
     public function delToken()
     {
-        $req = $this->connect()->prepare("DELETE FROM token WHERE id=1");
+        $req = $this->connect()->prepare("DELETE FROM token");
 		$req = execute();
 	}
 

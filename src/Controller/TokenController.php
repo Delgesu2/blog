@@ -6,8 +6,6 @@ use Framework\Manager\TokenManager;
 
 class TokenController
 {
-
-    private $token;
     private $tokendb;
 
 
@@ -17,15 +15,15 @@ class TokenController
         $this->tokendb = new TokenManager;
     }
 
-    public function __invoke($token)
+    public function __invoke()
     {
         // Generate token
         $token = uniqid(rand(10, 99), true);
 
-        // Insert token in database
-        $this->tokendb->createToken($token);
 
-        // Send token with Swiftmailer
+        // Send token with Swiftmailer //
+
+        // Get mailer informations
         $data = require __DIR__ . './../../config/mailer.php';
 
         // Create the Transport
@@ -38,8 +36,9 @@ class TokenController
         $mailer = new \Swift_Mailer($transport);
 
         // Create a message
-        $contact = 'Nouveau message du blog: le lien suivant vous permettra de réinitialiser votre mot de passe:' . '<a
-			href="blog.localhost/token? . echo $token . ">' . 'Cliquez ici !' . '</a>';
+        $contact = 'Nouveau message du blog: le lien suivant vous permettra de réinitialiser votre mot de passe:' . '
+        <a href="http://blog.localhost/token?' . $token . '">Cliquez ici !</a></br>
+        <p>Attention: lien valable pendant 15 minutes.</p>';
         $message = (new \Swift_Message('Nouveau message'))
             ->setFrom([$data['from'] => 'Mon site-blog'])
             ->setTo($data['to'])
@@ -48,5 +47,11 @@ class TokenController
 
         // Send the message
         $result = $mailer->send($message);
+
+        // Insert token in database
+           $this->tokendb->createToken($token);
+
+           header("refresh:3;url=/");
+           echo 'Courriel pour réinitialiser mot de passe envoyé. Redirection automatique vers l\'accueil.';
     }
 }

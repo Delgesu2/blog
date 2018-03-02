@@ -55,6 +55,11 @@ return [
         'controller'   => \Framework\Controller\AccessAdminForgetController::class
     ],
 
+    'admin_forget_token' => [
+        'path'         => '/admin/forget/token',
+        'controller'   => \Framework\Controller\TokenController::class
+    ],
+
     'admin_list'    => [
         'path'         => '/admin/list',
         'controller'   => \Framework\Controller\ListAdminController::class
