@@ -31,11 +31,10 @@ class AccessAdminForgetController
         /** Le champ est-il plein ? */
         if (!empty($_POST['email'])) {
             if (($_POST['email']) == $arrayData->getCourriel()) {
-                    header("refresh:3;url=/admin/forget/token");
-                    echo 'Courriel de réinitialisation du mot de passe envoyé. Retour page d\'accueil.';
+                header('Location:/admin/forget/token');
                 } else {
-                header("refresh:3;url=/admin/forget");
-                echo 'L\'adresse n\'est pas celle de l\'administrateur. Retour automatique vers contrôle.';
+                    header("refresh:3;url=/admin/forget");
+                    echo 'L\'adresse n\'est pas celle de l\'administrateur. Retour automatique vers contrôle.';
             }
         } else {
             header("refresh:3;url=/admin/forget");

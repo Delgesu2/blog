@@ -39,6 +39,7 @@ class Router
     {
         foreach ($this->routes as $route) {
 
+            //  if /id detected
             if (preg_match($route->getRequirements(), $request, $id)) {
                 $new_id = trim($id[0], '/');
                 $regex = '#:id#';
@@ -51,6 +52,18 @@ class Router
                 }
             }
 
+            // if ? detected
+            elseif (preg_match('#\?#', $request)) {
+                $route->setPath($request);
+                $route->setController('\Framework\Controller\TokenPasswordController');
+
+                if($route->getPath() === $request) {
+                    $class = $this->createController($route->getController());
+                    return $class();
+                }
+            }
+
+            // regular path
             elseif ($route->getPath() === $request) {
                 $class = $this->createController($route->getController());
                 if (preg_match('#updatepost_action#', $request) || preg_match('#write#', $request) ||

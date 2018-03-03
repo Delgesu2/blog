@@ -43,6 +43,14 @@ class Route
     }
 
     /**
+     * @param Route $path
+     */
+    public function setPath($path)
+    {
+        $this->path = $path;
+    }
+
+    /**
      * @return string
      */
     public function getController()
@@ -51,10 +59,11 @@ class Route
     }
 
     /**
-     * @param Route $path
+     * @param Route $controller
      */
-    public function setPath($path)
+    public function setController($controller)
     {
-        $this->path = $path;
+        $this->controller = $controller;
     }
+
 }

@@ -3,7 +3,7 @@
 namespace Framework\Manager;
 
 use App\DBFactory;
-use Framework\Modele\User;
+use Framework\Modele\Token;
 
 class TokenManager extends DBFactory
 {
@@ -12,15 +12,17 @@ class TokenManager extends DBFactory
     // Create token
     public function createToken($token)
     {
-        $req = $this->connect()->prepare("INSERT INTO token(token)
-		                                 VALUES (:token)");
+        $req = $this->connect()->prepare("START TRANSACTION;
+        DELETE FROM token;
+        INSERT INTO token(token) VALUES (:token);
+        COMMIT;");
         $req->execute([':token' => $token]);
     }
 
     // Read token
-    public function getToken()
+    public function readToken()
     {
-        $req = $this->connect()->prepare("SELECT token FROM token WHERE id=1");
+        $req = $this->connect()->prepare("SELECT token FROM token");
         $req->execute();
 
         return $this->buildDomain($req->fetch());
