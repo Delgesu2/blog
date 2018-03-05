@@ -28,12 +28,6 @@ class TokenManager extends DBFactory
         return $this->buildDomain($req->fetch());
     }
 
-    // Delete token
-    public function delToken()
-    {
-        $req = $this->connect()->prepare("DELETE FROM token");
-		$req = execute();
-	}
 
     // Hydratation
     public function buildDomain(array $data)

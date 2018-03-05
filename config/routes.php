@@ -60,6 +60,16 @@ return [
         'controller'   => \Framework\Controller\TokenController::class
     ],
 
+    'password_reset' => [
+        'path'         => '/pswrreset',
+        'controller'   => \Framework\Controller\PasswordReset::class
+    ],
+
+    'password_reset_action' => [
+        'path'          => '/pswrd_reset_action',
+        'controller'    => \Framework\Controller\PasswordReset::class
+        ],
+
     'admin_list'    => [
         'path'         => '/admin/list',
         'controller'   => \Framework\Controller\ListAdminController::class

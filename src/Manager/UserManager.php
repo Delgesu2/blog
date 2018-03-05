@@ -34,8 +34,16 @@ class UserManager extends DBFactory {
         $req->execute();
     }
 
-    // Tableau contenant les données de l'entité User
-    private function buildDomain(array $data)
+    // Modifier uniquement mot-de-passe
+    public function pswrdUpdate() {
+        $req = $this->connect()->prepare("UPDATE user SET mdp = :mdp WHERE id=1");
+        $req->bindValue(':mdp', $_POST['nv_mdp'], \PDO::PARAM_STR);
+        $req->execute();
+    }
+
+        // Hydratation de l'entité par une boucle.
+    public function buildDomain(array $data)
+
     {
         $user = new User();
         $user->setId($data['id']);

@@ -25,7 +25,7 @@ class AccessAdminController
         $arrayData=$this->userManager->getUser();
 
         /* Les champs sont-ils pleins ? */
-        if (!empty($_POST['identifiant']) && !empty($_POST['mdp'])) {
+        if (!empty (htmlspecialchars($_POST['identifiant'])) && !empty(htmlspecialchars($_POST['mdp']))) {
             /* Les données sont-elles justes ?*/
             if (($_POST['identifiant']) == $arrayData->getIdentifiant()
                 && password_verify($_POST['mdp'], $arrayData->getMdp()) ) {

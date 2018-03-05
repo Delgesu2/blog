@@ -52,7 +52,7 @@ class Router
                 }
             }
 
-            // if ? detected
+            // if ? detected -- token verifying
             elseif (preg_match('#\?#', $request)) {
                 $route->setPath($request);
                 $route->setController('\Framework\Controller\TokenPasswordController');
@@ -67,7 +67,8 @@ class Router
             elseif ($route->getPath() === $request) {
                 $class = $this->createController($route->getController());
                 if (preg_match('#updatepost_action#', $request) || preg_match('#write#', $request) ||
-                    preg_match('#envoi#', $request) || preg_match('#check#', $request)) {
+                    preg_match('#envoi#', $request) || preg_match('#check#', $request) ||
+                    preg_match('#pswrd_reset_action#', $request)){
                     return $class->action();
                 } else
                     return $class();
