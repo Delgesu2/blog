@@ -22,6 +22,9 @@ class PasswordReset
 
     public function __invoke()
     {
+        if (empty ($_SESSION['token'])) {
+            header('Location:/');
+        }
         require __DIR__ . './../../templates/pswrd_reset.php';
     }
 

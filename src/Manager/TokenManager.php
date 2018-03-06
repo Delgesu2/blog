@@ -20,10 +20,11 @@ class TokenManager extends DBFactory
     }
 
     // Read token
-    public function readToken()
+    public function readToken($token)
     {
-        $req = $this->connect()->prepare("SELECT token FROM token");
-        $req->execute();
+        $req = $this->connect()->prepare("SELECT token FROM token 
+         WHERE token=:token");
+        $req->execute([':token' => $token]);
 
         return $this->buildDomain($req->fetch());
     }

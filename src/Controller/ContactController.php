@@ -35,9 +35,9 @@ class ContactController
         $contact = 'Nouveau message de: ' . htmlspecialchars($_POST['prenom']) . ' ' . htmlspecialchars($_POST['nom']) .
             '<p>' . htmlspecialchars($_POST['message']) . '</p>';
         $message = (new \Swift_Message('Nouveau message'))
-            ->setFrom([$data['from'] => 'Mon site-blog'])
-            ->setTo($data['to'])
-            ->setSubject($_POST['sujet'])
+            ->setFrom([htmlspecialchars($data['from']) => 'Mon site-blog'])
+            ->setTo(htmlspecialchars($data['to']))
+            ->setSubject(htmlspecialchars($_POST['sujet']))
             ->setBody($contact, 'text/html');
 
 // Send the message

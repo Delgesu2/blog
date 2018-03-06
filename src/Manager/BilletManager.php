@@ -67,9 +67,9 @@ class BilletManager extends DBFactory {
     {
         $req = $this->connect()->prepare("UPDATE post SET titre = :titre, chapo = :chapo, contenu = :contenu,
                                                    datemaj = NOW() WHERE id = :id ") ;
-        $req->bindValue(':titre', $_POST['titre'], \PDO::PARAM_STR);
-        $req->bindValue(':chapo', $_POST['chapo'], \PDO::PARAM_STR);
-        $req->bindValue(':contenu', $_POST['contenu'], \PDO::PARAM_STR);
+        $req->bindValue(':titre', htmlspecialchars($_POST['titre']), \PDO::PARAM_STR);
+        $req->bindValue(':chapo', htmlspecialchars($_POST['chapo']), \PDO::PARAM_STR);
+        $req->bindValue(':contenu', htmlspecialchars($_POST['contenu']), \PDO::PARAM_STR);
         $req->bindValue(':id', $_POST ('id'), \PDO::PARAM_INT);
         $req->execute();
     }
@@ -86,9 +86,9 @@ class BilletManager extends DBFactory {
     {
         $req = $this->connect()->prepare("INSERT INTO post(titre, chapo, contenu, datecreation)
                                                    VALUES (:titre, :chapo, :contenu, NOW())");
-        $req->bindValue(':titre', $_POST['titre'], \PDO::PARAM_STR);
-        $req->bindValue(':chapo', $_POST['chapo'], \PDO::PARAM_STR);
-        $req->bindValue(':contenu', $_POST['contenu'], \PDO::PARAM_STR);
+        $req->bindValue(':titre', htmlspecialchars($_POST['titre']), \PDO::PARAM_STR);
+        $req->bindValue(':chapo', htmlspecialchars($_POST['chapo']), \PDO::PARAM_STR);
+        $req->bindValue(':contenu', htmlspecialchars($_POST['contenu']), \PDO::PARAM_STR);
         $req->execute();
     }
 

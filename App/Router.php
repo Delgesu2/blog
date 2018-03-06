@@ -39,6 +39,8 @@ class Router
     {
         foreach ($this->routes as $route) {
 
+            $this->match($request, $route->getPath());
+
             //  if /id detected
             if (preg_match($route->getRequirements(), $request, $id)) {
                 $new_id = trim($id[0], '/');
@@ -52,8 +54,9 @@ class Router
                 }
             }
 
-            // if ? detected -- token verifying
-            elseif (preg_match('#\?#', $request)) {
+            // if ? detected -- token verifying and put in $_GET
+            elseif (preg_match('#\?token=[\d+[a-zA-Z.]+#', $request, $param)) {
+                $_GET['token'] = trim($param[0], '\?token=');
                 $route->setPath($request);
                 $route->setController('\Framework\Controller\TokenPasswordController');
 
@@ -74,9 +77,8 @@ class Router
                     return $class();
             }
 
-
-            elseif ($this->getMatches() == count($this->routes) || $this->getMatches() > count($this->routes)) {
-                throw new \Exception(sprintf('Route not matched'));
+            elseif ($this->getMatches() < 0) {
+                echo"prout";
             }
         }
     }
@@ -88,9 +90,14 @@ class Router
 
     public function match(string $request, string $route)
     {
-        if ($request !== $route) {
-            $this->matches++;
+        if ($request == $route) {
+            $m1 = $this->matches++;
         }
+
+        if ($request !== $route) {
+            $m2 = $this->matches++;
+        }
+        echo $m1+$m2;
     }
 
 }

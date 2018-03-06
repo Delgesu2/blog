@@ -1,5 +1,5 @@
 <?php
-if (isset($_SESSION['identifiant'])) {
+if (isset($_SESSION)) {
     ?>
 
     <!DOCTYPE html>
