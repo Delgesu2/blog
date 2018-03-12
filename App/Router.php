@@ -39,7 +39,7 @@ class Router
     {
         foreach ($this->routes as $route) {
 
-            $this->match($request, $route->getPath());
+           // $this->match($request, $route->getPath());
 
             //  if /id detected
             if (preg_match($route->getRequirements(), $request, $id)) {
@@ -48,10 +48,10 @@ class Router
                 $new_path = preg_replace($regex, $new_id, $route->getPath());
                 $route->setPath($new_path);
 
-                if ($route->getPath() === $request) {
-                    $class = $this->createController($route->getController());
-                    return $class($new_id);
-                }
+                    if ($route->getPath() === $request) {
+                        $class = $this->createController($route->getController());
+                        return $class($new_id);
+                    }
             }
 
             // if ? detected -- token verifying and put in $_GET
@@ -60,44 +60,99 @@ class Router
                 $route->setPath($request);
                 $route->setController('\Framework\Controller\TokenPasswordController');
 
-                if($route->getPath() === $request) {
-                    $class = $this->createController($route->getController());
-                    return $class();
-                }
+                    if ($route->getPath() === $request) {
+                        $class = $this->createController($route->getController());
+                        return $class();
+                    }
             }
 
             // regular path
             elseif ($route->getPath() === $request) {
                 $class = $this->createController($route->getController());
-                if (preg_match('#updatepost_action#', $request) || preg_match('#write#', $request) ||
-                    preg_match('#envoi#', $request) || preg_match('#check#', $request) ||
-                    preg_match('#pswrd_reset_action#', $request)){
-                    return $class->action();
-                } else
-                    return $class();
+                    if (preg_match('#updatepost_action#', $request) || preg_match('#write#', $request) ||
+                        preg_match('#envoi#', $request) || preg_match('#check#', $request) ||
+                        preg_match('#pswrd_reset_action#', $request)
+                    ) {
+                        return $class->action();
+                    } else {
+                        return $class();
+                    }
             }
 
-            elseif ($this->getMatches() < 0) {
-                echo"prout";
-            }
+
+            /*   elseif ($this->getMatches() < 0) {
+               echo"prout";
+               }
+               }
+               }
+
+               public function getMatches()
+               {
+               return $this->matches;
+               }
+
+               public function match(string $request, string $route)
+               {
+
+                if ($request == $route) {
+               $m1 = $this->matches++;
+               }
+
+
+                if ($request !== $route) {
+              $m2 = $this->matches++;
+                }
+
+               $m3 = count($route[]);
+              if (($m1+$m2) !== $m3) {
+               echo "prout";
+               }
+               }  */
+
+
+          /*  switch ($request) {
+
+                case ($route->getPath() === $request) :
+                    $class = $this->createController($route->getController());
+                    if (preg_match('#updatepost_action#', $request) || preg_match('#write#', $request) ||
+                        preg_match('#envoi#', $request) || preg_match('#check#', $request) ||
+                        preg_match('#pswrd_reset_action#', $request)){
+                        return $class->action();
+                    } else
+                        return $class();
+                    break;
+
+                case (preg_match($route->getRequirements(), $request, $id)) :
+                    $new_id = trim($id[0], '/');
+                    $regex = '#:id#';
+                    var_dump($new_id);
+                    die();
+                    $new_path = preg_replace($regex, $new_id, $route->getPath());
+                    $route->setPath($new_path);
+
+                    if ($route->getPath() === $request) {
+                    $class = $this->createController($route->getController());
+                    return $class($new_id);
+                    }
+                    break;
+
+                case (preg_match('#\?token=[\d+[a-zA-Z.]+#', $request, $param)) :
+                     $_GET['token'] = trim($param[0], '\?token=');
+                     $route->setPath($request);
+                     $route->setController('\Framework\Controller\TokenPasswordController');
+
+                     if($route->getPath() === $request) {
+                     $class = $this->createController($route->getController());
+                     return $class();
+                     }
+                     break;
+
+                case ($route->getPath() !== $request) :
+                     echo "flute !";
+                     break;    */
         }
     }
-
-    public function getMatches()
-    {
-        return $this->matches;
-    }
-
-    public function match(string $request, string $route)
-    {
-        if ($request == $route) {
-            $m1 = $this->matches++;
-        }
-
-        if ($request !== $route) {
-            $m2 = $this->matches++;
-        }
-        echo $m1+$m2;
-    }
-
 }
+
+
+

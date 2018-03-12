@@ -14,10 +14,10 @@ ob_start();
 
         <label for="civilit&#233;">Civilit&#233; : </label>
         <select id="civilite" name="civilite">
-            <option value="mr">
+            <option value="Monsieur">
                 Monsieur
             </option>
-            <option value="mme">
+            <option value="Madame">
                 Madame
             </option>
         </select>

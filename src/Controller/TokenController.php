@@ -25,7 +25,7 @@ class TokenController
         $data = require __DIR__ . './../../config/mailer.php';
 
         // Create the Transport
-        $transport = (new \Swift_SmtpTransport($data['smtp'], 25))
+        $transport = (new \Swift_SmtpTransport($data['smtp'], 465, 'ssl'))
             ->setUsername($data['username'])
             ->setPassword($data['password'])
         ;
