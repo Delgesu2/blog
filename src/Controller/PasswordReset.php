@@ -30,19 +30,19 @@ class PasswordReset
 
     public function action()
     {
-        /* REGEX: au moins 1 majuscule, au moins 1 chiffre, au moins 8 caractères, pas d'espace */
+        /* REGEX: at least 1 capital letter, 1 number, at least 8 characters, no space */
         $regex_mdp = '#(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])\S{8,}#';
         $mdp = $_POST['nv_mdp'];
 
         if (!empty (htmlspecialchars($_POST['nv_mdp']))) {
-            /* Verification validité nouveaux mdp avec regex */
+            /* Checking new password validity with regex */
             if (preg_match($regex_mdp, $mdp)) {
 
                 /* Hash password */
                 $pwd = password_hash($mdp, PASSWORD_DEFAULT);
                 $_POST['nv_mdp'] = $pwd;
 
-                /* Update dans la BDD */
+                /* Update in database */
                 $this->pswrreset->pswrdUpdate();
                 session_destroy();
                 header('Location:/');

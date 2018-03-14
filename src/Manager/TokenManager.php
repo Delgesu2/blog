@@ -9,7 +9,10 @@ class TokenManager extends DBFactory
 {
     public $data;
 
-    // Create token
+    /**
+     * Create token
+     * @param $token
+     */
     public function createToken($token)
     {
         $req = $this->connect()->prepare("START TRANSACTION;
@@ -19,7 +22,11 @@ class TokenManager extends DBFactory
         $req->execute([':token' => $token]);
     }
 
-    // Read token
+    /**
+     * Read token
+     * @param $token
+     * @return Token
+     */
     public function readToken($token)
     {
         $req = $this->connect()->prepare("SELECT token FROM token 
@@ -30,7 +37,11 @@ class TokenManager extends DBFactory
     }
 
 
-    // Hydratation
+    /**
+     * Hydrate object in loop
+     * @param array $data
+     * @return Token
+     */
     public function buildDomain(array $data)
     {
         $token = new Token();

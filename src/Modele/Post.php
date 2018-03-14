@@ -14,32 +14,32 @@ class Post
     public $id;
 
     /**
-     * @var titre du billet
+     * @var Post title
      */
     public $titre;
 
     /**
-     * @var chapo du billet
+     * @var Post header
      */
     public $chapo;
 
     /**
-     * @var contenu du billet
+     * @var Post content
      */
     public $contenu;
 
     /**
-     * @var date création du billet
+     * @var Creation date
      */
     public $datecreation;
 
     /**
-     * @var date mise-à-jour éventuelle du billet
+     * @var Update date
      */
     public $datemaj;
 
 
-    // getters et setters
+    // getters & setters
 
     /**
      * @return mixed

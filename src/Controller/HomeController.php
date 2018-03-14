@@ -8,7 +8,7 @@
 
 namespace Framework\Controller;
 
-class HomeController //extends AbstractController
+class HomeController
 {
 
     public function __invoke()

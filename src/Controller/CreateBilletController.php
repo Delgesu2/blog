@@ -19,7 +19,6 @@ class CreateBilletController
         $this->create = new BilletManager();
     }
 
-    // Appel du template de formulaire
     public function __invoke()
     {
        require __DIR__ . './../../templates/create.php';

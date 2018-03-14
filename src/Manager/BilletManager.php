@@ -15,13 +15,16 @@ class BilletManager extends DBFactory {
 
     private $data;
 
-    // Renvoie la liste des billets du blog
+    /**
+     * Public posts list
+     * @return mixed
+     */
     public function getBillets()
     {
        $req = $this->connect()->query("SELECT id, titre, chapo, 
         CONCAT(SUBSTRING(contenu,1,200), '...') AS contenu, 
-        DATE_FORMAT(datecreation, '%d/%m/%Y à %Hh%imin%ss') AS datecreation,
-        DATE_FORMAT(datemaj, 'Mis à jour le %d/%m/%Y à %Hh%imin%ss') AS datemaj,
+        DATE_FORMAT(datecreation, '%d/%m/%Y à %Hh%imin') AS datecreation,
+        DATE_FORMAT(datemaj, 'Mis à jour le %d/%m/%Y à %Hh%imin') AS datemaj,
         CASE WHEN datemaj IS NULL THEN datecreation ELSE datemaj END AS datetri 
         FROM post ORDER BY datetri DESC") ;
        while ($res=$req->fetch()) {
@@ -30,19 +33,26 @@ class BilletManager extends DBFactory {
        return $this->data;
     }
 
-    // Renvoie toutes les informations sur un billet
+    /**
+     * Post data on 1 post
+     * @param $id
+     * @return Post
+     */
     public function infosBillet($id)
     {
         $req = $this->connect()->prepare("SELECT id, titre, chapo, contenu, 
-    		DATE_FORMAT(datecreation, \"%d/%m/%Y à %Hh%imin%ss\") AS datecreation,
-    		DATE_FORMAT(datemaj, \"%d/%m/%Y à %Hh%imin%ss\") AS datemaj
+    		DATE_FORMAT(datecreation, \"%d/%m/%Y à %Hh%imin\") AS datecreation,
+    		DATE_FORMAT(datemaj, \"%d/%m/%Y à %Hh%imin\") AS datemaj
     		FROM post WHERE id = :id") ;
         $req->execute([':id' => $id]);
 
         return $this->buildDomain($req->fetch());
     }
 
-    // Renvoie la liste des billets en admin
+    /**
+     * Post list in admin
+     * @return mixed
+     */
     public function getList()
     {
         $req = $this->connect()->query("SELECT id, titre, DATE_FORMAT(datecreation, '%d-%m-%Y à %Hh%im%ss') 
@@ -53,7 +63,11 @@ class BilletManager extends DBFactory {
         return $this->data;
     }
 
-    // Récupérer un billet à modifier dans le formulaire
+    /**
+     * Data recover for update
+     * @param $id
+     * @return Post
+     */
     public function recup_update($id)
     {
         $req = $this->connect()->prepare("SELECT id, titre, chapo, contenu FROM post WHERE id = :id");
@@ -62,7 +76,9 @@ class BilletManager extends DBFactory {
         return $this->buildDomain($req->fetch());
     }
 
-    // Modifier billet
+    /**
+     * Post update in database
+     */
     public function modif()
     {
         $req = $this->connect()->prepare("UPDATE post SET titre = :titre, chapo = :chapo, contenu = :contenu,
@@ -74,14 +90,19 @@ class BilletManager extends DBFactory {
         $req->execute();
     }
 
-    // Effacer un billet
+    /**
+     * Post delete
+     * @param $id
+     */
     public function erase_billet($id)
     {
         $req = $this->connect()->prepare("DELETE FROM post WHERE id=:id");
         $req->execute([':id' => $id]);
     }
 
-    // Créer un billet
+    /**
+     * Post create
+     */
     public function create()
     {
         $req = $this->connect()->prepare("INSERT INTO post(titre, chapo, contenu, datecreation)
@@ -92,7 +113,11 @@ class BilletManager extends DBFactory {
         $req->execute();
     }
 
-    // Hydratation de l'entité par une boucle.
+    /**
+     * Hydrate object in loop
+     * @param array $data
+     * @return Post
+     */
     public function buildDomain(array $data)
     {
         $post = new Post();

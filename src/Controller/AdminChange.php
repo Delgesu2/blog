@@ -8,7 +8,6 @@
 
 namespace Framework\Controller;
 
-
 class AdminChange
 {
     public function __invoke()

@@ -6,7 +6,7 @@
  * Time: 21:35
  */
 
-// tableau des routes du site
+// Site's paths map
 
 return [
     'homepage' => [

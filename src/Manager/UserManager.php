@@ -15,7 +15,10 @@ class UserManager extends DBFactory {
 
     public $data;
 
-    // Récupérer données utilisateur
+    /**
+     * Recover user data
+     * @return User
+     */
     public function getUser() {
         $req = $this->connect()->prepare("SELECT id, identifiant, mdp, courriel FROM user WHERE id=1") ;
         $req->execute();
@@ -24,7 +27,9 @@ class UserManager extends DBFactory {
         return $this->buildDomain($data);
     }
 
-       // Modifier données utilisateur
+    /**
+     * Update user data
+     */
     public function userUpdate() {
         $req = $this->connect()->prepare("UPDATE user SET identifiant = :identifiant, mdp = :mdp, courriel = :courriel
         WHERE id=1") ;
@@ -34,14 +39,20 @@ class UserManager extends DBFactory {
         $req->execute();
     }
 
-    // Modifier uniquement mot-de-passe
+    /**
+     * Update password
+     */
     public function pswrdUpdate() {
         $req = $this->connect()->prepare("UPDATE user SET mdp = :mdp WHERE id=1");
         $req->bindValue(':mdp', $_POST['nv_mdp'], \PDO::PARAM_STR);
         $req->execute();
     }
 
-        // Hydratation de l'entité par une boucle.
+    /**
+     * Hydrate object in loop
+     * @param array $data
+     * @return User
+     */
     public function buildDomain(array $data)
 
     {

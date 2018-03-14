@@ -155,7 +155,6 @@ form
 	padding-bottom: 40px;
 }
 
-
 /* Public list posts */
 .titrepannel
 {
@@ -198,7 +197,6 @@ a:hover
 {
 	text-decoration: none;
 }
-
 
 /* Media querries */
 @media screen and (max-width: 780px)

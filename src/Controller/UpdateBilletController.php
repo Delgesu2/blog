@@ -19,7 +19,7 @@ class UpdateBilletController
         $this->billetManager = new BilletManager();
     }
 
-    // Récupération du billet et modification dans la templates
+    // Recover post in form
     public function __invoke($id)
     {
         $billet_recup = $this->billetManager->recup_update($id);

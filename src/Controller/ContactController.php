@@ -27,10 +27,10 @@ class ContactController
             ->setPassword($data['password'])
         ;
 
-// Create the Mailer
+        // Create the Mailer
         $mailer = new \Swift_Mailer($transport);
 
-// Create a message
+        // Create a message
         $contact = 'Nouveau message de: ' . $_POST['civilite'] . ' ' . htmlspecialchars($_POST['prenom']) .
             ' ' . htmlspecialchars($_POST['nom']) . '<p>' . htmlspecialchars($_POST['message']) . '</p>';
         $message = (new \Swift_Message('Nouveau message'))
@@ -39,10 +39,10 @@ class ContactController
             ->setSubject(htmlspecialchars($_POST['sujet']))
             ->setBody($contact, 'text/html');
 
-// Send the message
+        // Send the message
         $result = $mailer->send($message);
 
-// Redirection
+        // Redirection
          header('Location:/contact/sent');
     }
 }

@@ -7,8 +7,8 @@ ob_start();
     <h2 class="text-center">Modifier ou supprimer</h2>
 
     <div class="row">
-        <div class="col-sm-12 col-xs-12 table-responsive">
-            <table class="table table-striped table-condesed">
+        <div class="col-sm-12 col-xs-12">
+            <table class="table table-striped table-condesed table-responsive">
                 <thead>
                     <tr>
                         <th>Titre</th> <th>Cr&#233;&#233; le</th> <th>Modifié le</th> <th>Action</th>

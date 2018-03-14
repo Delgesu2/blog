@@ -19,7 +19,7 @@ class ListAdminController
         $this->admin_list = new BilletManager();
     }
 
-    // Affiche la liste des billets du blog version admin
+    // Display post list in admin
     public function __invoke()
     {
         $billets_admin = $this->admin_list->getList();
