@@ -1,12 +1,14 @@
-#blog
+blog
+====
 
-##Projet 5 - Parcours développeur d'application PHP/Symfony - OpenClassrooms
+Projet 5 - Parcours développeur d'application PHP/Symfony - OpenClassrooms
+--------------------------------------------------------------------------
 
-###___Installation sur serveur___ 
+### ___Installation sur serveur___ 
 
 Une fois le site déployé, le dossier racine doit être /public . Faire pointer le _virtual host_ sur celui-ci.
 
-###___Connexion à la BDD___
+### ___Connexion à la BDD___
 
 Pour pouvoir lire la page 'blog' du site, vous devez paramétrer votre base de données.
 
@@ -17,7 +19,7 @@ Pour pouvoir lire la page 'blog' du site, vous devez paramétrer votre base de d
  
 * La partie publique du site est accessible. 
 
-###___Partie administration___
+### ___Partie administration___
 
 Afin d'accéder à la partie _administration_, vous devrez définir vos propres identifiant et mot de passe. Par défaut, ils sont: 
 
@@ -27,7 +29,7 @@ Utilisez-les pour accéder à la partie administration et les changer immédiate
 Le mot de passe doit comporter au moins **1 majuscule**, **1 chiffre**, et au minimum **8 caractères** en tout.
 
 
-###___Formulaire de contact___
+### ___Formulaire de contact___
 
 Il y a 3 fichiers à modifier.
 
