@@ -8,19 +8,16 @@
 
 namespace App;
 
-//use Framework\Controller\HomeController;
-
 class Router
 {
-    private $routes = []; // Liste des routes dans un tableau
-    private $matches = 0;
+    private $routes = []; // Roads in array
 
     public function __construct()
     {
         $this->createRoutes();
     }
 
-    public function createRoutes()  // On remplit le tableau
+    public function createRoutes()
     {
         $routes = require __DIR__ . './../config/routes.php';
 
@@ -38,8 +35,6 @@ class Router
     public function handleRequest($request)
     {
         foreach ($this->routes as $route) {
-
-           // $this->match($request, $route->getPath());
 
             //  if /id detected
             if (preg_match($route->getRequirements(), $request, $id)) {
@@ -79,6 +74,8 @@ class Router
                     }
             }
         }
+
+        header('Location:/404');
     }
 }
 

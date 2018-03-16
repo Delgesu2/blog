@@ -14,6 +14,11 @@ return [
         'controller'=> \Framework\Controller\HomeController::class
     ],
 
+    '404' => [
+        'path'      => '/404',
+        'controller'=> \Framework\Controller\Error404Controller::class
+    ],
+
     'article_list' => [
         'path'      =>'/post/list',
         'controller'=> \Framework\Controller\ArticleListController::class
