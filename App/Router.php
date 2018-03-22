@@ -10,7 +10,10 @@ namespace App;
 
 class Router
 {
-    private $routes = []; // Roads in array
+    /**
+     * @var array paths
+     */
+    private $routes = [];
 
     public function __construct()
     {
@@ -36,7 +39,9 @@ class Router
     {
         foreach ($this->routes as $route) {
 
-            //  if /id detected
+            /**
+             * if /id detected
+             */
             if (preg_match($route->getRequirements(), $request, $id)) {
                 $new_id = trim($id[0], '/');
                 $regex = '#:id#';
@@ -49,7 +54,9 @@ class Router
                     }
             }
 
-            // if ? detected -- token verifying and put in $_GET
+            /**
+             * if ? detected -- token verifying and put in $_GET
+             */
             elseif (preg_match('#\?token=[\d+[a-zA-Z.]+#', $request, $param)) {
                 $_GET['token'] = trim($param[0], '\?token=');
                 $route->setPath($request);
@@ -59,9 +66,9 @@ class Router
                         $class = $this->createController($route->getController());
                         return $class();
                     }
-            }
-
-            // regular path
+            } /**
+             * regular path
+             */
             elseif ($route->getPath() === $request) {
                 $class = $this->createController($route->getController());
                     if (preg_match('#updatepost_action#', $request) || preg_match('#write#', $request) ||

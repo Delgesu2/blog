@@ -12,7 +12,11 @@ abstract class DBFactory
 {
     protected function connect()
     {
-         return new \PDO('mysql:host=localhost;dbname=monblog;charset=utf8', 'root', '',
+        // Read data array
+        $data = require __DIR__ . './../config/connect.php';
+
+         return new \PDO('mysql:host=' . $data['host'] . ';dbname=' . $data['dbname'] . ';charset=utf8',
+             $data['username'], $data['password'],
          array(\PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION));
     }
 }

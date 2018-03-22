@@ -1,6 +1,7 @@
 /public/contenu/images
 /public/contenu/CVBauhaus.pdf
 /config/mailer.php
+/config/connect.php
 /src/Controller/Vue.php
 /vendor
 

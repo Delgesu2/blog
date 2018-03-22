@@ -13,9 +13,12 @@ Une fois le site déployé, le dossier racine doit être /public . Faire pointer
 Pour pouvoir lire la page 'blog' du site, vous devez paramétrer votre base de données.
 
 * Utilisez le fichier script *monblog.sql* pour la création de la BDD et son remplissage.
-* Retranscrivez ces données dans le fichier /App/DBFactory.php ligne 15:
+* Retranscrivez ces données dans le fichier /config.connect.php:
 
-    * `'mysql:host=nom_hote;dbname=nom_de_la_bdd;charset=utf8','votre_nom_utilisateur','mot_de_passe'`
+    * 'host'    => 'nom_hote',
+    * 'dbname'  => 'BBD',
+    * 'username'=> 'nom_utilisateur',
+    * 'password'=> 'mot_de_passe'
  
 * La partie publique du site est accessible. 
 
@@ -23,7 +26,6 @@ Pour pouvoir lire la page 'blog' du site, vous devez paramétrer votre base de d
 
 Afin d'accéder à la partie _administration_, vous devrez définir vos propres identifiant et mot de passe. Par défaut, ils sont: 
 
-identifiant: `albator`    mot de passe: `Tagada71` 
 
 Utilisez-les pour accéder à la partie administration et les changer immédiatement. N'oubliez pas de définir une adresse mail. Elle sera utile en cas de perte du mot de passe.
 Le mot de passe doit comporter au moins **1 majuscule**, **1 chiffre**, et au minimum **8 caractères** en tout.
