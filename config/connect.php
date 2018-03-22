@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'host'    => 'localhost',
-    'dbname'  => 'monblog',
-    'username'=> 'root',
-    'password'=> ''
+    'host'    => '#####',
+    'dbname'  => '####',
+    'username'=> '###"',
+    'password'=> '####'
 ];
