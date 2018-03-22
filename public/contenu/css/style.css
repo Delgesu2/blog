@@ -218,7 +218,7 @@ a:hover
 	background-color: red;
 	position: relative;
 	-webkit-animation-name: example; /* Safari 4.0 - 8.0 */
-	-webkit-animation-duration: 2s; / Safari 4.0 - 8.0 */
+	-webkit-animation-duration: 2s; /* Safari 4.0 - 8.0 */
      animation-name: example;
 	animation-duration: 1.5s;
 }
