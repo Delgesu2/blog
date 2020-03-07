@@ -135,18 +135,18 @@ h3
 	-moz-border-radius: 8px;
 	border-radius: 8px;
 	transition: width 1s, background-color 1s;
-	cursor: pointer;
+	/*cursor: pointer;*/
 }
 
-#flip:hover, #flip2:hover, #flip3:hover
+/*#flip:hover, #flip2:hover, #flip3:hover
 {
     width: 200px;
 	background-color: rgb(201, 48, 44);
-}
+} */
 
 #panel, #panel2, #panel3
 {
-	display: none;
+	/*display: none;*/
 	margin-bottom: 30px;
 }
 

@@ -1,9 +1,9 @@
 <?php
 
 return [
-    'smtp'     => 'smtp.server.com  ',
-    'username' => 'yourname',
-    'password' => '##########',
-    'from'     => 'contact@thisblog.com',
-    'to'       => 'yourmail'
+    'smtp'     => 'fajitas.o2switch.net',
+    'username' => 'contact@devxdemo.eu',
+    'password' => 'Ygn429FsHqns',
+    'from'     => 'contact@devxdemo.eu',
+    'to'       => 'coutant.xavier@orange.fr'
 ];

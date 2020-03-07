@@ -32,7 +32,7 @@ class ContactController
 
         // Create a message
         $contact = 'Nouveau message de: ' . $_POST['civilite'] . ' ' . htmlspecialchars($_POST['prenom']) .
-            ' ' . htmlspecialchars($_POST['nom']) . '<p>' . htmlspecialchars($_POST['email']) . '</p>
+            ' ' . htmlspecialchars($_POST['nom']) . '<p>Adresse courriel: ' . htmlspecialchars($_POST['email']) . '</p>
             <p>' .htmlspecialchars($_POST['message']) . '</p>';
         $message = (new \Swift_Message('Nouveau message'))
             ->setFrom([$data['from'] => 'Mon site-blog'])

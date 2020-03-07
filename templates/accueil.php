@@ -38,7 +38,6 @@ ob_start();
                             <td>CSS</td><td>PHP/POO</td><td>MySQL</td>
                         </tr>
                     </table>
-                    Et une goutte de jQuery, d'accord ...
                 </div>
 
                 <!-- 2e panneau -->
@@ -103,7 +102,7 @@ ob_start();
 		</div>
 
     <!-- Javascript -->
-    <script>
+   <!-- <script>
         $(document).ready(function(){
             $("#flip").click(function(){
                 $("#panel").slideToggle("slow");
@@ -117,7 +116,7 @@ ob_start();
                 $("#panel3").slideToggle("slow");
             });
         });
-    </script>
+    </script>  -->
 
 <?php
     $content = ob_get_clean();
