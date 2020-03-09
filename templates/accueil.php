@@ -101,23 +101,6 @@ ob_start();
 		<!-- fin thumbnail -->
 		</div>
 
-    <!-- Javascript -->
-   <!-- <script>
-        $(document).ready(function(){
-            $("#flip").click(function(){
-                $("#panel").slideToggle("slow");
-            });
-
-            $("#flip2").click(function(){
-                $("#panel2").slideToggle("slow");
-            });
-
-            $("#flip3").click(function(){
-                $("#panel3").slideToggle("slow");
-            });
-        });
-    </script>  -->
-
 <?php
     $content = ob_get_clean();
     require ('public-template.php');

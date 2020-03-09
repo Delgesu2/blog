@@ -1,0 +1,269 @@
+/* Character fonts */
+@font-face
+{
+	font-family: 'Bauhaus';
+	src: url('../fonts/MandalaBold.otf');
+}
+
+@font-face
+{
+	font-family: 'Bauhaus_Light';
+	src: url('../fonts/MandalaRegular.otf');
+}
+
+
+@font-face
+{
+	font-family: 'UbuntuLight';
+	src: url('../fonts/Ubuntu-L.ttf') format('truetype');
+}
+
+/* Page */
+body
+{
+    font-family: 'UbuntuLight', Arial, serif;
+    background-color:whitesmoke ;
+}
+
+.panel, .alert
+{
+	margin-top: 2em;
+}
+
+/* Header */
+h3
+{
+	font-size: 1.3em;
+}
+
+.jumbotron
+{
+	background-image: url('../images/banniere2.png');
+	color: black;
+}
+
+.subtitle
+{
+	font-family: Bauhaus, Arial, serif;
+	color: rgb(201, 48, 44);
+}
+
+.jumbotitre
+ {
+ 	font-family: 'Bauhaus', Arial, serif;
+ }
+
+/* Menu */
+.btnjumbo
+{
+	margin-bottom: -80px;
+}
+
+.fond
+{
+    background-color: black;
+    font-family: Bauhaus;
+}
+
+.btnmobile
+{
+    display: none;
+}
+
+.soustitre
+{
+	font-family: Bauhaus_Light, Arial, serif;
+}
+/* End menu */
+
+/* Modal */
+.oubli
+{
+	margin-top: 1em;
+}
+
+.ici
+{
+    color: red;
+}
+
+.chapolanding
+{
+	margin-bottom: 30px;
+}
+
+
+.table
+{
+	background-color: white;
+}
+
+.annuler
+{
+	margin-left: 1em;
+	color: red;
+}
+
+/* Righ frame */
+.fondThumb
+{
+	background-color: black;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+}
+
+.thumbwrite
+{
+	color: white;
+}
+
+.list-group-item
+{
+	padding: 5px;
+}
+
+/* Panels */
+#flip, #flip2, #flip3
+{
+	width: 180px;
+	margin: 5px;
+	padding: 10px 0 10px 20px;
+	background-color: black;
+    color: #FFF;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+	transition: width 1s, background-color 1s;
+	/*cursor: pointer;*/
+}
+
+/*#flip:hover, #flip2:hover, #flip3:hover
+{
+    width: 200px;
+	background-color: rgb(201, 48, 44);
+} */
+
+#panel, #panel2, #panel3
+{
+	/*display: none;*/
+	margin-bottom: 30px;
+}
+
+form
+{
+	padding-bottom: 40px;
+}
+
+/* Public list posts */
+.titrepannel
+{
+	background-color: black;
+	color: rgb(201, 48, 44);
+	font-family: Bauhaus_Light, Arial, serif;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+}
+
+.titrepost
+{
+	font-size: 1.4em;
+	color: rgb(201, 48, 44);
+}
+
+.titredate
+{
+	font-size: 1.1em;
+}
+
+.chapo
+{
+	font-size: 1.2em;
+}
+
+/* Solo post */
+.badgesolo
+{
+	margin-bottom: 20px;
+}
+
+/* Dynamic links */
+a
+{
+	color: rgb(51, 51, 51);
+}
+
+a:hover
+{
+	text-decoration: none;
+}
+
+/* 404 animation */
+
+.pingouin
+{
+	max-width: 80%;
+}
+
+#animated_div
+{
+	border-style: ridge;
+	border-color: black;
+	font-family: Bauhaus;
+	font-size: 2.2em;
+	color: whitesmoke;
+	width: 40%;
+	left:30%;
+	background-color: red;
+	position: relative;
+	-webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+	-webkit-animation-duration: 2s; /* Safari 4.0 - 8.0 */
+     animation-name: example;
+	animation-duration: 1.5s;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes example {
+
+	0%  {background-color:yellow; left:0px; top:0px; transform: rotate(20deg);}
+	100%  {background-color:red; left:30%; top:0px; transform: rotate(0deg);}
+}
+
+/* Standard syntax */
+@keyframes example {
+
+	0%  {background-color:yellow; left:0px; top:0px; transform: rotate(20deg);}
+	100%  {background-color:red; left:30%; top:0px; transform: rotate(0deg);}
+}
+
+
+/* Media querries */
+@media screen and (max-width: 780px)
+{
+	.btnjumbo
+	{
+        display: none;
+	}
+
+    .btnmobile
+    {
+        display: block;
+        font-family: Bauhaus;
+    }
+
+	h2
+	{
+		font-size: 1.5em;
+	}
+
+	#animated_div
+	{
+		font-size: 1.8em;
+	}
+
+	.pingouin
+	{
+		max-width: 90%;
+	}
+}

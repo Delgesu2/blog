@@ -11,7 +11,7 @@ namespace Framework\Controller;
 use Framework\Manager\BilletManager;
 
 
-class ArticleListController
+class HomepageController
 {
     private $liste;
 
@@ -23,6 +23,6 @@ class ArticleListController
     public function __invoke()    // Affiche la liste des billets du blog
     {
        $billets = $this->liste->getBillets();
-       require '../templates/liste_billets.php';
+       require '../templates/homepage.php';
     }
 }

@@ -11,7 +11,7 @@
 return [
     'homepage' => [
         'path'      => '/',
-        'controller'=> \Framework\Controller\HomeController::class
+        'controller'=> \Framework\Controller\HomepageController::class
     ],
 
     '404' => [
@@ -21,7 +21,7 @@ return [
 
     'article_list' => [
         'path'      =>'/post/list',
-        'controller'=> \Framework\Controller\ArticleListController::class
+        'controller'=> \Framework\Controller\HomepageController::class
     ],
 
     'article_details' => [
