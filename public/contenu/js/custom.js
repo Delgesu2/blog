@@ -57,3 +57,9 @@ window.onload = function() {
     document.body.appendChild(css);
 };
 
+
+// Navbar classe active with jQuery
+$(document).ready(function() {
+    $('li.active').removeClass('active');
+    $('a[href="' + location.pathname + '"]').closest('li').addClass('active');
+});

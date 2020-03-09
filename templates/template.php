@@ -18,8 +18,6 @@
 
         <link type="text/css" rel="stylesheet" href="../contenu/css/simplePagination.css"/>
 
-
-
         <link href="https://fonts.googleapis.com/css?family=Raleway:200,100,400" rel="stylesheet" type="text/css" />
 
         <!-- Favicon -->
@@ -42,21 +40,16 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#"><img class="img-responsive" src="img/logo.png" alt="Logo" /></a>
+                    <!-- <a class="navbar-brand" href="#"><img class="img-responsive" src="img/logo.png" alt="Logo" /></a> -->
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="/">Accueil</a></li>
-                        <li><a href="/contact">Contact</a></li>
-                        <li><a href="login.html">Connexion</a></li>
+                    <ul class="nav navbar-nav" id="navigation">
+                        <li class="bouton"><a href="/">Accueil</a></li>
+                        <li class="bouton"><a href="/contact">Contact</a></li>
+                        <li class="bouton"><a href="login.php">Connexion</a></li>
                     </ul>
-                    <form class="navbar-form navbar-right" role="search">
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Search">
-                        </div>
-                    </form>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
         </nav>
@@ -69,12 +62,24 @@
     <!-- footer -->
     <footer>
         <div class="container">
-            <!-- This theme comes under Creative Commons Attribution 4.0 Unported. So don't remove below link back -->
-            <p class="copy-right">Copyright &copy; 2014 <a href="#">Your Site</a> | Designed By : <a href="http://www.indioweb.in/portfolio">IndioWeb</a>, All rights reserved. </p>
+            <div class="row footer">
+                <div class="col-xs-offset-3 col-sm-offset-5 col-xs-9">
+                    <a href="https://www.linkedin.com/in/xavier-coutant-webdev">
+                        <img src="contenu/images/linkedin-logo.png" alt="LikedIn" title="LinkedIn"   class="icon">
+                    </a>
+                    <a href="contenu/CV_XavierCoutant.pdf">
+                        <img src="contenu/images/cv.png" alt="CV" title="t&#233;l&#233;charger mon CV" class="icon">
+                    </a>
+                    <a href="https://github.com/Delgesu2/blog">
+                        <img src="contenu/images/octocat.png" alt="Github" title="Github" class="icon">
+                    </a>
+                </div>
+            </div>
         </div>
     </footer>
 
 </div>
+
 
         <!-- Javascript files -->
         <!-- jQuery -->
