@@ -120,10 +120,13 @@ ob_start();
                 </div>
                 <div class="row">
 
+                    <div class="list-wrapper">
+
                     <?php if (!empty($billets)) {
                         // Boucle affichage : récupération des lignes de la table post
                         foreach ($billets as $post): ?>
 
+                        <div class="list-item">
                             <div class="col-md-5">
                                 <!-- blog entry -->
                                 <div class="entry">
@@ -142,23 +145,54 @@ ob_start();
                                     <div class="clearfix"></div>
                                 </div>
                             </div>
+                        </div>
 
                         <?php endforeach;
                     } else
                         echo '<h3>Pas de billet à lire</h3>';
                     ?>
 
+                    </div>
+
                 </div>
 
-                <div class="blog-btn">
-                    <!-- button -->
-                    <a href="#" class="btn btn-warning">Read More Blogs</a>
+                <div class="row">
+                    <div class="col-xs-offset-5">
+                        <div id="pagination-container"></div>
+                    </div>
                 </div>
+
             </div>
+
+
+
         </div>
 
     </div>
 
+    <script src="../contenu/js/jquery.js"></script>
+    <script type="text/javascript" src="../contenu/js/jquery.simplePagination.js"></script>
+
+    <script>
+        var items = $(".list-wrapper .list-item");
+        var numItems = items.length;
+        var perPage = 2;
+
+        items.slice(perPage).hide();
+
+        $('#pagination-container').pagination({
+            items: numItems,
+            itemsOnPage: perPage,
+            cssStyle: 'light-theme',
+            prevText: "&lsaquo;",
+            nextText: "&rsaquo;",
+            onPageClick: function(pageNumber) {
+                var showFrom = perPage * (pageNumber - 1);
+                var showTo = showFrom + perPage;
+                items.hide().slice(showFrom, showTo).show();
+            }
+        });
+    </script>
 
 <?php
 $content = ob_get_clean();

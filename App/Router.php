@@ -66,7 +66,9 @@ class Router
                         $class = $this->createController($route->getController());
                         return $class();
                     }
-            } /**
+            }
+
+            /**
              * regular path
              */
             elseif ($route->getPath() === $request) {

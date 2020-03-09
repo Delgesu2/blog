@@ -16,6 +16,10 @@
         <!-- Custom CSS -->
         <link href="../contenu/css/style.css" rel="stylesheet">
 
+        <link type="text/css" rel="stylesheet" href="../contenu/css/simplePagination.css"/>
+
+
+
         <link href="https://fonts.googleapis.com/css?family=Raleway:200,100,400" rel="stylesheet" type="text/css" />
 
         <!-- Favicon -->
