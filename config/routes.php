@@ -45,6 +45,11 @@ return [
         'controller'=> \Framework\Controller\MessageSentController::class
     ],
 
+    'connexion_page' => [
+        'path'       => '/connexion',
+        'controller' =>\Framework\Controller\LoginPageController::class
+    ],
+
     'acces_admin' => [
         'path'       => '/admin',
         'controller' => \Framework\Controller\AccessAdminController::class

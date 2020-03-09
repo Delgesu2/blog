@@ -35,7 +35,7 @@ class TokenController
 
         // Create a message
         $contact = 'Nouveau message du blog: le lien suivant vous permettra de réinitialiser votre mot de passe:' . '
-        <a href="http://blog.localhost/admin/forget/pswd?token=' . $token . '">Cliquez ici !</a></br>
+        <a href="http://blog/admin/forget/pswd?token=' . $token . '">Cliquez ici !</a></br>
         <p>Attention: lien valable pendant 15 minutes.</p>';
         $message = (new \Swift_Message('Nouveau message'))
             ->setFrom([$data['from'] => 'Mon site-blog'])

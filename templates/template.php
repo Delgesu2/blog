@@ -48,7 +48,7 @@
                     <ul class="nav navbar-nav" id="navigation">
                         <li class="bouton"><a href="/">Accueil</a></li>
                         <li class="bouton"><a href="/contact">Contact</a></li>
-                        <li class="bouton"><a href="login.php">Connexion</a></li>
+                        <li class="bouton"><a href="/connexion">Connexion</a></li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->

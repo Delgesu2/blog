@@ -381,6 +381,18 @@ footer p {
 	max-width: 80%;
 }
 
+/* oubli mdp */
+.oubli {
+	margin-top: 1em;
+	text-align: right;
+}
+
+.annuler
+{
+	margin-left: 1em;
+	color: red;
+}
+
 #animated_div
 {
 	border-style: ridge;
